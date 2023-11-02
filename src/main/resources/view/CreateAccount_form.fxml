@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="rootNode" prefHeight="538.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CreateAccountFormController">
    <children>
       <AnchorPane prefHeight="500.0" prefWidth="406.0">
@@ -43,13 +42,13 @@
       <JFXTextField fx:id="txtetf" layoutX="490.0" layoutY="204.0" prefHeight="26.0" prefWidth="159.0" promptText="ETF Number" />
       <JFXTextField fx:id="txtusername" layoutX="494.0" layoutY="278.0" prefHeight="26.0" prefWidth="310.0" promptText="UserName" />
       <JFXTextField fx:id="txtpassword" layoutX="494.0" layoutY="336.0" prefHeight="26.0" prefWidth="310.0" promptText="Password" />
-      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="397.0" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #16a085;" text="Create Account">
+      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="397.0" onAction="#btnCreateAccOnAction" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #16a085;" text="Create Account">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
       <Line endX="193.20001220703125" layoutX="674.0" layoutY="450.0" startX="-187.5999755859375" />
-      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="482.0" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #16a085;" text="Sign in">
+      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="482.0" onAction="#btnSignInOnAction" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #16a085;" text="Sign in">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

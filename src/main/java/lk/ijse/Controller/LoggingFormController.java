@@ -9,12 +9,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Db.DbConnection;
+import lk.ijse.Model.loggingModel;
 
 import java.awt.*;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class LoggingFormController extends CreateAccountFormController{
-
 
     @FXML
     private AnchorPane rootNode;
@@ -24,6 +28,8 @@ public class LoggingFormController extends CreateAccountFormController{
 
     @FXML
     private JFXTextField txtusername;
+
+    private loggingModel loggingModel = new loggingModel();
 
     public LoggingFormController(){
         setValues(super.saveDetail);
@@ -49,32 +55,31 @@ public class LoggingFormController extends CreateAccountFormController{
             // Login successful, you can open a new scene or perform other actions.
             showInfoAlert("Login Successful", "Welcome, " + username + "!");
 
-            System.out.println("Navigating to the Dashboard");
             Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Dashboard_form.fxml"));
             Scene scene = new Scene(rootNode);
             Stage stage = (Stage) this.rootNode.getScene().getWindow();
-            stage.setTitle("Elephant Pass");
+            stage.setTitle("Liyo garment");
             stage.setScene(scene);
 
         } else {
             // Login failed, show an error message to the user.
-            showErrorAlert("Login Failed", "Invalid username or password.");
+            showErrorAlert("Login Failed", "Invalid username or password. Please try again.");
         }
     }
 
-    private void showErrorAlert(String title, String massage) {
+    private void showErrorAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(massage);
+        alert.setContentText(message);
         alert.showAndWait();
     }
 
-    private void showInfoAlert(String title, String message) {
+    private void showInfoAlert(String title, String massage) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
+        alert.setContentText(massage);
         alert.showAndWait();
     }
 
@@ -95,6 +100,23 @@ public class LoggingFormController extends CreateAccountFormController{
             for (int j = 0; j < saveDetail[i].length; j++) {
                 System.out.println(saveDetail[i][j]+",");
             }
+        }
+    }
+
+    public void btnAddOnAction(ActionEvent actionEvent) {
+        try {
+            String userName = txtusername.getText();
+            String password = txtpassword.getText();
+
+            boolean isAdd = loggingModel.AddAdmin(userName,password);
+
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Admin saved successfully!!").show();
+            }
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,"Try again!").show();
+            throw new RuntimeException(e);
         }
     }
 }

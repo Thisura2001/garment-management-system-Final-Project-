@@ -9,14 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.RowMaterialFormController">
+<AnchorPane fx:id="rootNode" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.RowMaterialFormController">
    <children>
       <AnchorPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #d1d8e0;">
          <children>
             <ImageView fitHeight="302.0" fitWidth="276.0" layoutX="6.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@raw-materials-rubber-stamp-vector-12469456.jpg" />
+                  <Image url="@image/raw-materials-rubber-stamp-vector-12469456.jpg" />
                </image>
             </ImageView>
             <AnchorPane layoutX="364.0" layoutY="124.0" prefHeight="350.0" prefWidth="355.0" style="-fx-background-color: #2980b9;">
@@ -87,14 +86,22 @@
             </JFXButton>
             <ImageView layoutX="668.0" layoutY="10.0">
                <image>
-                  <Image url="@icons8-material-64.png" />
+                  <Image url="@image/icons8-material-64.png" />
                </image>
             </ImageView>
             <ImageView layoutX="242.0" layoutY="21.0">
                <image>
-                  <Image url="@icons8-search-24.png" />
+                  <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="450.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="62.0" style="-fx-background-color: #273c75;" text="Back" textFill="#f5f6fa">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class loggingModel {
+public class LoggingModel {
     public boolean AddAdmin(String userName, String password) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "INSERT INTO admin VALUES (?,?)";

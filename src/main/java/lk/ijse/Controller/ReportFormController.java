@@ -10,7 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EmployeeFormController {
+public class ReportFormController {
+
     @FXML
     private AnchorPane rootNode;
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {

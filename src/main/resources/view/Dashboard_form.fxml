@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,26 +10,74 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="535.0" prefWidth="1121.0" style="-fx-background-color: #82589F;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashboardFormController">
+<AnchorPane fx:id="rootNode" prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #ffb8b8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashboardFormController">
    <children>
-      <AnchorPane prefHeight="548.0" prefWidth="200.0" style="-fx-background-color: #778ca3;">
+      <AnchorPane layoutX="-15.0" layoutY="-3.0" prefHeight="656.0" prefWidth="206.0" style="-fx-background-color: #778ca3;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="150.0" prefHeight="42.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Button" />
-            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="307.0" prefHeight="42.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Button" />
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="231.0" prefHeight="42.0" prefWidth="118.0" style="-fx-background-color: #778beb;" />
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="395.0" prefHeight="42.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Button" />
-            <Label layoutX="20.0" layoutY="502.0" text="Need help?.." />
-            <Label layoutX="20.0" layoutY="520.0" text="Open help center here">
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="129.0" onAction="#btnManageCustomerOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Customer">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="339.0" onAction="#btnManageEmployeeOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Employee">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="197.0" onAction="#btnManageItemOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Items">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="407.0" onAction="#btnManageSupplierOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Supplier">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <Label layoutX="29.0" layoutY="603.0" text="Need help?.." />
+            <Label layoutX="31.0" layoutY="621.0" text="Open help center here">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
-            <Line endX="-81.59999084472656" layoutX="191.0" layoutY="534.0" startX="-100.0" />
-            <ImageView fitHeight="64.0" fitWidth="76.0" layoutX="62.0" layoutY="14.0">
+            <Line endX="-81.59999084472656" layoutX="204.0" layoutY="634.0" startX="-100.0" />
+            <ImageView fitHeight="64.0" fitWidth="76.0" layoutX="75.0" layoutY="14.0">
                <image>
                   <Image url="@image/icons8-user-50.png" />
                </image>
             </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="547.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Report">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="269.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Place Order">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="474.0" onAction="#btnManageMaterialOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Material">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
          </children>
       </AnchorPane>
       <Label layoutX="320.0" layoutY="11.0" prefHeight="18.0" prefWidth="129.0" text="   Welcome Back!!">
@@ -47,23 +95,18 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="476.0" layoutY="21.0" prefHeight="26.0" prefWidth="321.0" />
-      <ImageView layoutX="725.0" layoutY="22.0">
+      <TextField layoutX="690.0" layoutY="25.0" prefHeight="26.0" prefWidth="446.0" />
+      <ImageView layoutX="1112.0" layoutY="26.0">
          <image>
             <Image url="@image/icons8-search-24.png" />
          </image>
       </ImageView>
-      <Label layoutX="755.0" layoutY="25.0" text="Search">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="485.0" layoutY="26.0" text="Search something here....">
+      <Label layoutX="706.0" layoutY="31.0" text="Search something here....">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="271.0" layoutY="125.0" prefHeight="414.0" prefWidth="770.0" style="-fx-background-color: #8395a7;">
+      <AnchorPane layoutX="271.0" layoutY="125.0" prefHeight="490.0" prefWidth="1210.0" style="-fx-background-color: #d2dae2;">
          <children>
             <Label layoutX="15.0" layoutY="14.0" text="Dashboard">
                <font>
@@ -75,77 +118,27 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <TextArea layoutX="257.0" layoutY="2.0" prefHeight="80.0" prefWidth="424.0" style="-fx-background-color: #341f97;" />
-            <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="275.0" layoutY="11.0">
-               <image>
-                  <Image url="@image/icons8-supplier-48.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="368.0" layoutY="12.0">
-               <image>
-                  <Image url="@image/icons8-customer-50.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="483.0" layoutY="11.0">
-               <image>
-                  <Image url="@image/icons8-report-48.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="571.0" layoutY="13.0">
-               <image>
-                  <Image url="@image/icons8-list-25.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="299.0" layoutY="16.0" text="Supliers" />
-            <Label layoutX="398.0" layoutY="15.0" text="Customers" />
-            <Label layoutX="507.0" layoutY="16.0" text="orders" />
-            <Label layoutX="607.0" layoutY="17.0" text="Profit" />
-            <Label layoutX="306.0" layoutY="38.0" prefHeight="18.0" prefWidth="28.0" style="-fx-background-color: #ff9f43;" text="12">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="412.0" layoutY="38.0" prefHeight="18.0" prefWidth="28.0" style="-fx-background-color: #ff9f43;" text="20">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="510.0" layoutY="38.0" style="-fx-background-color: #ff9f43;" text="23">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="593.0" layoutY="38.0" style="-fx-background-color: #ff9f43;" text="\$300+">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="320.0" fitWidth="777.0" layoutX="-1.0" layoutY="94.0">
-               <image>
-                  <Image url="@image/R.gif" />
-               </image>
-            </ImageView>
-            <Label layoutX="2.0" layoutY="391.0" prefHeight="24.0" prefWidth="118.0" style="-fx-background-color: #f7f1e3;" text="    Liyo Garment">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1006.0" layoutY="9.0">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1360.0" layoutY="14.0">
          <image>
             <Image url="@image/icons8-customer-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="1042.0" layoutY="10.0">
+      <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="1404.0" layoutY="14.0">
          <image>
             <Image url="@image/icons8-notification-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="1074.0" layoutY="10.0">
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="1446.0" layoutY="14.0">
          <image>
             <Image url="@image/icons8-setting-50.png" />
          </image>
       </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="1150.0" layoutY="25.0" style="-fx-background-color: #20bf6b;" text="Search">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

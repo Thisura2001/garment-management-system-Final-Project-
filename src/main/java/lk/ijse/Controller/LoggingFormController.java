@@ -9,13 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Db.DbConnection;
-import lk.ijse.Model.loggingModel;
+import lk.ijse.Model.LoggingModel;
 
-import java.awt.*;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class LoggingFormController extends CreateAccountFormController{
@@ -29,7 +25,7 @@ public class LoggingFormController extends CreateAccountFormController{
     @FXML
     private JFXTextField txtusername;
 
-    private loggingModel loggingModel = new loggingModel();
+    private LoggingModel loggingModel = new LoggingModel();
 
     public LoggingFormController(){
         setValues(super.saveDetail);

@@ -2,44 +2,45 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.SupplierFormController">
    <children>
-      <AnchorPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #b2bec3;">
+      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #b2bec3;">
          <children>
-            <ImageView fitHeight="330.0" fitWidth="328.0" layoutX="6.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="330.0" fitWidth="328.0" layoutX="-9.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/supplier.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="370.0" layoutY="70.0" prefHeight="399.0" prefWidth="381.0" style="-fx-background-color: #8c7ae6;">
+            <AnchorPane layoutX="346.0" layoutY="70.0" prefHeight="546.0" prefWidth="394.0" style="-fx-background-color: #8c7ae6;">
                <children>
                   <TextField layoutX="153.0" layoutY="82.0" prefHeight="26.0" prefWidth="214.0" />
-                  <TextField layoutX="153.0" layoutY="149.0" prefHeight="26.0" prefWidth="214.0" />
-                  <TextField layoutX="153.0" layoutY="215.0" prefHeight="26.0" prefWidth="214.0" />
-                  <TextField layoutX="153.0" layoutY="282.0" prefHeight="26.0" prefWidth="214.0" />
+                  <TextField layoutX="153.0" layoutY="171.0" prefHeight="26.0" prefWidth="214.0" />
+                  <TextField layoutX="153.0" layoutY="259.0" prefHeight="26.0" prefWidth="214.0" />
+                  <TextField layoutX="153.0" layoutY="358.0" prefHeight="26.0" prefWidth="214.0" />
                   <Label layoutX="57.0" layoutY="86.0" text="Supplier Id">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="54.0" layoutY="153.0" text="Supplier Name">
+                  <Label layoutX="49.0" layoutY="175.0" text="Supplier Name">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="49.0" layoutY="219.0" text="Supplier address">
+                  <Label layoutX="36.0" layoutY="263.0" text="Supplier address">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="62.0" layoutY="286.0" text="Supplier Tel">
+                  <Label layoutX="49.0" layoutY="362.0" text="Supplier Tel">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -49,15 +50,15 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="153.0" layoutY="344.0" prefHeight="26.0" prefWidth="214.0" />
-                  <Label layoutX="57.0" layoutY="348.0" text="Supplier Type">
+                  <TextField layoutX="153.0" layoutY="462.0" prefHeight="26.0" prefWidth="214.0" />
+                  <Label layoutX="51.0" layoutY="466.0" text="Supplier Type">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="421.0" layoutY="14.0" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #0097e6;" text="  Manage Supplier" textFill="#f5f6fa">
+            <Label layoutX="421.0" layoutY="14.0" prefHeight="35.0" prefWidth="502.0" style="-fx-background-color: #0097e6;" text="                       Manage Supplier" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -67,22 +68,22 @@
                   <Font size="11.0" />
                </font>
             </TextField>
-            <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="224.0" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #0a3d62;" text="Add Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="243.0" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #0a3d62;" text="Add Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="775.0" layoutY="294.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62;" text="Delete Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="325.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62;" text="Delete Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="775.0" layoutY="358.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62;" text="Update Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="428.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62;" text="Update Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="775.0" layoutY="433.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62;" text="Search Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="533.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62;" text="Search Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -92,11 +93,25 @@
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="653.0" layoutY="3.0">
+            <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="930.0" layoutY="3.0">
                <image>
                   <Image url="@image/icons8-supplier-100.png" />
                </image>
             </ImageView>
+            <TableView layoutX="903.0" layoutY="170.0" prefHeight="456.0" prefWidth="570.0">
+              <columns>
+                <TableColumn prefWidth="112.800048828125" text="Supplier_id" />
+                  <TableColumn prefWidth="112.800048828125" text="Name" />
+                  <TableColumn prefWidth="112.800048828125" text="Address" />
+                  <TableColumn prefWidth="112.800048828125" text="Telephone" />
+                  <TableColumn prefWidth="112.800048828125" text="Type" />
+              </columns>
+            </TableView>
+            <Label layoutX="991.0" layoutY="99.0" text="Here is the Table View For Supplier" textFill="#fa3232">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

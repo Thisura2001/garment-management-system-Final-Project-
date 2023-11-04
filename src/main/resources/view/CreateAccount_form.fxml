@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="538.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CreateAccountFormController">
+<AnchorPane fx:id="rootNode" prefHeight="538.0" prefWidth="880.0" style="-fx-background-color: #d1d8e0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CreateAccountFormController">
    <children>
       <AnchorPane prefHeight="500.0" prefWidth="406.0">
          <children>

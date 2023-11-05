@@ -19,21 +19,33 @@
                   <Image url="@image/employee_manage.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="337.0" layoutY="81.0" prefHeight="520.0" prefWidth="330.0" style="-fx-background-color: #fad390;">
+            <AnchorPane layoutX="337.0" layoutY="81.0" prefHeight="492.0" prefWidth="330.0" style="-fx-background-color: #fad390;">
                <children>
-                  <TextField layoutX="112.0" layoutY="128.0" prefHeight="26.0" prefWidth="186.0" />
-                  <TextField layoutX="112.0" layoutY="233.0" prefHeight="26.0" prefWidth="186.0" />
-                  <TextField layoutX="112.0" layoutY="351.0" prefHeight="26.0" prefWidth="186.0" />
-                  <TextField layoutX="112.0" layoutY="450.0" prefHeight="26.0" prefWidth="186.0" />
+                  <TextField layoutX="112.0" layoutY="150.0" prefHeight="26.0" prefWidth="186.0" />
+                  <TextField layoutX="112.0" layoutY="308.0" prefHeight="26.0" prefWidth="186.0" />
+                  <TextField layoutX="112.0" layoutY="400.0" prefHeight="26.0" prefWidth="186.0" />
                   <Label layoutX="92.0" layoutY="14.0" text="Fill this Form">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="38.0" layoutY="132.0" text="Emp Id" />
-                  <Label layoutX="41.0" layoutY="237.0" text="Name" />
-                  <Label layoutX="32.0" layoutY="355.0" text="Address" />
-                  <Label layoutX="26.0" layoutY="454.0" text="Telephone" />
+                  <Label layoutX="25.0" layoutY="154.0" text="Emp Id">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="25.0" layoutY="229.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="15.0" layoutY="312.0" text="Address">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="15.0" layoutY="404.0" text="Telephone">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <TextField layoutX="112.0" layoutY="225.0" prefHeight="26.0" prefWidth="186.0" />
                </children>
             </AnchorPane>
             <Label layoutX="346.0" layoutY="14.0" prefHeight="35.0" prefWidth="391.0" style="-fx-background-color: #8c7ae6;" text="               Manage Employee" textFill="#f5f6fa">

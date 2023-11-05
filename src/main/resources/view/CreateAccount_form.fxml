@@ -11,20 +11,15 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="538.0" prefWidth="880.0" style="-fx-background-color: #d1d8e0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CreateAccountFormController">
+<AnchorPane fx:id="rootNode" prefHeight="464.0" prefWidth="880.0" style="-fx-background-color: #a5b1c2;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CreateAccountFormController">
    <children>
-      <AnchorPane prefHeight="500.0" prefWidth="406.0">
+      <AnchorPane prefHeight="466.0" prefWidth="466.0">
          <children>
-            <ImageView fitHeight="538.0" fitWidth="474.0">
+            <ImageView fitHeight="466.0" fitWidth="466.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/gentleman-logo-design-clothing-company-logo-vector-31051507.jpg" />
+                  <Image url="@image/create%20account.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="131.0" layoutY="348.0" prefHeight="35.0" prefWidth="197.0" style="-fx-background-color: #ecf0f1;" text="   Liyo Garment">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
       <Label layoutX="560.0" layoutY="14.0" prefHeight="35.0" prefWidth="235.0" style="-fx-background-color: #7f8c8d;" text="Create An Account !">
@@ -32,26 +27,29 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtFname" layoutX="490.0" layoutY="119.0" prefHeight="26.0" prefWidth="159.0" promptText="First Name">
+      <JFXTextField fx:id="txtFname" layoutX="490.0" layoutY="106.0" prefHeight="26.0" prefWidth="159.0" promptText="First Name">
          <effect>
             <Bloom />
          </effect>
       </JFXTextField>
-      <JFXTextField fx:id="txtLname" layoutX="696.0" layoutY="119.0" prefHeight="26.0" prefWidth="159.0" promptText="Last Name" />
-      <JFXTextField fx:id="txtnic" layoutX="696.0" layoutY="204.0" prefHeight="26.0" prefWidth="159.0" promptText="NIC" />
-      <JFXTextField fx:id="txtetf" layoutX="490.0" layoutY="204.0" prefHeight="26.0" prefWidth="159.0" promptText="ETF Number" />
-      <JFXTextField fx:id="txtusername" layoutX="494.0" layoutY="278.0" prefHeight="26.0" prefWidth="310.0" promptText="UserName" />
-      <JFXTextField fx:id="txtpassword" layoutX="494.0" layoutY="336.0" prefHeight="26.0" prefWidth="310.0" promptText="Password" />
-      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="397.0" onAction="#btnCreateAccOnAction" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #16a085;" text="Create Account">
+      <JFXTextField fx:id="txtLname" layoutX="696.0" layoutY="106.0" prefHeight="26.0" prefWidth="159.0" promptText="Last Name" />
+      <JFXTextField fx:id="txtnic" layoutX="696.0" layoutY="177.0" prefHeight="26.0" prefWidth="159.0" promptText="NIC" />
+      <JFXTextField fx:id="txtetf" layoutX="490.0" layoutY="177.0" prefHeight="26.0" prefWidth="159.0" promptText="ETF Number" />
+      <JFXTextField fx:id="txtusername" layoutX="494.0" layoutY="256.0" prefHeight="26.0" prefWidth="310.0" promptText="UserName" />
+      <JFXTextField fx:id="txtpassword" layoutX="494.0" layoutY="310.0" prefHeight="26.0" prefWidth="310.0" promptText="Password" />
+      <JFXButton buttonType="RAISED" layoutX="610.0" layoutY="378.0" onAction="#btnCreateAccOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="      Create Account">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
-      <Line endX="193.20001220703125" layoutX="674.0" layoutY="450.0" startX="-187.5999755859375" />
-      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="482.0" onAction="#btnSignInOnAction" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #16a085;" text="Sign in">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
+      <Line endX="193.20001220703125" layoutX="671.0" layoutY="437.0" startX="-187.5999755859375" />
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="610.0" layoutY="383.0">
+         <image>
+            <Image url="@image/icons8-create-64.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -64,13 +64,13 @@ public class DashboardFormController {
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/placeOrder_form.fxml"));
-//        Parent rootNode = fxmlLoader.load();
-//
-//        Scene scene = new Scene(rootNode);
-//        Stage stage = (Stage) this.rootNode.getScene().getWindow();
-//        stage.setTitle("PlaceOrder_Form");
-//        stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/placeOrder_form.fxml"));
+        Parent rootNode = fxmlLoader.load();
+
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setTitle("PlaceOrder_Form");
+        stage.setScene(scene);
     }
 
     public void btnManageMaterialOnAction(ActionEvent actionEvent) throws IOException {

@@ -1,14 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.Controller.PlaceOrderFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PlaceOrderFormController">
+   <children>
+      <AnchorPane fx:id="rootNode" prefHeight="743.0" prefWidth="1450.0" style="-fx-background-color: #d1d8e0;">
+         <children>
+            <ImageView fitHeight="307.0" fitWidth="345.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/place-order1.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="316.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #dfe4ea;">
+               <children>
+                  <Label layoutX="23.0" layoutY="90.0" text="Order Id -:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="770.0" layoutY="90.0" text="Order Date -:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="155.0" text="Customer Id -:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="712.0" layoutY="154.0" text="Customer Name -:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="231.0" text="Code :  ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="309.0" layoutY="228.0" text="Description :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="538.0" layoutY="228.0" text="Unit Price :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="748.0" layoutY="228.0" text="Qty on Hand :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="1002.0" layoutY="224.0" prefHeight="35.0" prefWidth="63.0" />
+                  <Label layoutX="1018.0" layoutY="197.0" text="Qty">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="960.0" layoutY="274.0" prefHeight="50.0" prefWidth="142.0" style="-fx-background-color: #1e90ff;" text="           Add to Cart">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <TreeTableView layoutX="126.0" layoutY="335.0" prefHeight="354.0" prefWidth="906.0">
+                    <columns>
+                      <TreeTableColumn prefWidth="150.4000244140625" text="Code" />
+                      <TreeTableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                        <TreeTableColumn prefWidth="150.4000244140625" text="Description" />
+                        <TreeTableColumn prefWidth="150.4000244140625" text="Qty" />
+                        <TreeTableColumn prefWidth="150.4000244140625" text="Unit Price" />
+                        <TreeTableColumn prefWidth="150.4000244140625" text="Total" />
+                        <TreeTableColumn prefWidth="150.4000244140625" text="Action" />
+                    </columns>
+                  </TreeTableView>
+                  <JFXButton buttonType="RAISED" layoutX="975.0" layoutY="705.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #009432;" text="            Place Order">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="826.0" layoutY="705.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #009432;" text="Back">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="29.0" layoutY="709.0" text="Net Total :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="4.0" text="Place Your Order Here" textFill="#a952eb">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="975.0" layoutY="286.0">
+                     <image>
+                        <Image url="@image/icons8-cart-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView layoutX="987.0" layoutY="708.0">
+                     <image>
+                        <Image url="@image/icons8-create-order-30.png" />
+                     </image>
+                  </ImageView>
+                  <JFXComboBox layoutX="92.0" layoutY="231.0" prefHeight="26.0" prefWidth="142.0" />
+                  <JFXComboBox layoutX="192.0" layoutY="159.0" prefHeight="26.0" prefWidth="223.0" />
+                  <JFXButton buttonType="RAISED" layoutX="436.0" layoutY="160.0" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #0be881;" text="      New">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="445.0" layoutY="169.0">
+                     <image>
+                        <Image url="@image/icons8-add-24.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

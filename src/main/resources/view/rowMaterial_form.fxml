@@ -25,10 +25,10 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="123.0" layoutY="73.0" prefHeight="26.0" prefWidth="223.0" />
-                  <TextField layoutX="123.0" layoutY="137.0" prefHeight="26.0" prefWidth="223.0" />
-                  <TextField layoutX="123.0" layoutY="206.0" prefHeight="26.0" prefWidth="223.0" />
-                  <TextField layoutX="123.0" layoutY="275.0" prefHeight="26.0" prefWidth="223.0" />
+                  <TextField fx:id="txtid" layoutX="123.0" layoutY="73.0" prefHeight="26.0" prefWidth="223.0" />
+                  <TextField fx:id="txtname" layoutX="123.0" layoutY="137.0" prefHeight="26.0" prefWidth="223.0" />
+                  <TextField fx:id="txtunitPrice" layoutX="123.0" layoutY="206.0" prefHeight="26.0" prefWidth="223.0" />
+                  <TextField fx:id="txtqty" layoutX="123.0" layoutY="275.0" prefHeight="26.0" prefWidth="223.0" />
                   <Label layoutX="21.0" layoutY="141.0" text="Material Name">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -52,7 +52,7 @@
                </font>
             </Label>
             <TextField layoutX="14.0" layoutY="19.0" prefHeight="26.0" prefWidth="256.0" text="Search Something Here....." />
-            <JFXButton buttonType="RAISED" layoutX="765.0" layoutY="232.0" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #273c75;" text="Add Material" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="765.0" layoutY="232.0" onAction="#btnAddMaterialOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #273c75;" text="Add Material" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -10,51 +10,51 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #ffb8b8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashboardFormController">
+<AnchorPane fx:id="rootNode" prefHeight="681.0" prefWidth="1500.0" style="-fx-background-color: #ffb8b8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashboardFormController">
    <children>
-      <AnchorPane layoutX="-15.0" layoutY="-3.0" prefHeight="656.0" prefWidth="206.0" style="-fx-background-color: #778ca3;">
+      <AnchorPane layoutX="-15.0" layoutY="-3.0" prefHeight="696.0" prefWidth="206.0" style="-fx-background-color: #778ca3;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="129.0" onAction="#btnManageCustomerOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Customer">
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="129.0" onAction="#btnManageCustomerOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="               Manage Customer">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="339.0" onAction="#btnManageEmployeeOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Employee">
+            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="339.0" onAction="#btnManageEmployeeOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="              Manage Employee">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="197.0" onAction="#btnManageItemOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Items">
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="197.0" onAction="#btnManageItemOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="              Manage Items">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="407.0" onAction="#btnManageSupplierOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Supplier">
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="407.0" onAction="#btnManageSupplierOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="                 Manage Supplier">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <Label layoutX="29.0" layoutY="603.0" text="Need help?.." />
-            <Label layoutX="31.0" layoutY="621.0" text="Open help center here">
+            <Label layoutX="29.0" layoutY="650.0" text="Need help?.." />
+            <Label layoutX="32.0" layoutY="668.0" text="Open help center here">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
-            <Line endX="-81.59999084472656" layoutX="204.0" layoutY="634.0" startX="-100.0" />
+            <Line endX="-81.59999084472656" layoutX="204.0" layoutY="682.0" startX="-100.0" />
             <ImageView fitHeight="64.0" fitWidth="76.0" layoutX="75.0" layoutY="14.0">
                <image>
                   <Image url="@image/icons8-user-50.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="547.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Report">
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="547.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="                    Manage Report">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
@@ -62,7 +62,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="269.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Place Order">
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="269.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="            Place Order">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
@@ -70,7 +70,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="474.0" onAction="#btnManageMaterialOnAction" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #778beb;" text="Manage Material">
+            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="474.0" onAction="#btnManageMaterialOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #778beb;" text="                 Manage Material">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
@@ -78,6 +78,41 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="34.0" layoutY="129.0">
+               <image>
+                  <Image url="@image/icons8-customer-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="44.0" layoutY="197.0">
+               <image>
+                  <Image url="@image/icons8-items-64.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="47.0" layoutY="271.0">
+               <image>
+                  <Image url="@image/icons8-create-order-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="47.0" layoutY="341.0">
+               <image>
+                  <Image url="@image/icons8-employee-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="44.0" layoutY="409.0">
+               <image>
+                  <Image url="@image/icons8-supplier-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="44.0" layoutY="476.0">
+               <image>
+                  <Image url="@image/icons8-material-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="44.0" layoutY="547.0">
+               <image>
+                  <Image url="@image/icons8-report-48.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Label layoutX="320.0" layoutY="11.0" prefHeight="18.0" prefWidth="129.0" text="   Welcome Back!!">
@@ -106,7 +141,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="271.0" layoutY="125.0" prefHeight="490.0" prefWidth="1210.0" style="-fx-background-color: #d2dae2;">
+      <AnchorPane layoutX="271.0" layoutY="125.0" prefHeight="548.0" prefWidth="1210.0" style="-fx-background-color: #d2dae2;">
          <children>
             <Label layoutX="15.0" layoutY="14.0" text="Dashboard">
                <font>

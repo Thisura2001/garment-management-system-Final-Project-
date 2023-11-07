@@ -66,4 +66,7 @@ public class RowMaterialFormController {
             throw new RuntimeException(e);
         }
     }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+    }
 }

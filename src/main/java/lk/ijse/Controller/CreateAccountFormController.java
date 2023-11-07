@@ -66,6 +66,7 @@ public class CreateAccountFormController {
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setTitle("Log in Page");
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 }

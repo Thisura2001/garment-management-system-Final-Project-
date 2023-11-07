@@ -37,7 +37,7 @@ public class LoggingFormController extends CreateAccountFormController{
         Stage stage = (Stage) rootNode.getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("Create Account Form");
-        stage.centerOnScreen();
+
     }
 
     public void btnLoggingOnAction(ActionEvent actionEvent) throws IOException {
@@ -56,6 +56,7 @@ public class LoggingFormController extends CreateAccountFormController{
             Stage stage = (Stage) this.rootNode.getScene().getWindow();
             stage.setTitle("Liyo garment");
             stage.setScene(scene);
+            stage.centerOnScreen();
 
         } else {
             // Login failed, show an error message to the user.

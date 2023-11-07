@@ -1,27 +1,52 @@
 package lk.ijse.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Db.DbConnection;
 import lk.ijse.Dto.Customer_dto;
 import lk.ijse.Model.CustomerManage_model;
-
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import lk.ijse.Tm.CustomerTm;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class CustomerFormController {
     @FXML
+    private TableColumn<CustomerTm,String> colAddress;
+
+    @FXML
+    private TableColumn<CustomerTm,String> colId;
+
+    @FXML
+    private TableColumn<CustomerTm,String> colName;
+
+    @FXML
+    private TableColumn<CustomerTm,String> colTel;
+
+    @FXML
+    private TableView<CustomerTm> tblCustomer;
+
+    @FXML
     private AnchorPane rootNode;
+
     @FXML
     private TextField txtaddress;
 
@@ -33,8 +58,47 @@ public class CustomerFormController {
 
     @FXML
     private TextField txttel;
-
     private CustomerManage_model customerManageModel = new CustomerManage_model();
+    public void initialize(){
+        setCellValueFactory();
+        loadAllCustomer();
+    }
+
+    private void loadAllCustomer() {
+        var model = new CustomerManage_model();
+
+        ObservableList<CustomerTm> obList = FXCollections.observableArrayList();
+
+        try {
+            List<Customer_dto> dtoList = model.getAllCustomer();
+
+            for (Customer_dto dto : dtoList) {
+                obList.add(
+                        new CustomerTm(
+                                dto.getId(),
+                                dto.getName(),
+                                dto.getAddress(),
+                                dto.getTel()
+                        )
+                );
+            }
+
+            tblCustomer.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setCellValueFactory() {
+        colId.setCellValueFactory(new PropertyValueFactory<>("cus_id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("cus_name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("cus_address"));
+        colTel.setCellValueFactory(new PropertyValueFactory<>("cus_tel"));
+        
+    }
+
+
+
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Dashboard_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -115,7 +179,6 @@ public class CustomerFormController {
 
         try {
             Customer_dto customerDto = customerManageModel.searchCustomer(id);
-
             if (customerDto != null){
                 txtid.setText(customerDto.getId());
                 txtname.setText(customerDto.getName());
@@ -128,5 +191,9 @@ public class CustomerFormController {
         }catch (Exception e){
           new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        clearFields();
     }
 }

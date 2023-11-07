@@ -1,5 +1,7 @@
 package lk.ijse.Model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lk.ijse.Db.DbConnection;
 import lk.ijse.Dto.Customer_dto;
 
@@ -7,6 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class CustomerManage_model {
 
@@ -63,5 +68,27 @@ public class CustomerManage_model {
             customerDto = new Customer_dto(cus_id,cus_name,cus_address,cus_tel);
         }
         return customerDto;
+    }
+
+    public List<Customer_dto> getAllCustomer() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM customer";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        ArrayList<Customer_dto> dtoList = new ArrayList<>();
+
+        while(resultSet.next()) {
+            dtoList.add(
+                    new Customer_dto(
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getString(4)
+                    )
+            );
+        }
+        return dtoList;
     }
 }

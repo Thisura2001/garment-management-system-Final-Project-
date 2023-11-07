@@ -21,7 +21,7 @@
                   <Image url="@image/place-order1.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="316.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #dfe4ea;">
+            <AnchorPane layoutX="316.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #8395a7;">
                <children>
                   <Label layoutX="23.0" layoutY="90.0" text="Order Id -:">
                      <font>
@@ -63,13 +63,13 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="1002.0" layoutY="224.0" prefHeight="35.0" prefWidth="63.0" />
+                  <TextField layoutX="1002.0" layoutY="224.0" prefHeight="35.0" prefWidth="63.0" style="-fx-background-radius: 40;" />
                   <Label layoutX="1018.0" layoutY="197.0" text="Qty">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton buttonType="RAISED" layoutX="960.0" layoutY="274.0" prefHeight="50.0" prefWidth="142.0" style="-fx-background-color: #1e90ff;" text="           Add to Cart">
+                  <JFXButton buttonType="RAISED" layoutX="960.0" layoutY="274.0" prefHeight="50.0" prefWidth="142.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 40;" text="           Add to Cart">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -85,12 +85,12 @@
                         <TreeTableColumn prefWidth="150.4000244140625" text="Action" />
                     </columns>
                   </TreeTableView>
-                  <JFXButton buttonType="RAISED" layoutX="975.0" layoutY="705.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #009432;" text="            Place Order">
+                  <JFXButton buttonType="RAISED" layoutX="975.0" layoutY="705.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #009432; -fx-background-radius: 30;" text="            Place Order">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="826.0" layoutY="705.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #009432;" text="Back">
+                  <JFXButton buttonType="RAISED" layoutX="826.0" layoutY="705.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #009432; -fx-background-radius: 40;" text="Back">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -100,7 +100,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="300.0" layoutY="4.0" text="Place Your Order Here" textFill="#a952eb">
+                  <Label layoutX="300.0" layoutY="4.0" text="Place Your Order Here" textFill="#341f97">
                      <font>
                         <Font name="System Bold Italic" size="36.0" />
                      </font>
@@ -117,7 +117,7 @@
                   </ImageView>
                   <JFXComboBox layoutX="92.0" layoutY="231.0" prefHeight="26.0" prefWidth="142.0" />
                   <JFXComboBox layoutX="192.0" layoutY="159.0" prefHeight="26.0" prefWidth="223.0" />
-                  <JFXButton buttonType="RAISED" layoutX="436.0" layoutY="160.0" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #0be881;" text="      New">
+                  <JFXButton buttonType="RAISED" layoutX="436.0" layoutY="160.0" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #0be881; -fx-background-radius: 40;" text="      New">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

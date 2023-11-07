@@ -61,6 +61,7 @@ public class DashboardFormController {
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setTitle("report_Form");
         stage.setScene(scene);
+
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws IOException {

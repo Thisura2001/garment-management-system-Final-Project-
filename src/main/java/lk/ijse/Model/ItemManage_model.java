@@ -1,15 +1,14 @@
 package lk.ijse.Model;
 
 import lk.ijse.Db.DbConnection;
-import lk.ijse.Dto.Customer_dto;
-import lk.ijse.Dto.Item_dto;
+import lk.ijse.Dto.itemDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ItemManage_model {
-    public static boolean addItems(Item_dto itemDto) throws SQLException {
+    public static boolean addItems(itemDto itemDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "INSERT INTO item VALUES (?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -30,7 +29,7 @@ public class ItemManage_model {
         return preparedStatement.executeUpdate()>0;
     }
 
-    public boolean updateItems(Item_dto itemDto) throws SQLException {
+    public boolean updateItems(itemDto itemDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "UPDATE item SET description = ?,qty_on_hand = ? ,unit_price = ? WHERE code = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);

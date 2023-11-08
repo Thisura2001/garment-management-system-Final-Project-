@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Dto.adminDto;
+import lk.ijse.Model.AdminModel;
 import lk.ijse.Model.LoggingModel;
 
 import java.io.IOException;
@@ -27,9 +29,7 @@ public class LoggingFormController extends CreateAccountFormController{
 
     private LoggingModel loggingModel = new LoggingModel();
 
-    public LoggingFormController(){
-        setValues(super.saveDetail);
-    }
+    private AdminModel adminModel = new AdminModel();
 
     public void btnCreateAccountOnAction(ActionEvent actionEvent) throws IOException {
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/CreateAccount_form.fxml"));
@@ -40,26 +40,21 @@ public class LoggingFormController extends CreateAccountFormController{
 
     }
 
-    public void btnLoggingOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnLoggingOnAction(ActionEvent actionEvent) throws IOException, SQLException {
         String username = txtusername.getText();
         String password = txtpassword.getText();
 
-        // Replace this logic with your actual authentication mechanism.
-        boolean isLoginSuccessful = authenticateUser(username, password);
+        adminDto dto = new adminDto(username, password);
+        String pass = adminModel.searchAdmin(dto);
 
-        if (isLoginSuccessful) {
-            // Login successful, you can open a new scene or perform other actions.
-            showInfoAlert("Login Successful", "Welcome, " + username + "!");
-
+        if(pass.equals(password)){
             Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Dashboard_form.fxml"));
             Scene scene = new Scene(rootNode);
             Stage stage = (Stage) this.rootNode.getScene().getWindow();
             stage.setTitle("Liyo garment");
             stage.setScene(scene);
             stage.centerOnScreen();
-
         } else {
-            // Login failed, show an error message to the user.
             showErrorAlert("Login Failed", "Invalid username or password. Please try again.");
         }
     }
@@ -72,25 +67,6 @@ public class LoggingFormController extends CreateAccountFormController{
         alert.showAndWait();
     }
 
-    private void showInfoAlert(String title, String massage) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(massage);
-        alert.showAndWait();
-    }
-
-    private boolean authenticateUser(String username, String password) {
-        for (int i = 0; i < saveDetail.length; i++) {
-            if (saveDetail[i][4].equals(username) && saveDetail[i][5].equals(password)) {
-                System.out.println("Password correct");
-                return true;
-            }
-        }
-        // If no matching user was found
-        System.out.println("Username or password incorrect");
-        return false;
-    }
     void setValues(String[][] sd) {
         this.saveDetail = sd;
         for (int i = 0; i < saveDetail.length; i++) {

@@ -1,14 +1,14 @@
 package lk.ijse.Model;
 
 import lk.ijse.Db.DbConnection;
-import lk.ijse.Dto.Employee_dto;
+import lk.ijse.Dto.employeeDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class EmployeeManage_model {
-    public boolean addEmployee(Employee_dto employeeDto) throws SQLException {
+    public boolean addEmployee(employeeDto employeeDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "INSERT INTO employee VALUES (?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -29,7 +29,7 @@ public class EmployeeManage_model {
         return preparedStatement.executeUpdate() > 0;
     }
 
-    public boolean updateEmployee(Employee_dto employeeDto) throws SQLException {
+    public boolean updateEmployee(employeeDto employeeDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "UPDATE employee SET name= ?,address = ? ,tel = ? WHERE emp_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);

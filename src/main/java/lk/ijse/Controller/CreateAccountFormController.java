@@ -6,10 +6,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Dto.adminDto;
+import lk.ijse.Model.AdminModel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class CreateAccountFormController {
     public String[][] saveDetail = new String[2][6];
@@ -33,28 +37,27 @@ public class CreateAccountFormController {
 
     @FXML
     private JFXTextField txtusername;
-    void callArray(){
-        for (int i = 0; i < saveDetail.length; i++) {
-            int count = 0;
-            for (int j = 0; j < saveDetail[i].length; j++) {
-                if (saveDetail[i][j] != null) {
-                    count++;
-                }
-            }
-            if (count != 6) {
-                saveDetail[i][0] = txtFname.getText();
-                saveDetail[i][1] = txtLname.getText();
-                saveDetail[i][2] = txtetf.getText();
-                saveDetail[i][3] = txtnic.getText();
-                saveDetail[i][4] = txtusername.getText();
-                saveDetail[i][5] = txtpassword.getText();
-                break;
-            }
-        }
-    }
+
+    private AdminModel adminModel =new AdminModel();
 
     public void btnCreateAccOnAction(ActionEvent actionEvent) throws IOException {
-        callArray();
+
+        String username = txtusername.getText();
+        String password = txtpassword.getText();
+
+        adminDto dto = new adminDto(username, password);
+
+        try {
+            boolean isSaved = adminModel.saveAdmin(dto);
+
+            if (isSaved) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Admin saved!").show();
+                clearFields();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/logging_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -68,5 +71,10 @@ public class CreateAccountFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    private void clearFields() {
+        txtpassword.clear();
+        txtusername.clear();
     }
 }

@@ -4,7 +4,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,16 +14,12 @@
    <children>
       <AnchorPane layoutX="403.0" layoutY="59.0" prefHeight="359.0" prefWidth="426.0" style="-fx-background-color: #a4b0be; -fx-background-radius: 30;">
          <children>
-            <JFXTextField fx:id="txtFname" layoutX="27.0" layoutY="49.0" prefHeight="26.0" prefWidth="159.0" promptText="First Name">
-               <effect>
-                  <Bloom />
-               </effect>
-            </JFXTextField>
-            <JFXTextField fx:id="txtLname" layoutX="252.0" layoutY="49.0" prefHeight="26.0" prefWidth="159.0" promptText="Last Name" />
-            <JFXTextField fx:id="txtetf" layoutX="27.0" layoutY="124.0" prefHeight="26.0" prefWidth="159.0" promptText="ETF Number" />
-            <JFXTextField fx:id="txtnic" layoutX="252.0" layoutY="124.0" prefHeight="26.0" prefWidth="159.0" promptText="NIC" />
-            <JFXTextField fx:id="txtusername" layoutX="27.0" layoutY="200.0" prefHeight="26.0" prefWidth="375.0" promptText="UserName" />
-            <JFXTextField fx:id="txtpassword" layoutX="31.0" layoutY="250.0" prefHeight="26.0" prefWidth="357.0" promptText="Password" />
+            <JFXTextField fx:id="txtFname" labelFloat="true" layoutX="27.0" layoutY="49.0" prefHeight="26.0" prefWidth="159.0" promptText="First Name" />
+            <JFXTextField fx:id="txtLname" labelFloat="true" layoutX="252.0" layoutY="49.0" prefHeight="26.0" prefWidth="159.0" promptText="Last Name" />
+            <JFXTextField fx:id="txtetf" labelFloat="true" layoutX="27.0" layoutY="124.0" prefHeight="26.0" prefWidth="159.0" promptText="ETF Number" />
+            <JFXTextField fx:id="txtnic" labelFloat="true" layoutX="252.0" layoutY="124.0" prefHeight="26.0" prefWidth="159.0" promptText="NIC" />
+            <JFXTextField fx:id="txtusername" labelFloat="true" layoutX="27.0" layoutY="200.0" prefHeight="26.0" prefWidth="375.0" promptText="UserName" />
+            <JFXTextField fx:id="txtpassword" labelFloat="true" layoutX="31.0" layoutY="250.0" prefHeight="26.0" prefWidth="357.0" promptText="Password" />
             <JFXButton buttonType="RAISED" layoutX="138.0" layoutY="311.0" onAction="#btnCreateAccOnAction" prefHeight="35.0" prefWidth="143.0" style="-fx-background-color: #16a085; -fx-background-radius: 20;" text="      Create Account">
                <cursor>
                   <Cursor fx:constant="HAND" />

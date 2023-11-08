@@ -10,17 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Db.DbConnection;
-import lk.ijse.Dto.Customer_dto;
-import lk.ijse.Dto.Item_dto;
+import lk.ijse.Dto.itemDto;
 import lk.ijse.Model.ItemManage_model;
-import lk.ijse.Tm.ItemTm;
 
-import javax.swing.table.TableColumn;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class ItemFormController {
 
@@ -64,7 +57,7 @@ public class ItemFormController {
             Integer qtyOnHand = Integer.valueOf(txtqtyOnHand.getText());
             String unitPrice =txtunitPrice.getText();
 
-            boolean isAdd = ItemManage_model.addItems(new Item_dto(code,description,qtyOnHand,unitPrice));
+            boolean isAdd = ItemManage_model.addItems(new itemDto(code,description,qtyOnHand,unitPrice));
 
             if (isAdd){
                 new Alert(Alert.AlertType.CONFIRMATION,"Item Saved!!").show();
@@ -103,7 +96,7 @@ public class ItemFormController {
             Integer qtyOnHand = Integer.valueOf(txtqtyOnHand.getText());
             String unitPrice =txtunitPrice.getText();
 
-            boolean isUpdate = itemManageModel.updateItems(new Item_dto(code,description,qtyOnHand,unitPrice));
+            boolean isUpdate = itemManageModel.updateItems(new itemDto(code,description,qtyOnHand,unitPrice));
 
             if (isUpdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"Item Update Success!!").show();

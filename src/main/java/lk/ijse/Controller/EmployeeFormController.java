@@ -9,8 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Dto.Customer_dto;
-import lk.ijse.Dto.Employee_dto;
+import lk.ijse.Dto.employeeDto;
 import lk.ijse.Model.EmployeeManage_model;
 
 import java.io.IOException;
@@ -48,7 +47,7 @@ public class EmployeeFormController {
         String address = txtaddress.getText();
         Integer tel = Integer.valueOf(txttel.getText());
         try{
-        boolean isAdd = employeeManageModel.addEmployee(new Employee_dto(id,name,address,tel));
+        boolean isAdd = employeeManageModel.addEmployee(new employeeDto(id,name,address,tel));
 
         if (isAdd){
             new Alert(Alert.AlertType.CONFIRMATION,"Employee Saved Successfully!!").show();
@@ -85,7 +84,7 @@ public class EmployeeFormController {
             String address =txtaddress.getText();
             Integer tel = Integer.valueOf(txttel.getText());
 
-            boolean isUpdate = employeeManageModel.updateEmployee(new Employee_dto(id,name,address,tel));
+            boolean isUpdate = employeeManageModel.updateEmployee(new employeeDto(id,name,address,tel));
 
             if (isUpdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer Update Success!!").show();

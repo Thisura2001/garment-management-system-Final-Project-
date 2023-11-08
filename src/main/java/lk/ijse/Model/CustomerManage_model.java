@@ -1,9 +1,7 @@
 package lk.ijse.Model;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import lk.ijse.Db.DbConnection;
-import lk.ijse.Dto.Customer_dto;
+import lk.ijse.Dto.customerDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,11 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class CustomerManage_model {
 
-    public boolean addCustomer(Customer_dto customerDto) throws SQLException {
+    public boolean addCustomer(customerDto customerDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "INSERT INTO customer VALUES (?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -28,7 +25,7 @@ public class CustomerManage_model {
         return preparedStatement.executeUpdate()>0;
     }
 
-    public boolean updateCustomer(Customer_dto customerDto) throws SQLException {
+    public boolean updateCustomer(customerDto customerDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "UPDATE customer SET name= ?,address = ? ,tel = ? WHERE cust_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -48,7 +45,7 @@ public class CustomerManage_model {
         return preparedStatement.executeUpdate()>0;
     }
 
-    public Customer_dto searchCustomer(String id) throws SQLException {
+    public customerDto searchCustomer(String id) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM customer WHERE cust_id = ?";
@@ -57,7 +54,7 @@ public class CustomerManage_model {
 
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        Customer_dto customerDto = null;
+        customerDto customerDto = null;
 
         if(resultSet.next()){
             String  cus_id = resultSet.getString(1);
@@ -65,23 +62,23 @@ public class CustomerManage_model {
             String  cus_address = resultSet.getString(3);
             String  cus_tel = resultSet.getString(4);
 
-            customerDto = new Customer_dto(cus_id,cus_name,cus_address,cus_tel);
+            customerDto = new customerDto(cus_id,cus_name,cus_address,cus_tel);
         }
         return customerDto;
     }
 
-    public List<Customer_dto> getAllCustomer() throws SQLException {
+    public List<customerDto> getAllCustomer() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM customer";
         PreparedStatement pstm = connection.prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
 
-        ArrayList<Customer_dto> dtoList = new ArrayList<>();
+        ArrayList<customerDto> dtoList = new ArrayList<>();
 
         while(resultSet.next()) {
             dtoList.add(
-                    new Customer_dto(
+                    new customerDto(
                             resultSet.getString(1),
                             resultSet.getString(2),
                             resultSet.getString(3),

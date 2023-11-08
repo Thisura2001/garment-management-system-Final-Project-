@@ -13,20 +13,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Db.DbConnection;
-import lk.ijse.Dto.Customer_dto;
+import lk.ijse.Dto.customerDto;
 import lk.ijse.Model.CustomerManage_model;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import lk.ijse.Tm.CustomerTm;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class CustomerFormController {
     @FXML
@@ -70,9 +64,9 @@ public class CustomerFormController {
         ObservableList<CustomerTm> obList = FXCollections.observableArrayList();
 
         try {
-            List<Customer_dto> dtoList = model.getAllCustomer();
+            List<customerDto> dtoList = model.getAllCustomer();
 
-            for (Customer_dto dto : dtoList) {
+            for (customerDto dto : dtoList) {
                 obList.add(
                         new CustomerTm(
                                 dto.getId(),
@@ -116,10 +110,11 @@ public class CustomerFormController {
             String address =txtaddress.getText();
             String tel =txttel.getText();
 
-            boolean isAdd = customerManageModel.addCustomer(new Customer_dto(id,name,address,tel));
+            boolean isAdd = customerManageModel.addCustomer(new customerDto(id,name,address,tel));
 
             if (isAdd){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer Saved!!").show();
+                loadAllCustomer();
                 clearFields();
             }
 
@@ -144,7 +139,7 @@ public class CustomerFormController {
             String address =txtaddress.getText();
             String tel =txttel.getText();
 
-            boolean isUpdate = customerManageModel.updateCustomer(new Customer_dto(id,name,address,tel));
+            boolean isUpdate = customerManageModel.updateCustomer(new customerDto(id,name,address,tel));
 
             if (isUpdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer Update Success!!").show();
@@ -178,7 +173,7 @@ public class CustomerFormController {
         String id = txtid.getText();
 
         try {
-            Customer_dto customerDto = customerManageModel.searchCustomer(id);
+            customerDto customerDto = customerManageModel.searchCustomer(id);
             if (customerDto != null){
                 txtid.setText(customerDto.getId());
                 txtname.setText(customerDto.getName());

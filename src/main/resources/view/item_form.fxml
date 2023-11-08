@@ -19,7 +19,7 @@
                   <Image url="@image/item_manage.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="366.0" layoutY="94.0" prefHeight="510.0" prefWidth="378.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
+            <AnchorPane layoutX="371.0" layoutY="123.0" prefHeight="510.0" prefWidth="378.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
                <children>
                   <Label layoutX="115.0" layoutY="14.0" text="Fill this Form">
                      <font>
@@ -87,7 +87,7 @@
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tblItem" layoutX="908.0" layoutY="123.0" prefHeight="474.0" prefWidth="577.0">
+            <TableView fx:id="tblItem" layoutX="900.0" layoutY="123.0" prefHeight="499.0" prefWidth="586.0">
               <columns>
                 <TableColumn fx:id="colid" prefWidth="150.40008544921875" text="Item_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />

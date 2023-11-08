@@ -1,20 +1,46 @@
 package lk.ijse.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Dto.employeeDto;
 import lk.ijse.Model.EmployeeManage_model;
 
+import javafx.scene.control.TableColumn;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+import lk.ijse.Tm.EmployeeTm;
 
 public class EmployeeFormController {
+
+    @FXML
+    private TableView<EmployeeTm> tblEmployee;
+    @FXML
+    private TableColumn<?,?> colAddress;
+
+    @FXML
+    private TableColumn<?,?> colName;
+
+    @FXML
+    private TableColumn<?,?> colTel;
+
+    @FXML
+    private TableColumn<?,?> colid;
+
+    @FXML
+    private AnchorPane rootNode;
+
     @FXML
     private TextField txtaddress;
 
@@ -26,10 +52,47 @@ public class EmployeeFormController {
 
     @FXML
     private TextField txttel;
-    @FXML
-    private AnchorPane rootNode;
 
     private EmployeeManage_model employeeManageModel = new EmployeeManage_model();
+
+    public void initialize(){
+        setCellValueFactory();
+        loadAllEmployee();
+    }
+
+    private void loadAllEmployee() {
+        var model = new EmployeeManage_model();
+
+        ObservableList<EmployeeTm> obList = FXCollections.observableArrayList();
+
+        try {
+            List<employeeDto> dtoList = model.getAllEmployee();
+
+            for (employeeDto employeeDto : dtoList) {
+                obList.add(
+                        new EmployeeTm(
+                                employeeDto.getEmp_id(),
+                                employeeDto.getName(),
+                                employeeDto.getAddress(),
+                                employeeDto.getTel()
+                        )
+                );
+            }
+
+            tblEmployee.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setCellValueFactory() {
+        colid.setCellValueFactory(new PropertyValueFactory<>("emp_id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colTel.setCellValueFactory(new PropertyValueFactory<>("tel"));
+
+    }
+
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Dashboard_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -51,6 +114,7 @@ public class EmployeeFormController {
 
         if (isAdd){
             new Alert(Alert.AlertType.CONFIRMATION,"Employee Saved Successfully!!").show();
+            loadAllEmployee();
             clearFields();
         }
 

@@ -19,7 +19,7 @@
                   <Image url="@image/employee_manage.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="337.0" layoutY="81.0" prefHeight="492.0" prefWidth="330.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
+            <AnchorPane layoutX="331.0" layoutY="134.0" prefHeight="492.0" prefWidth="330.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
                <children>
                   <TextField fx:id="txtid" layoutX="112.0" layoutY="150.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtaddress" layoutX="112.0" layoutY="308.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />
@@ -88,13 +88,13 @@
                   <Image url="@image/icons8-employee-64.png" />
                </image>
             </ImageView>
-            <TableView layoutX="866.0" layoutY="125.0" prefHeight="492.0" prefWidth="610.0">
+            <TableView fx:id="tblEmployee" layoutX="866.0" layoutY="125.0" prefHeight="492.0" prefWidth="610.0">
               <columns>
-                <TableColumn prefWidth="150.4000244140625" text="Employee_id" />
+                <TableColumn fx:id="colid" prefWidth="150.4000244140625" text="Employee_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-                  <TableColumn prefWidth="150.4000244140625" text="Name" />
-                  <TableColumn prefWidth="150.4000244140625" text="Address" />
-                  <TableColumn prefWidth="150.4000244140625" text="Telephone" />
+                  <TableColumn fx:id="colName" prefWidth="150.4000244140625" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="150.4000244140625" text="Address" />
+                  <TableColumn fx:id="colTel" prefWidth="150.4000244140625" text="Telephone" />
               </columns>
             </TableView>
             <Label layoutX="1017.0" layoutY="67.0" text="Here is the table View for Employees" textFill="#fc3062">

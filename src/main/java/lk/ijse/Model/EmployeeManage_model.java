@@ -1,11 +1,15 @@
 package lk.ijse.Model;
 
 import lk.ijse.Db.DbConnection;
+import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.employeeDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeManage_model {
     public boolean addEmployee(employeeDto employeeDto) throws SQLException {
@@ -41,4 +45,25 @@ public class EmployeeManage_model {
         return preparedStatement.executeUpdate()>0;
     }
 
+    public List<employeeDto> getAllEmployee() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM employee";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        ArrayList<employeeDto> dtoList = new ArrayList<>();
+
+        while(resultSet.next()) {
+            dtoList.add(
+                    new employeeDto(
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getInt(4)
+                    )
+            );
+        }
+        return dtoList;
+    }
 }

@@ -24,16 +24,16 @@ import java.util.List;
 
 public class CustomerFormController {
     @FXML
-    private TableColumn<CustomerTm,String> colAddress;
+    private TableColumn<?,?> colAddress;
 
     @FXML
-    private TableColumn<CustomerTm,String> colId;
+    private TableColumn<?,?> colId;
 
     @FXML
-    private TableColumn<CustomerTm,String> colName;
+    private TableColumn<?,?> colName;
 
     @FXML
-    private TableColumn<CustomerTm,String> colTel;
+    private TableColumn<?,?> colTel;
 
     @FXML
     private TableView<CustomerTm> tblCustomer;

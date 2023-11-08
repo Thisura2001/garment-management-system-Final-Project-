@@ -1,5 +1,7 @@
 package lk.ijse.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,20 +10,39 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Dto.itemDto;
 import lk.ijse.Model.ItemManage_model;
+import javafx.scene.control.TableColumn;
+import lk.ijse.Tm.EmployeeTm;
+import lk.ijse.Tm.ItemTm;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 public class ItemFormController {
+
+
+    @FXML
+    private TableColumn<?,?> colUnitPrice;
+
+    @FXML
+    private TableColumn<?, ?> colid;
+
+    @FXML
+    private TableColumn<?, ?> colname;
+
+    @FXML
+    private TableColumn<?, ?> colqtyOnHand;
 
     @FXML
     private AnchorPane rootNode;
 
     @FXML
-    private TableView<?> tblItem;
+    private TableView<ItemTm> tblItem;
 
     @FXML
     private TextField txtid;
@@ -36,6 +57,45 @@ public class ItemFormController {
     private TextField txtunitPrice;
 
     private ItemManage_model itemManageModel = new ItemManage_model();
+
+    public void initialize(){
+        setCellValueFactory();
+        loadAllItems();
+    }
+
+    private void loadAllItems() {
+        var model = new ItemManage_model();
+
+        ObservableList<ItemTm> obList = FXCollections.observableArrayList();
+
+        try {
+            List<itemDto> dtoList = model.getAllitems();
+
+            for (itemDto itemDto : dtoList) {
+                obList.add(
+                        new ItemTm(
+                                itemDto.getCode(),
+                                itemDto.getDescription(),
+                                itemDto.getQty(),
+                                itemDto.getUnitPrice()
+                        )
+                );
+            }
+
+            tblItem.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setCellValueFactory() {
+        colid.setCellValueFactory(new PropertyValueFactory<>("code"));
+        colname.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colqtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty_on_hand"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
+
+    }
+
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Dashboard_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -61,6 +121,7 @@ public class ItemFormController {
 
             if (isAdd){
                 new Alert(Alert.AlertType.CONFIRMATION,"Item Saved!!").show();
+                loadAllItems();
                 clearFields();
             }
 

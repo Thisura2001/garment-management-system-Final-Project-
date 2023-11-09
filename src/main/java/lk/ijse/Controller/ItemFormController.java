@@ -140,6 +140,7 @@ public class ItemFormController {
 
             if (isDelete){
                 new Alert(Alert.AlertType.CONFIRMATION,"Item delete Successfully!!").show();
+                loadAllItems();
                 clearFields();
             }
 
@@ -161,6 +162,7 @@ public class ItemFormController {
 
             if (isUpdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"Item Update Success!!").show();
+                loadAllItems();
                 clearFields();
             }
 

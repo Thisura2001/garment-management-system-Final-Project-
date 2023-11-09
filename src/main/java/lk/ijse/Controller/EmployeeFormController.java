@@ -131,6 +131,7 @@ public class EmployeeFormController {
 
             if (isDelete){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer delete Successfully!!").show();
+                loadAllEmployee();
                 clearFields();
             }
 
@@ -152,6 +153,7 @@ public class EmployeeFormController {
 
             if (isUpdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer Update Success!!").show();
+                loadAllEmployee();
                 clearFields();
             }
 

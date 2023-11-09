@@ -125,13 +125,6 @@ public class CustomerFormController {
 
     }
 
-    private void clearFields() {
-        txtid.setText("");
-        txtname.setText("");
-        txtaddress.setText("");
-        txttel.setText("");
-    }
-
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         try {
             String id = txtid.getText();
@@ -143,6 +136,7 @@ public class CustomerFormController {
 
             if (isUpdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer Update Success!!").show();
+                loadAllCustomer();
                 clearFields();
             }
 
@@ -160,6 +154,7 @@ public class CustomerFormController {
 
             if (isDelete){
                 new Alert(Alert.AlertType.CONFIRMATION,"Customer delete Successfully!!").show();
+                loadAllCustomer();
                 clearFields();
             }
 
@@ -190,5 +185,13 @@ public class CustomerFormController {
 
     public void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
+    }
+
+
+    private void clearFields() {
+        txtid.setText("");
+        txtname.setText("");
+        txtaddress.setText("");
+        txttel.setText("");
     }
 }

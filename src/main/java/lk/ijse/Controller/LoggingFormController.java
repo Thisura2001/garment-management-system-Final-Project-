@@ -16,7 +16,7 @@ import lk.ijse.Model.LoggingModel;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class LoggingFormController extends CreateAccountFormController{
+public class LoggingFormController {
 
     @FXML
     private AnchorPane rootNode;
@@ -32,7 +32,7 @@ public class LoggingFormController extends CreateAccountFormController{
     private AdminModel adminModel = new AdminModel();
 
     public void btnCreateAccountOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/CreateAccount_form.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/Admin_form.fxml"));
         Scene scene = new Scene(anchorPane);
         Stage stage = (Stage) rootNode.getScene().getWindow();
         stage.setScene(scene);
@@ -55,41 +55,7 @@ public class LoggingFormController extends CreateAccountFormController{
             stage.setScene(scene);
             stage.centerOnScreen();
         } else {
-            showErrorAlert("Login Failed", "Invalid username or password. Please try again.");
-        }
-    }
-
-    private void showErrorAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    void setValues(String[][] sd) {
-        this.saveDetail = sd;
-        for (int i = 0; i < saveDetail.length; i++) {
-            for (int j = 0; j < saveDetail[i].length; j++) {
-                System.out.println(saveDetail[i][j]+",");
-            }
-        }
-    }
-
-    public void btnAddOnAction(ActionEvent actionEvent) {
-        try {
-            String userName = txtusername.getText();
-            String password = txtpassword.getText();
-
-            boolean isAdd = loggingModel.AddAdmin(userName,password);
-
-            if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Admin saved successfully!!").show();
-            }
-
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,"Try again!").show();
-            throw new RuntimeException(e);
+           new Alert(Alert.AlertType.ERROR,"Something Wrong Try again!!").show();
         }
     }
 }

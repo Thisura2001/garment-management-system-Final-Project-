@@ -15,8 +15,7 @@ import lk.ijse.Model.AdminModel;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class CreateAccountFormController {
-    public String[][] saveDetail = new String[2][6];
+public class AdminFormController {
     @FXML
     private AnchorPane rootNode;
 
@@ -45,10 +44,8 @@ public class CreateAccountFormController {
         String username = txtusername.getText();
         String password = txtpassword.getText();
 
-        adminDto dto = new adminDto(username, password);
-
         try {
-            boolean isSaved = adminModel.saveAdmin(dto);
+            boolean isSaved = adminModel.saveAdmin(new adminDto(username,password));
 
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Admin saved!").show();
@@ -61,9 +58,6 @@ public class CreateAccountFormController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/logging_form.fxml"));
         Parent rootNode = fxmlLoader.load();
-        LoggingFormController loginFormController = fxmlLoader.getController();
-
-        loginFormController.setValues(saveDetail);
 
         Scene scene = new Scene(rootNode);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
@@ -74,7 +68,7 @@ public class CreateAccountFormController {
     }
 
     private void clearFields() {
-        txtpassword.clear();
-        txtusername.clear();
+        txtpassword.setText("");
+        txtusername.setText("");
     }
 }

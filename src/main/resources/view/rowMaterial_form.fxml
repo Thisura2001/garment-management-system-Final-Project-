@@ -15,7 +15,7 @@
    <children>
       <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #d1d8e0;">
          <children>
-            <ImageView fitHeight="407.0" fitWidth="332.0" layoutX="14.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="373.0" fitWidth="342.0" layoutX="14.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/raw-materials-rubber-stamp-vector-12469456.jpg" />
                </image>
@@ -28,10 +28,10 @@
                      </font>
                   </Label>
                   <TextField fx:id="txtid" layoutX="111.0" layoutY="113.0" prefHeight="26.0" prefWidth="223.0" style="-fx-background-radius: 30;" />
-                  <TextField fx:id="txtname" layoutX="111.0" layoutY="191.0" prefHeight="26.0" prefWidth="223.0" style="-fx-background-radius: 30;" />
+                  <TextField fx:id="txtname" layoutX="111.0" layoutY="199.0" prefHeight="26.0" prefWidth="223.0" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtunitPrice" layoutX="111.0" layoutY="284.0" prefHeight="26.0" prefWidth="223.0" style="-fx-background-radius: 30;" />
-                  <TextField fx:id="txtqty" layoutX="111.0" layoutY="381.0" prefHeight="26.0" prefWidth="223.0" style="-fx-background-radius: 30;" />
-                  <Label layoutX="10.0" layoutY="195.0" text="Material Name">
+                  <TextField fx:id="txtqty" layoutX="111.0" layoutY="371.0" prefHeight="26.0" prefWidth="223.0" style="-fx-background-radius: 30;" />
+                  <Label layoutX="11.0" layoutY="203.0" text="Material Name">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -41,7 +41,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="53.0" layoutY="385.0" text="qty">
+                  <Label layoutX="17.0" layoutY="375.0" text="qty On Hand">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -67,7 +67,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="307.0" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Material" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="307.0" onAction="#btnUpdateMaterialOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Material" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -75,15 +75,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="382.0" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete Material" textFill="#f5f6fa">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="451.0" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #273c75; -fx-background-radius: 30;" text="Search Material" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="382.0" onAction="#btnDeleteMaterialOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete Material" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -109,13 +101,13 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <TableView layoutX="873.0" layoutY="124.0" prefHeight="490.0" prefWidth="605.0">
+            <TableView fx:id="tblRowMaterial" layoutX="880.0" layoutY="119.0" prefHeight="490.0" prefWidth="605.0">
               <columns>
-                <TableColumn prefWidth="150.4000244140625" text="Row_id" />
+                <TableColumn fx:id="colid" prefWidth="150.4000244140625" text="Row_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-                  <TableColumn prefWidth="150.4000244140625" text="Name" />
-                  <TableColumn prefWidth="150.4000244140625" text="Unit Price" />
-                  <TableColumn prefWidth="150.4000244140625" text="QTY On Hand" />
+                  <TableColumn fx:id="colname" prefWidth="150.4000244140625" text="Name" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="150.4000244140625" text="Unit Price" />
+                  <TableColumn fx:id="colQtyOnHand" prefWidth="150.4000244140625" text="QTY On Hand" />
               </columns>
             </TableView>
             <Label layoutX="954.0" layoutY="66.0" text="Here is the table view for RowMaterials" textFill="#f71919">
@@ -123,7 +115,7 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="519.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Clear" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="456.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Clear" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

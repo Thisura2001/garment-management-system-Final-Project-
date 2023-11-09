@@ -12,7 +12,7 @@ public class supplierDto {
     String sup_id;
     String name;
     String address;
-    String tel;
+    String email;
     String type;
 
 }

@@ -1,22 +1,50 @@
 package lk.ijse.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Db.DbConnection;
+import lk.ijse.Dto.customerDto;
+import lk.ijse.Dto.rowMaterialDto;
+import lk.ijse.Model.CustomerManage_model;
+import lk.ijse.Model.MaterialManage_model;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
+
+import javafx.scene.control.TableColumn;
+import lk.ijse.Tm.CustomerTm;
+import lk.ijse.Tm.RowMaterialTm;
 
 public class RowMaterialFormController {
+    @FXML
+    private TableView<RowMaterialTm> tblRowMaterial;
+
+    @FXML
+    private TableColumn<?, ?> colQtyOnHand;
+
+    @FXML
+    private TableColumn<?, ?> colUnitPrice;
+
+    @FXML
+    private TableColumn<?, ?> colid;
+
+    @FXML
+    private TableColumn<?, ?> colname;
+
     @FXML
     private TextField txtid;
 
@@ -29,9 +57,50 @@ public class RowMaterialFormController {
     @FXML
     private TextField txtunitPrice;
 
-
     @FXML
     private AnchorPane rootNode;
+
+    private MaterialManage_model materialManageModel = new MaterialManage_model();
+
+    public void initialize(){
+        setCellValueFactory();
+        loadAllMaterial();
+    }
+
+    private void loadAllMaterial() {
+        var model = new MaterialManage_model();
+
+        ObservableList<RowMaterialTm> obList = FXCollections.observableArrayList();
+
+        try {
+            List<rowMaterialDto> dtoList = model.getAllMaterial();
+
+            for (rowMaterialDto dto : dtoList) {
+                obList.add(
+                        new RowMaterialTm(
+                                dto.getRow_id(),
+                                dto.getName(),
+                                dto.getUnitPrice(),
+                                dto.getQty()
+                        )
+                );
+            }
+
+            tblRowMaterial.setItems(obList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void setCellValueFactory() {
+        colid.setCellValueFactory(new PropertyValueFactory<>("row_id"));
+        colname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
+        colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty_on_hand"));
+
+    }
+
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Dashboard_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -45,22 +114,18 @@ public class RowMaterialFormController {
     public void btnAddMaterialOnAction(ActionEvent actionEvent) {
         String id = txtid.getText();
         String name = txtname.getText();
-        String price = txtunitPrice.getText();
-        String qty = txtqty.getText();
+        String unit_price = txtunitPrice.getText();
+        Integer qty = Integer.valueOf(txtqty.getText());
 
         try {
-            Connection connection = DbConnection.getInstance().getConnection();
-            String sql = "INSERT INTO rowmaterial VALUES (?,?,?,?)";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,id);
-            preparedStatement.setString(2,name);
-            preparedStatement.setString(3,price);
-            preparedStatement.setString(4,qty);
 
-           int affectedRows =  preparedStatement.executeUpdate();
-           if (affectedRows>0){
-               new Alert(Alert.AlertType.CONFIRMATION,"Material saved Successfully!!").show();
-           }
+            boolean isSaved = materialManageModel.saveMaterial(new rowMaterialDto(id,name,unit_price,qty));
+
+                if (isSaved){
+                    new Alert(Alert.AlertType.CONFIRMATION,"Material saved Success!!").show();
+                    loadAllMaterial();
+                    clearFields();
+                }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             throw new RuntimeException(e);
@@ -68,5 +133,52 @@ public class RowMaterialFormController {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+        clearFields();
+    }
+
+    public void btnUpdateMaterialOnAction(ActionEvent actionEvent) {
+        try {
+            String id = txtid.getText();
+            String name = txtname.getText();
+            String unit_price = txtunitPrice.getText();
+            Integer qty_on_hand = Integer.valueOf(txtqty.getText());
+
+            boolean isUpdate = materialManageModel.updateMaterial(new rowMaterialDto(id,name,unit_price,qty_on_hand));
+
+            if (isUpdate){
+                new Alert(Alert.AlertType.CONFIRMATION,"Material Update Successfully!!").show();
+                loadAllMaterial();
+                clearFields();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            System.out.println(e);
+        }
+    }
+
+    public void btnDeleteMaterialOnAction(ActionEvent actionEvent) {
+        String id = txtid.getText();
+        try {
+            boolean isDeleted = materialManageModel.deleteMaterial(id);
+
+            if (isDeleted){
+                new Alert(Alert.AlertType.CONFIRMATION,"Material delete Successfully").show();
+                loadAllMaterial();
+                clearFields();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            System.out.println(e);
+        }
+    }
+
+
+    private void clearFields() {
+        txtid.setText("");
+        txtname.setText("");
+        txtqty.setText("");
+        txtunitPrice.setText("");
     }
 }

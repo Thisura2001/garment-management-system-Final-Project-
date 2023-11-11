@@ -17,5 +17,7 @@ public class AppInitializer extends Application {
         stage.setTitle("Logging form");
 
         stage.show();
+
+
     }
 }

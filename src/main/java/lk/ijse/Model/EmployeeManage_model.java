@@ -66,4 +66,26 @@ public class EmployeeManage_model {
         }
         return dtoList;
     }
+
+    public employeeDto searchEmployee(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM employee WHERE emp_id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,id);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        employeeDto employeeDto = null;
+
+        if(resultSet.next()){
+            String  emp_id = resultSet.getString(1);
+            String  name = resultSet.getString(2);
+            String  address = resultSet.getString(3);
+            Integer  tel = resultSet.getInt(4);
+
+            employeeDto = new employeeDto(emp_id,name,address,tel);
+        }
+        return employeeDto;
+    }
 }

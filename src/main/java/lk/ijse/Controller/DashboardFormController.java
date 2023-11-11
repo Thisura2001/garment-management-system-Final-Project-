@@ -5,14 +5,27 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class DashboardFormController {
     @FXML
     private AnchorPane rootNode;
+    @FXML
+    private Label lblDate;
+
+   public  void initialize(){
+       setDate();
+    }
+
+    private void setDate() {
+        lblDate.setText(String.valueOf(LocalDate.now()));
+    }
+
     public void btnManageCustomerOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/customer_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -81,6 +94,16 @@ public class DashboardFormController {
         Scene scene = new Scene(rootNode);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setTitle("Row Material_Form");
+        stage.setScene(scene);
+    }
+
+    public void manageAttendaceOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Attendance_form.fxml"));
+        Parent rootNode = fxmlLoader.load();
+
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setTitle("Attendance_Form");
         stage.setScene(scene);
     }
 }

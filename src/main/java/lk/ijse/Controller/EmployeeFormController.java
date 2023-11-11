@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.employeeDto;
 import lk.ijse.Model.EmployeeManage_model;
 
@@ -165,6 +166,23 @@ public class EmployeeFormController {
 
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
+        String id = txtid.getText();
+
+        try {
+           employeeDto employeeDto  = employeeManageModel.searchEmployee(id);
+            if (employeeDto != null){
+                txtid.setText(employeeDto.getEmp_id());
+                txtname.setText(employeeDto.getName());
+                txtaddress.setText(employeeDto.getAddress());
+                txttel.setText(String.valueOf(employeeDto.getTel()));
+            }else{
+                new Alert(Alert.AlertType.INFORMATION,"Employee not Found!!").show();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
+
     }
     private void clearFields() {
         txtid.setText("");

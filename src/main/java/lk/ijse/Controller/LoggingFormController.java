@@ -15,6 +15,7 @@ import lk.ijse.Model.LoggingModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class LoggingFormController {
 
@@ -41,21 +42,27 @@ public class LoggingFormController {
     }
 
     public void btnLoggingOnAction(ActionEvent actionEvent) throws IOException, SQLException {
-        String username = txtusername.getText();
+        String userName = txtusername.getText();
         String password = txtpassword.getText();
 
-        adminDto dto = new adminDto(username, password);
-        String pass = adminModel.searchAdmin(dto);
-
-        if(pass.equals(password)){
-            Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Dashboard_form.fxml"));
-            Scene scene = new Scene(rootNode);
-            Stage stage = (Stage) this.rootNode.getScene().getWindow();
-            stage.setTitle("Liyo garment");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-        } else {
-           new Alert(Alert.AlertType.ERROR,"Something Wrong Try again!!").show();
+        adminDto adminDto = new adminDto(userName, password);
+        try {
+            Optional<adminDto> u = loggingModel.searchUser(adminDto);
+            if (u.isPresent()) {
+                adminDto user1 = u.get();
+                if (userName.equals(user1.getUsername()) && password.equals(user1.getPassword())) {
+                    Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Dashboard_form.fxml"));
+                    Scene scene = new Scene(rootNode);
+                    Stage stage = (Stage) this.rootNode.getScene().getWindow();
+                    stage.setTitle("Liyo garment");
+                    stage.setScene(scene);
+                    stage.centerOnScreen();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Something Wrong Try again!!").show();
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
         }
     }
 }

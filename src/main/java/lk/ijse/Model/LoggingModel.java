@@ -12,14 +12,18 @@ import java.util.Optional;
 public class LoggingModel {
 
     public Optional<adminDto> searchUser(adminDto adminDto) throws SQLException {
-        Connection con = DbConnection.getInstance().getConnection();
-        PreparedStatement ps = con.prepareStatement("select * from admin where userName= ? and password = ?");
-        ps.setString(1,adminDto.getUsername());
-        ps.setString(2,adminDto.getPassword());
-        ResultSet rs = ps.executeQuery();
-        if (rs.next()){
-            String userName = rs.getString(1);
-            String password = rs.getString(2);
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM admin WHERE userName = ? and password = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setString(1,adminDto.getUsername());
+        preparedStatement.setString(2,adminDto.getPassword());
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()){
+            String userName = resultSet.getString(1);
+            String password = resultSet.getString(2);
             return Optional.of(new adminDto(userName,password));
         }
         return Optional.empty();

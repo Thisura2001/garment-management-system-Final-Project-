@@ -23,25 +23,4 @@ public class AdminModel {
 
         return isSaved;
     }
-
-    public String searchAdmin(adminDto dto) throws SQLException {
-
-        Connection connection = DbConnection.getInstance().getConnection();
-
-        String sql = "SELECT * FROM admin WHERE userName = ?";
-        PreparedStatement pstm = connection.prepareStatement(sql);
-
-        pstm.setString(1, dto.getUsername());
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        if(resultSet.next()) {
-            String username = resultSet.getString(1);
-            String password = resultSet.getString(2);
-
-            dto = new adminDto(username,password);
-        }
-        return dto.getPassword();
-
-    }
 }

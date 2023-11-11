@@ -106,4 +106,15 @@ public class DashboardFormController {
         stage.setTitle("Attendance_Form");
         stage.setScene(scene);
     }
+
+    public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/logging_form.fxml"));
+        Parent rootNode = fxmlLoader.load();
+
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setTitle("Logging_Form");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
 }

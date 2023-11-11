@@ -40,8 +40,16 @@ public class LoggingFormController {
         stage.setTitle("Create Account Form");
 
     }
+    private void navigateToDashBoard() throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Dashboard_form.fxml"));
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setTitle("Liyo garment");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
 
-    public void btnLoggingOnAction(ActionEvent actionEvent) throws IOException, SQLException {
+    public void btnLoggingOnAction(ActionEvent actionEvent)  {
         String userName = txtusername.getText();
         String password = txtpassword.getText();
 
@@ -51,17 +59,12 @@ public class LoggingFormController {
             if (u.isPresent()) {
                 adminDto user1 = u.get();
                 if (userName.equals(user1.getUsername()) && password.equals(user1.getPassword())) {
-                    Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Dashboard_form.fxml"));
-                    Scene scene = new Scene(rootNode);
-                    Stage stage = (Stage) this.rootNode.getScene().getWindow();
-                    stage.setTitle("Liyo garment");
-                    stage.setScene(scene);
-                    stage.centerOnScreen();
-                } else {
-                    new Alert(Alert.AlertType.ERROR, "Something Wrong Try again!!").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Welcome " + userName).showAndWait();
+                    navigateToDashBoard();
                 }
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
             System.out.println(e);
         }
     }

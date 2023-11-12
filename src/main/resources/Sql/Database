@@ -1,0 +1,77 @@
+create table admin(
+userName varchar(200)primary key,
+password varchar(100)not null
+);
+
+create table employee(
+emp_id varchar(10)primary key,
+name varchar(20) not null,
+address varchar(20)not null,
+tel int(10)
+);
+
+create table customer(
+cust_id varchar(10)primary key,
+name varchar(20)not null,
+address varchar(20)not null,
+tel varchar(20)not null
+);
+
+create table orders(
+or_id varchar(10)primary key,
+time varchar(20)not null,
+date varchar(20)not null,
+payment varchar(30)not null,
+cust_id varchar(10)not null,
+foreign key(cust_id)references customer(cust_id) on delete cascade on update cascade
+);
+
+create table item(
+Code varchar(10)primary key,
+description varchar(20)not null,
+qty_on_hand int(50)not null,
+unit_price varchar(20)
+);
+
+create table order_detail(
+or_id varchar(10)not null,
+code varchar(10)not null,
+unit_price varchar(10)not null,
+qty int(20)not null,
+foreign key(or_id) references orders (or_id) on delete cascade on update cascade,
+foreign key(code) references item(code) on delete cascade on update cascade
+);
+
+create table rowmaterial(
+row_id varchar(10)primary key,
+name varchar(20)not null,
+unit_price varchar(10)not null,
+qty_on_hand int(20)not null
+);
+
+create table material_detail(
+code varchar(10)not null,
+row_id varchar(10)not null,
+unit_price varchar(10)not null,
+qty varchar(20)not null,
+foreign key(code) references item(code) on delete cascade on update cascade,
+foreign key(row_id) references rowmaterial(row_id) on delete cascade on update cascade
+);
+
+create table supplier(
+sup_id varchar(10)primary key,
+name varchar(20)not null,
+address varchar(20)not null,
+email varchar(100)not null,
+type varchar(20)not null
+);
+
+create table attendance(
+E_id varchar(10)primary key,
+name varchar(50),
+date date,
+time varchar(30),
+status varchar(20)
+);
+
+

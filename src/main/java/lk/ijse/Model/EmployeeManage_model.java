@@ -49,8 +49,8 @@ public class EmployeeManage_model {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM employee";
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
+        PreparedStatement preparedStatement= connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
 
         ArrayList<employeeDto> dtoList = new ArrayList<>();
 

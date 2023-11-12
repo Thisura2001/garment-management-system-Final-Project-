@@ -13,14 +13,14 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="393.0" prefWidth="748.0" style="-fx-background-color: #d1d8e0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoggingFormController">
    <children>
-      <ImageView fitHeight="391.0" fitWidth="759.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="391.0" fitWidth="760.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/zerrin_1.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="199.0" layoutY="35.0" prefHeight="323.0" prefWidth="330.0" style="-fx-background-color: CDB8F7; -fx-background-radius: 30;">
+      <AnchorPane layoutX="376.0" layoutY="-1.0" prefHeight="393.0" prefWidth="374.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
          <children>
-            <JFXTextField fx:id="txtpassword" labelFloat="true" layoutX="14.0" layoutY="179.0" prefHeight="26.0" prefWidth="291.0" promptText="Password">
+            <JFXTextField fx:id="txtpassword" labelFloat="true" layoutX="35.0" layoutY="246.0" prefHeight="26.0" prefWidth="320.0" promptText="Password">
                <effect>
                   <Blend>
                      <topInput>
@@ -29,12 +29,12 @@
                   </Blend>
                </effect>
             </JFXTextField>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="277.0" layoutY="180.0">
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="328.0" layoutY="247.0">
                <image>
                   <Image url="@image/icons8-password-30.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="130.0" layoutY="271.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" text="    Log in">
+            <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="345.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" text="    Log in">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -42,12 +42,12 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="15.0" fitWidth="17.0" layoutX="130.0" layoutY="277.0">
+            <ImageView fitHeight="15.0" fitWidth="17.0" layoutX="196.0" layoutY="351.0">
                <image>
                   <Image url="@image/icons8-log-in-30.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="219.0" layoutY="271.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
+            <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="345.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -55,17 +55,17 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="18.0" fitWidth="24.0" layoutX="219.0" layoutY="275.0">
+            <ImageView fitHeight="18.0" fitWidth="24.0" layoutX="281.0" layoutY="349.0">
                <image>
                   <Image url="@image/icons8-create-64.png" />
                </image>
             </ImageView>
-            <Label fx:id="txtlabel" layoutX="46.0" layoutY="231.0" text="Remember me?">
+            <Label fx:id="txtlabel" layoutX="60.0" layoutY="288.0" text="Remember me?">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtusername" labelFloat="true" layoutX="18.0" layoutY="92.0" prefHeight="26.0" prefWidth="291.0" promptText="UserName">
+            <JFXTextField fx:id="txtusername" labelFloat="true" layoutX="36.0" layoutY="169.0" prefHeight="26.0" prefWidth="320.0" promptText="UserName">
                <effect>
                   <Blend>
                      <topInput>
@@ -74,21 +74,18 @@
                   </Blend>
                </effect>
             </JFXTextField>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="277.0" layoutY="93.0">
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="328.0" layoutY="170.0">
                <image>
                   <Image url="@image/icons8-user-50.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="18.0" layoutY="214.0" prefHeight="34.0" prefWidth="34.0">
-               <children>
-                  <AnchorPane layoutX="15.0" layoutY="20.0" prefHeight="8.0" prefWidth="10.0" style="-fx-background-color: #222f3e;" />
-               </children>
-            </AnchorPane>
-            <Label layoutX="125.0" layoutY="14.0" text="WelCome  !!">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Label>
+            <AnchorPane layoutX="18.0" layoutY="214.0" prefHeight="34.0" prefWidth="34.0" />
+            <AnchorPane layoutX="36.0" layoutY="292.0" prefHeight="8.0" prefWidth="10.0" style="-fx-background-color: #222f3e;" />
+            <ImageView fitHeight="106.0" fitWidth="110.0" layoutX="140.0" layoutY="14.0">
+               <image>
+                  <Image url="@image/3426587.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

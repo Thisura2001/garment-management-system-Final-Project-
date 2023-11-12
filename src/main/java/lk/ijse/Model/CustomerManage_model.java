@@ -2,6 +2,7 @@ package lk.ijse.Model;
 
 import lk.ijse.Db.DbConnection;
 import lk.ijse.Dto.customerDto;
+import lk.ijse.Dto.employeeDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -73,6 +74,28 @@ public class CustomerManage_model {
         String sql = "SELECT * FROM customer";
         PreparedStatement pstm = connection.prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
+
+        ArrayList<customerDto> dtoList = new ArrayList<>();
+
+        while(resultSet.next()) {
+            dtoList.add(
+                    new customerDto(
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getString(4)
+                    )
+            );
+        }
+        return dtoList;
+    }
+
+    public List<customerDto> getAllcustomerId() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM customer";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
 
         ArrayList<customerDto> dtoList = new ArrayList<>();
 

@@ -35,7 +35,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="232.0" text="Name">
+                  <Label layoutX="23.0" layoutY="232.0" text="Description">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -106,7 +106,7 @@
                   <Font name="System Bold" size="11.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="768.0" layoutY="471.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #9980FA; -fx-background-radius: 20;" text="Clear" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="768.0" layoutY="471.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #9980FA; -fx-background-radius: 20;" text="Search" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>

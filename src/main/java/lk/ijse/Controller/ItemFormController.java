@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.itemDto;
 import lk.ijse.Model.ItemManage_model;
 import javafx.scene.control.TableColumn;
@@ -108,7 +109,22 @@ public class ItemFormController {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-        clearFields();
+        String id = txtid.getText();
+
+        try {
+            itemDto itemDto = itemManageModel.searchItems(id);
+            if (itemDto != null){
+                txtid.setText(itemDto.getCode());
+                txtname.setText(itemDto.getDescription());
+                txtqtyOnHand.setText(String.valueOf(itemDto.getQty()));
+                txtunitPrice.setText(itemDto.getUnitPrice());
+            }else{
+                new Alert(Alert.AlertType.INFORMATION,"Item not Found!!").show();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
     public void btnAddOnAction(ActionEvent actionEvent){
         try {

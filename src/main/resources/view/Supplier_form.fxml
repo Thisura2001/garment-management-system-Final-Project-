@@ -19,7 +19,7 @@
                   <Image url="@image/supplier.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="355.0" layoutY="160.0" prefHeight="423.0" prefWidth="394.0" style="-fx-background-color: #718093;">
+            <AnchorPane layoutX="355.0" layoutY="160.0" prefHeight="423.0" prefWidth="394.0" style="-fx-background-color: #718093; -fx-background-radius: 50;">
                <children>
                   <TextField fx:id="txtid" layoutX="153.0" layoutY="94.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtname" layoutX="153.0" layoutY="155.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />

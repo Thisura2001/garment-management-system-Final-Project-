@@ -48,4 +48,13 @@ public class AttendanceModel {
         }
         return dtoList;
     }
+
+    public boolean deleteDetails(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "DELETE FROM attendance WHERE E_id= ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setString(1, id);
+        return preparedStatement.executeUpdate() > 0;
+    }
 }

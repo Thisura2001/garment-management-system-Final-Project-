@@ -142,9 +142,9 @@ public class AttendanceFormController {
 
     public void rbtnAbsentOnAction(ActionEvent actionEvent) {
         if(rAbstent.isSelected()){
-            attendanceStatus="Present";
-        }else{
             attendanceStatus="Absent";
+        }else{
+            attendanceStatus="Present";
         }
         System.out.println(attendanceStatus);
     }
@@ -183,10 +183,33 @@ public class AttendanceFormController {
     }
 
     public void btnCancelOnAction(ActionEvent actionEvent) {
+        String id = String.valueOf(cmbEmplooyeId.getValue());
+
+        try{
+           boolean isDelete = attendanceModel.deleteDetails(id);
+
+           if (isDelete){
+               new Alert(Alert.AlertType.INFORMATION,"Deleted success!!").show();
+               loadAllAttendanceDetails();
+           }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Dashboard_form.fxml"));
+        Parent rootNode = fxmlLoader.load();
+
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setTitle("Dashboard Form");
+        stage.setScene(scene);
+    }
+
+    public void btnNewOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/employee_form.fxml"));
         Parent rootNode = fxmlLoader.load();
 
         Scene scene = new Scene(rootNode);

@@ -59,6 +59,9 @@ public class PlaceOrderFormController {
     private Label lblCustomerName;
 
     @FXML
+    private Label lblCustomerMail;
+
+    @FXML
     private Label lblDescription;
 
     @FXML
@@ -269,6 +272,7 @@ public class PlaceOrderFormController {
         try {
             customerDto customerDto = customerManageModel.searchCustomer(id);
             lblCustomerName.setText(customerDto.getName());
+            lblCustomerMail.setText(customerDto.getAddress());
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -72,4 +72,20 @@ public class SupplierManage_model {
         }
         return dtoList;
     }
+
+    public char[] getSupplierCount() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT COUNT(sup_id) FROM supplier";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                char[] count = resultSet.getString(1).toCharArray();
+                return count;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -39,14 +39,14 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <Label layoutX="40.0" layoutY="328.0" text="Address">
+                  <Label layoutX="40.0" layoutY="328.0" text="Gmail">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <TextField fx:id="txtid" layoutX="135.0" layoutY="133.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 20;" />
-                  <TextField fx:id="txtname" layoutX="135.0" layoutY="227.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 20;" />
-                  <TextField fx:id="txttel" layoutX="135.0" layoutY="415.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 20;" />
-                  <TextField fx:id="txtaddress" layoutX="135.0" layoutY="324.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 20;" />
+                  <TextField fx:id="txtid" layoutX="135.0" layoutY="133.0" prefHeight="26.0" prefWidth="240.0" style="-fx-background-radius: 20;" />
+                  <TextField fx:id="txtname" layoutX="135.0" layoutY="227.0" prefHeight="26.0" prefWidth="240.0" style="-fx-background-radius: 20;" />
+                  <TextField fx:id="txttel" layoutX="135.0" layoutY="415.0" prefHeight="26.0" prefWidth="240.0" style="-fx-background-radius: 20;" />
+                  <TextField fx:id="txtaddress" layoutX="135.0" layoutY="324.0" prefHeight="26.0" prefWidth="240.0" style="-fx-background-radius: 20;" />
                   <Label layoutX="33.0" layoutY="419.0" text="Telephone">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -88,9 +88,9 @@
               <columns>
                 <TableColumn fx:id="colId" prefWidth="150.39996337890625" text="Customer_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-                  <TableColumn fx:id="colName" prefWidth="150.39990234375" text="Name" />
-                  <TableColumn fx:id="colAddress" prefWidth="150.39996337890625" text="Address" />
-                  <TableColumn fx:id="colTel" prefWidth="150.39996337890625" text="Telephone" />
+                  <TableColumn fx:id="colName" prefWidth="110.39990234375" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="210.400146484375" text="Address" />
+                  <TableColumn fx:id="colTel" prefWidth="131.199951171875" text="Telephone" />
               </columns>
             </TableView>
             <Label layoutX="1039.0" layoutY="67.0" text="Here is the table View For Customer" textFill="#fc3030">

@@ -17,8 +17,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.Model.CustomerManage_model;
+import lk.ijse.Model.EmployeeManage_model;
+import lk.ijse.Model.SupplierManage_model;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -29,6 +33,9 @@ public class DashboardFormController {
     private AnchorPane rootNode;
 
     @FXML
+    private Label lblCustomerCount;
+
+    @FXML
     private Label lblDate;
 
     @FXML
@@ -36,11 +43,33 @@ public class DashboardFormController {
 
     @FXML
     private BarChart<String,Number> BarChart;
+    @FXML
+    private Label lblEmployeeCount;
 
-   public  void initialize(){
+    @FXML
+    private Label lblSupplierCount;
+
+    CustomerManage_model customerManageModel = new CustomerManage_model();
+    EmployeeManage_model employeeManageModel = new EmployeeManage_model();
+    SupplierManage_model supplierManageModel = new SupplierManage_model();
+
+   public  void initialize() throws SQLException {
        setDate();
        setTime();
        loadBarChart();
+       getCustomerCount();
+       getEmployeeCount();
+       getSupplierCount();
+   }
+
+   public void getCustomerCount() throws SQLException {
+       lblCustomerCount.setText(String.valueOf(customerManageModel.getCount()));
+   }
+   public void getEmployeeCount() throws SQLException {
+    lblEmployeeCount.setText(String.valueOf(employeeManageModel.getEmployeeCount()));
+   }
+   public void getSupplierCount() throws SQLException {
+    lblSupplierCount.setText(String.valueOf(supplierManageModel.getSupplierCount()));
    }
 
     private void loadBarChart() {
@@ -56,9 +85,6 @@ public class DashboardFormController {
         series.getData().add(new XYChart.Data("Saturday",8));
         series.getData().add(new XYChart.Data("Sunday",5));
         BarChart.getData().addAll(series);
-
-        //BarChart = barChart;
-       // barChart.getData().addAll(series);
 
     }
 

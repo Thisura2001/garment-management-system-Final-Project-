@@ -1,5 +1,6 @@
 package lk.ijse.Controller;
 
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +24,7 @@ public class LoggingFormController {
     private AnchorPane rootNode;
 
     @FXML
-    private JFXTextField txtpassword;
+    private JFXPasswordField txtPassword;
 
     @FXML
     private JFXTextField txtusername;
@@ -51,7 +52,7 @@ public class LoggingFormController {
 
     public void btnLoggingOnAction(ActionEvent actionEvent)  {
         String userName = txtusername.getText();
-        String password = txtpassword.getText();
+        String password = txtPassword.getText();
 
         adminDto adminDto = new adminDto(userName, password);
         try {

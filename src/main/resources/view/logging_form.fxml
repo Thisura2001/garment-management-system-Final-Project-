@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -18,23 +19,14 @@
             <Image url="@image/zerrin_1.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="376.0" layoutY="-1.0" prefHeight="393.0" prefWidth="374.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 10;">
+      <AnchorPane layoutX="209.0" layoutY="37.0" prefHeight="318.0" prefWidth="330.0" style="-fx-background-color: #D7CBB2; -fx-background-radius: 10;">
          <children>
-            <JFXTextField fx:id="txtpassword" labelFloat="true" layoutX="35.0" layoutY="246.0" prefHeight="26.0" prefWidth="320.0" promptText="Password">
-               <effect>
-                  <Blend>
-                     <topInput>
-                        <PerspectiveTransform />
-                     </topInput>
-                  </Blend>
-               </effect>
-            </JFXTextField>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="328.0" layoutY="247.0">
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="281.0" layoutY="202.0">
                <image>
                   <Image url="@image/icons8-password-30.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="345.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" text="    Log in">
+            <JFXButton buttonType="RAISED" layoutX="152.0" layoutY="276.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" text="    Log in">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -42,12 +34,12 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="15.0" fitWidth="17.0" layoutX="196.0" layoutY="351.0">
+            <ImageView fitHeight="15.0" fitWidth="17.0" layoutX="160.0" layoutY="282.0">
                <image>
                   <Image url="@image/icons8-log-in-30.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="345.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
+            <JFXButton buttonType="RAISED" layoutX="246.0" layoutY="276.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -55,17 +47,17 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="18.0" fitWidth="24.0" layoutX="281.0" layoutY="349.0">
+            <ImageView fitHeight="18.0" fitWidth="24.0" layoutX="246.0" layoutY="281.0">
                <image>
                   <Image url="@image/icons8-create-64.png" />
                </image>
             </ImageView>
-            <Label fx:id="txtlabel" layoutX="60.0" layoutY="288.0" text="Remember me?">
+            <Label fx:id="txtlabel" layoutX="41.0" layoutY="248.0" text="Remember me?">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtusername" labelFloat="true" layoutX="36.0" layoutY="169.0" prefHeight="26.0" prefWidth="320.0" promptText="UserName">
+            <JFXTextField fx:id="txtusername" focusColor="#0d0d0d" labelFloat="true" layoutX="27.0" layoutY="126.0" prefHeight="26.0" prefWidth="281.0" promptText="UserName" unFocusColor="BLACK">
                <effect>
                   <Blend>
                      <topInput>
@@ -74,16 +66,17 @@
                   </Blend>
                </effect>
             </JFXTextField>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="328.0" layoutY="170.0">
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="281.0" layoutY="127.0">
                <image>
                   <Image url="@image/icons8-user-50.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="18.0" layoutY="214.0" prefHeight="34.0" prefWidth="34.0" />
-            <AnchorPane layoutX="36.0" layoutY="292.0" prefHeight="8.0" prefWidth="10.0" style="-fx-background-color: #222f3e;" />
-            <ImageView fitHeight="106.0" fitWidth="110.0" layoutX="140.0" layoutY="14.0">
+            <AnchorPane layoutX="22.0" layoutY="252.0" prefHeight="8.0" prefWidth="10.0" style="-fx-background-color: #222f3e;" />
+            <JFXPasswordField fx:id="txtPassword" focusColor="#0e0f10" labelFloat="true" layoutX="26.0" layoutY="201.0" prefHeight="26.0" prefWidth="282.0" promptText="Password" unFocusColor="#050505" />
+            <ImageView fitHeight="62.0" fitWidth="70.0" layoutX="134.0" layoutY="14.0">
                <image>
-                  <Image url="@image/3426587.png" />
+                  <Image url="@image/icons8-user-50.png" />
                </image>
             </ImageView>
          </children>

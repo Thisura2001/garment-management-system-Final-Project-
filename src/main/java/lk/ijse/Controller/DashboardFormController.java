@@ -1,6 +1,8 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +16,12 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class DashboardFormController {
     public JFXButton btnsearch;
@@ -27,10 +32,14 @@ public class DashboardFormController {
     private Label lblDate;
 
     @FXML
+    private Label lbltime;
+
+    @FXML
     private BarChart<String,Number> BarChart;
 
    public  void initialize(){
        setDate();
+       setTime();
        loadBarChart();
    }
 
@@ -55,6 +64,18 @@ public class DashboardFormController {
 
     private void setDate() {
         lblDate.setText(String.valueOf(LocalDate.now()));
+    }
+    private void setTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    LocalTime currentTime = LocalTime.now();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                    String formattedTime = currentTime.format(formatter);
+                    lbltime.setText(formattedTime);
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
 
 

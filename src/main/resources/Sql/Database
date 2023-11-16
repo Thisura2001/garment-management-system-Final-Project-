@@ -19,9 +19,7 @@ tel varchar(20)not null
 
 create table orders(
 or_id varchar(10)primary key,
-time varchar(20)not null,
 date varchar(20)not null,
-payment varchar(30)not null,
 cust_id varchar(10)not null,
 foreign key(cust_id)references customer(cust_id) on delete cascade on update cascade
 );

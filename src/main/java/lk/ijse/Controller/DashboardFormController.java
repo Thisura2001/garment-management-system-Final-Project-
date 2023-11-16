@@ -1,10 +1,16 @@
 package lk.ijse.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -13,18 +19,44 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 public class DashboardFormController {
+    public JFXButton btnsearch;
     @FXML
     private AnchorPane rootNode;
+
     @FXML
     private Label lblDate;
 
+    @FXML
+    private BarChart<String,Number> BarChart;
+
    public  void initialize(){
        setDate();
+       loadBarChart();
+   }
+
+    private void loadBarChart() {
+
+        XYChart.Series series = new XYChart.Series();
+
+        series.setName("Income");
+        series.getData().add(new XYChart.Data("Monday",8));
+        series.getData().add(new XYChart.Data("Tuesday",12));
+        series.getData().add(new XYChart.Data("Wednesday",10));
+        series.getData().add(new XYChart.Data("Thursday",15));
+        series.getData().add(new XYChart.Data("Friday",12));
+        series.getData().add(new XYChart.Data("Saturday",8));
+        series.getData().add(new XYChart.Data("Sunday",5));
+        BarChart.getData().addAll(series);
+
+        //BarChart = barChart;
+       // barChart.getData().addAll(series);
+
     }
 
     private void setDate() {
         lblDate.setText(String.valueOf(LocalDate.now()));
     }
+
 
     public void btnManageCustomerOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/customer_form.fxml"));

@@ -2,6 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -41,7 +44,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="455.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #fa8231; -fx-background-radius: 10;" text="                    Manage Report">
+            <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="455.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #fa8231; -fx-background-radius: 10;" stylesheets="@Css/style.css" text="                    Manage Report">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
@@ -171,6 +174,14 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
+            <BarChart fx:id="BarChart" layoutX="125.0" layoutY="98.0" prefHeight="473.0" prefWidth="734.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
          </children>
       </AnchorPane>
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1360.0" layoutY="14.0">
@@ -188,10 +199,11 @@
             <Image url="@image/icons8-setting-50.png" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="1150.0" layoutY="25.0" style="-fx-background-color: #20bf6b;" text="Search">
+      <JFXButton fx:id="btnsearch" buttonType="RAISED" layoutX="1150.0" layoutY="25.0" style="-fx-background-color: #20bf6b;" stylesheets="@Css/style.css" text="Search">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
+
    </children>
 </AnchorPane>

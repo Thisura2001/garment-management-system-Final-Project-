@@ -133,7 +133,22 @@ public class RowMaterialFormController {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-        clearFields();
+        String id = txtid.getText();
+
+        try {
+            rowMaterialDto rowMaterialDto = materialManageModel.searchMaterial(id);
+            if (rowMaterialDto != null){
+                txtid.setText(rowMaterialDto.getRow_id());
+                txtname.setText(rowMaterialDto.getName());
+                txtunitPrice.setText(rowMaterialDto.getUnitPrice());
+                txtqty.setText(String.valueOf(rowMaterialDto.getQty()));
+            }else{
+                new Alert(Alert.AlertType.INFORMATION,"Customer not Found!!").show();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     public void btnUpdateMaterialOnAction(ActionEvent actionEvent) {
@@ -141,7 +156,7 @@ public class RowMaterialFormController {
             String id = txtid.getText();
             String name = txtname.getText();
             String unit_price = txtunitPrice.getText();
-            Integer qty_on_hand = Integer.valueOf(txtqty.getText());
+            int qty_on_hand = Integer.valueOf(txtqty.getText());
 
             boolean isUpdate = materialManageModel.updateMaterial(new rowMaterialDto(id,name,unit_price,qty_on_hand));
 

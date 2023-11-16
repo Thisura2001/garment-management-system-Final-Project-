@@ -62,7 +62,7 @@ public class LoggingFormController {
                     new Alert(Alert.AlertType.CONFIRMATION, "Welcome " + userName).showAndWait();
                     navigateToDashBoard();
                 }
-            }
+            }else { new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();}
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
             System.out.println(e);

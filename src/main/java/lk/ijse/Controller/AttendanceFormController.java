@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class AttendanceFormController {
@@ -128,7 +129,10 @@ public class AttendanceFormController {
         lblDate.setText(String.valueOf(LocalDate.now()));
     }
     private void setTime() {
-        lblTime.setText(String.valueOf(LocalTime.now()));
+        LocalTime currentTime = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        String formattedTime = currentTime.format(formatter);
+        lblTime.setText(formattedTime);
     }
 
     public void rbtnPresentOnAction(ActionEvent actionEvent) {

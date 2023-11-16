@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.RowMaterialFormController">
    <children>
-      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #d1d8e0;">
+      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #d1d8e0;" stylesheets="@Css/style.css">
          <children>
             <ImageView fitHeight="373.0" fitWidth="342.0" layoutX="14.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -59,7 +59,7 @@
                </font>
             </Label>
             <TextField layoutX="14.0" layoutY="19.0" prefHeight="26.0" prefWidth="256.0" text="Search Something Here....." />
-            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="231.0" onAction="#btnAddMaterialOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Material" textFill="#f5f6fa">
+            <JFXButton id="stadd" buttonType="RAISED" layoutX="732.0" layoutY="231.0" onAction="#btnAddMaterialOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" stylesheets="@Css/style.css" text="Add Material" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -115,7 +115,7 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="456.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Clear" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="456.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Search" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

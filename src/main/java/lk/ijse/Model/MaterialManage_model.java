@@ -68,4 +68,26 @@ public class MaterialManage_model {
         }
         return dtoList;
     }
+
+    public rowMaterialDto searchMaterial(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM rowmaterial WHERE row_id= ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,id);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        rowMaterialDto materialDto = null;
+
+        if(resultSet.next()){
+            String  row_id = resultSet.getString(1);
+            String  row_name = resultSet.getString(2);
+            String  unit_price = resultSet.getString(3);
+            int  qty = Integer.parseInt(resultSet.getString(4));
+
+            materialDto = new rowMaterialDto(row_id,row_name,unit_price,qty);
+        }
+        return materialDto;
+    }
 }

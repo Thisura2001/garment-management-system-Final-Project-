@@ -21,6 +21,7 @@ import lk.ijse.Model.ItemManage_model;
 import lk.ijse.Model.OrderModel;
 import lk.ijse.Model.PlaceOrder_model;
 import lk.ijse.Tm.CartTm;
+import lk.ijse.mail.Mail;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -247,6 +248,14 @@ public class PlaceOrderFormController {
             boolean isSuccess = placeOrderModel.placeOrder(placeOrderDto);
             if (isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!").show();
+
+                Mail mail = new Mail();
+                mail.setMsg("Your Order is Success..!");
+                mail.setTo(lblCustomerMail.getText());
+                mail.setSubject("Successfully Ordered");
+
+                Thread thread = new Thread(mail);
+                thread.start();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

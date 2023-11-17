@@ -63,6 +63,6 @@ public class Mail implements Runnable{
             }
         } else {
             System.out.println("not sent. empty msg!");
-}
-}
-}
+            }
+        }
+    }

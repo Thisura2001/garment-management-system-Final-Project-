@@ -4,6 +4,7 @@ import lk.ijse.Db.DbConnection;
 import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.employeeDto;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -104,5 +105,30 @@ public class EmployeeManage_model {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public String genarateNextEmployeeId() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT emp_id FROM employee ORDER BY emp_id DESC LIMIT 1";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()){
+            return splitEmployeeId(resultSet.getString(1));
+        }
+        return splitEmployeeId(null);
+    }
+
+    private String splitEmployeeId(String CurrentEmployeeId) {
+        if(CurrentEmployeeId!= null) {
+            String[] split = CurrentEmployeeId.split("E0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            return "E00" + id;
+        } else {
+            return "E001";
+        }
     }
 }

@@ -57,6 +57,7 @@ public class CustomerFormController {
     public void initialize(){
         setCellValueFactory();
         loadAllCustomer();
+        genateNextCustomerId();
     }
 
     private void loadAllCustomer() {
@@ -81,6 +82,14 @@ public class CustomerFormController {
             tblCustomer.setItems(obList);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+    private void genateNextCustomerId() {
+        try {
+            String CustomerId = customerManageModel.generateNextCustomerId();
+            txtid.setText(CustomerId);
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 

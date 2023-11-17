@@ -247,10 +247,10 @@ public class PlaceOrderFormController {
         try {
             boolean isSuccess = placeOrderModel.placeOrder(placeOrderDto);
             if (isSuccess) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Order Success!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Order Success!!").show();
 
                 Mail mail = new Mail();
-                mail.setMsg("Your Order is Success..!");
+                mail.setMsg("Your Order is Successfully placed..!");
                 mail.setTo(lblCustomerMail.getText());
                 mail.setSubject("Successfully Ordered");
 

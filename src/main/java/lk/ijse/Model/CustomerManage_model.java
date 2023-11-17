@@ -162,4 +162,29 @@ public class CustomerManage_model {
         }
         return null;
     }
+
+    public String generateNextCustomerId() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT cust_id FROM customer ORDER BY cust_id DESC LIMIT 1";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next()) {
+            return splitCustomerId(resultSet.getString(1));
+        }
+        return splitCustomerId(null);
+    }
+
+    private String splitCustomerId(Object currentCustomerId) {
+        if(currentCustomerId != null) {
+            String[] split = currentCustomerId.toString().split("C0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            return "C00" + id;
+        } else {
+            return "C001";
+        }
+    }
 }

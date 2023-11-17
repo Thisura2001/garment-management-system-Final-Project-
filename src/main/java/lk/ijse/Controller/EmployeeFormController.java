@@ -59,6 +59,16 @@ public class EmployeeFormController {
     public void initialize(){
         setCellValueFactory();
         loadAllEmployee();
+        genateNextEmployeeId();
+    }
+
+    private void genateNextEmployeeId() {
+        try {
+          String EmployeeId = employeeManageModel.genarateNextEmployeeId();
+          txtid.setText(EmployeeId);
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     private void loadAllEmployee() {

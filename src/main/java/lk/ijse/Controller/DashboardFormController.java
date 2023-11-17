@@ -49,6 +49,9 @@ public class DashboardFormController {
     @FXML
     private Label lblSupplierCount;
 
+    @FXML
+    private AnchorPane childPanel;
+
     CustomerManage_model customerManageModel = new CustomerManage_model();
     EmployeeManage_model employeeManageModel = new EmployeeManage_model();
     SupplierManage_model supplierManageModel = new SupplierManage_model();

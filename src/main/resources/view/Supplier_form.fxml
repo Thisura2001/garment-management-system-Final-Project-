@@ -19,13 +19,13 @@
                   <Image url="@image/supplier.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="355.0" layoutY="160.0" prefHeight="423.0" prefWidth="394.0" style="-fx-background-color: #718093; -fx-background-radius: 50;">
+            <AnchorPane layoutX="355.0" layoutY="150.0" prefHeight="456.0" prefWidth="394.0" style="-fx-background-color: #718093; -fx-background-radius: 50;">
                <children>
-                  <TextField fx:id="txtid" layoutX="153.0" layoutY="94.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
+                  <TextField fx:id="txtid" layoutX="153.0" layoutY="81.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtname" layoutX="153.0" layoutY="155.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
-                  <TextField fx:id="txtaddress" layoutX="153.0" layoutY="219.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
-                  <TextField fx:id="txttel" layoutX="153.0" layoutY="281.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
-                  <Label layoutX="41.0" layoutY="98.0" text="Supplier Id">
+                  <TextField fx:id="txtaddress" layoutX="153.0" layoutY="232.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
+                  <TextField fx:id="txttel" layoutX="153.0" layoutY="310.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
+                  <Label layoutX="46.0" layoutY="84.0" text="Supplier Id">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -35,12 +35,12 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="28.0" layoutY="223.0" text="Supplier address">
+                  <Label layoutX="28.0" layoutY="236.0" text="Supplier address">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="34.0" layoutY="285.0" text="Supplier Email">
+                  <Label layoutX="34.0" layoutY="314.0" text="Supplier Email">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -50,8 +50,8 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txttype" layoutX="153.0" layoutY="334.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
-                  <Label layoutX="35.0" layoutY="338.0" text="Supplier Type">
+                  <TextField fx:id="txttype" layoutX="153.0" layoutY="388.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 30;" />
+                  <Label layoutX="41.0" layoutY="392.0" text="Supplier Type">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -68,22 +68,22 @@
                   <Font size="11.0" />
                </font>
             </TextField>
-            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="243.0" onAction="#btnAddSupplierOnAction" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="246.0" onAction="#btnAddSupplierOnAction" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="325.0" onAction="#btndeleteSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="325.0" onAction="#btndeleteSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="398.0" onAction="#btnUpdateSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="402.0" onAction="#btnUpdateSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="471.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 30;" text="Clear" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="471.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 30;" text="Clear" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -98,7 +98,7 @@
                   <Image url="@image/icons8-supplier-100.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tblSupplier" layoutX="872.0" layoutY="144.0" prefHeight="456.0" prefWidth="631.0">
+            <TableView fx:id="tblSupplier" layoutX="889.0" layoutY="144.0" prefHeight="456.0" prefWidth="614.0">
               <columns>
                 <TableColumn fx:id="colid" prefWidth="112.800048828125" text="Supplier_id" />
                   <TableColumn fx:id="colname" prefWidth="112.800048828125" text="Name" />
@@ -112,11 +112,16 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="598.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="68.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 40;" text="Back" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="1413.0" layoutY="15.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 40;" text="         Home" textFill="#0c0d0d">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
+            <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="1421.0" layoutY="22.0">
+               <image>
+                  <Image url="@image/icons8-home-50.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

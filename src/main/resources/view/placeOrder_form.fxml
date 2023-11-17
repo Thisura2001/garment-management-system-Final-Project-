@@ -14,11 +14,11 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PlaceOrderFormController">
    <children>
-      <AnchorPane fx:id="rootNode" prefHeight="743.0" prefWidth="1450.0" style="-fx-background-color: #778ca3;">
+      <AnchorPane fx:id="rootNode" prefHeight="743.0" prefWidth="1450.0" style="-fx-background-color: #a4b0be;">
          <children>
-            <AnchorPane layoutX="322.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #F8EFBA;">
+            <AnchorPane layoutX="322.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #dfe4ea;">
                <children>
-                  <AnchorPane layoutX="656.0" layoutY="81.0" prefHeight="257.0" prefWidth="451.0" style="-fx-background-color: #a5b1c2; -fx-background-radius: 40;">
+                  <AnchorPane layoutX="656.0" layoutY="81.0" prefHeight="257.0" prefWidth="451.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
                      <children>
                         <Label layoutX="76.0" layoutY="20.0" text="Code :  ">
                            <font>
@@ -58,7 +58,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="12.0" layoutY="63.0" prefHeight="274.0" prefWidth="460.0" style="-fx-background-color: #a5b1c2; -fx-background-radius: 40;">
+                  <AnchorPane layoutX="12.0" layoutY="63.0" prefHeight="274.0" prefWidth="460.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
                      <children>
                         <Label layoutX="38.0" layoutY="8.0" text="Order Id -:">
                            <font>
@@ -114,7 +114,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblCustomerName" layoutX="182.0" layoutY="174.0" prefHeight="26.0" prefWidth="142.0" textFill="#6d214f">
+                        <Label fx:id="lblCustomerName" layoutX="199.0" layoutY="174.0" prefHeight="26.0" prefWidth="142.0" textFill="#6d214f">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -139,7 +139,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="826.0" layoutY="705.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #009432; -fx-background-radius: 40;" text="Back" textFill="#f7f7f1">
+                  <JFXButton buttonType="RAISED" layoutX="979.0" layoutY="9.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 40;" text="       Home" textFill="#0d0d0c">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -149,7 +149,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="341.0" prefHeight="54.0" prefWidth="451.0" style="-fx-background-color: #222f3e; -fx-background-radius: 50;" text="              Place Your Order Here" textFill="WHITE">
+                  <Label layoutX="304.0" layoutY="14.0" prefHeight="42.0" prefWidth="506.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 50;" text="                     Place Your Order Here" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
@@ -179,6 +179,16 @@
                         <TableColumn fx:id="colAction" prefWidth="148.800048828125" text="Action" />
                     </columns>
                   </TableView>
+                  <ImageView fitHeight="17.0" fitWidth="24.0" layoutX="990.0" layoutY="18.0">
+                     <image>
+                        <Image url="@image/icons8-home-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="755.0" layoutY="20.0">
+                     <image>
+                        <Image url="@image/icons8-create-order-30.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <ImageView fitHeight="385.0" fitWidth="322.0" layoutY="180.0">

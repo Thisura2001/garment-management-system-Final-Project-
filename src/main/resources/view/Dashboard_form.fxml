@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="695.0" prefWidth="1528.0" style="-fx-background-color: #D2E4FD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashboardFormController">
    <children>
-      <AnchorPane layoutX="-2.0" prefHeight="714.0" prefWidth="245.0" style="-fx-background-color: #182C61;">
+      <AnchorPane fx:id="childPanel" layoutX="-2.0" prefHeight="714.0" prefWidth="245.0" style="-fx-background-color: #182C61;">
          <children>
             <JFXButton layoutX="62.0" layoutY="129.0" onAction="#btnManageCustomerOnAction" prefHeight="34.0" prefWidth="166.0" style="-fx-background-color: #182C61; -fx-background-radius: 40;" text="  Manage Customer" textFill="WHITE">
                <font>
@@ -148,7 +148,7 @@
             <Image url="@image/icons8-search-24.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="254.0" layoutY="75.0" prefHeight="609.0" prefWidth="1254.0" style="-fx-background-color: #d2dae2;">
+      <AnchorPane layoutX="254.0" layoutY="75.0" prefHeight="620.0" prefWidth="1254.0" style="-fx-background-color: #d2dae2;">
          <children>
             <Label layoutX="15.0" layoutY="14.0" text="Dashboard">
                <font>
@@ -188,35 +188,53 @@
                   <Image url="@image/icons8-time.gif" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="35.0" layoutY="78.0" prefHeight="187.0" prefWidth="370.0" style="-fx-background-color: #f1f2f6; -fx-background-radius: 40;">
+            <AnchorPane layoutX="35.0" layoutY="78.0" prefHeight="161.0" prefWidth="294.0" style="-fx-background-color: #f1f2f6; -fx-background-radius: 40;">
                <children>
-                  <ImageView fitHeight="58.0" fitWidth="82.0" layoutX="8.0" layoutY="42.0">
+                  <ImageView fitHeight="43.0" fitWidth="55.0" layoutX="14.0" layoutY="19.0">
                      <image>
                         <Image url="@image/icons8-customer-50%20(1).png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblCustomerCount" layoutX="148.0" layoutY="94.0" prefHeight="58.0" prefWidth="120.0">
+                  <Label fx:id="lblCustomerCount" layoutX="87.0" layoutY="68.0" prefHeight="58.0" prefWidth="120.0">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="83.0" layoutY="23.0" prefHeight="35.0" prefWidth="186.0" text="Current Customers" textFill="#4a6b94">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="40.0" layoutY="259.0" prefHeight="162.0" prefWidth="294.0" style="-fx-background-color: #f1f2f6; -fx-background-radius: 40;">
+               <children>
+                  <Label fx:id="lblEmployeeCount" layoutX="85.0" layoutY="71.0" prefHeight="58.0" prefWidth="120.0">
                      <font>
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="133.0" layoutY="129.0" prefHeight="35.0" prefWidth="246.0" text="Current Customers" textFill="#4a6b94">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="58.0" fitWidth="65.0" layoutX="35.0" layoutY="276.0">
+            <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="62.0" layoutY="279.0">
                <image>
                   <Image url="@image/icons8-employee-64%20(1).png" />
                </image>
             </ImageView>
-            <Label layoutX="125.0" layoutY="287.0" prefHeight="35.0" prefWidth="222.0" text="Current Employees" textFill="#317908">
+            <Label layoutX="125.0" layoutY="287.0" prefHeight="35.0" prefWidth="174.0" text="Current Employees" textFill="#317908">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <AnchorPane layoutX="40.0" layoutY="444.0" prefHeight="162.0" prefWidth="294.0" style="-fx-background-color: #f1f2f6; -fx-background-radius: 40;">
+               <children>
+                  <Label fx:id="lblSupplierCount" layoutX="87.0" layoutY="62.0" prefHeight="58.0" prefWidth="120.0">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <ImageView fitHeight="43.0" fitWidth="55.0" layoutX="40.0" layoutY="463.0">
                <image>
                   <Image url="@image/icons8-supplier-48.png" />
@@ -225,16 +243,6 @@
             <Label layoutX="125.0" layoutY="467.0" prefHeight="35.0" prefWidth="222.0" text="Current Suppliers" textFill="#823296">
                <font>
                   <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblEmployeeCount" layoutX="176.0" layoutY="344.0" prefHeight="58.0" prefWidth="120.0">
-               <font>
-                  <Font name="System Bold" size="48.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblSupplierCount" layoutX="176.0" layoutY="525.0" prefHeight="58.0" prefWidth="120.0">
-               <font>
-                  <Font name="System Bold" size="48.0" />
                </font>
             </Label>
          </children>

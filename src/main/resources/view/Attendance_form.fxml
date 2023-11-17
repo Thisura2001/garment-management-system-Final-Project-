@@ -17,12 +17,12 @@
    <children>
       <AnchorPane fx:id="rootNode" prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #c8d6e5;">
          <children>
-            <ImageView fitHeight="392.0" fitWidth="275.0" layoutX="32.0" layoutY="127.0">
+            <ImageView fitHeight="326.0" fitWidth="275.0" layoutX="27.0" layoutY="162.0">
                <image>
                   <Image url="@image/istockphoto-1167651240-612x612.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="336.0" layoutY="136.0" prefHeight="458.0" prefWidth="443.0" style="-fx-background-color: #a4b0be; -fx-background-radius: 40;">
+            <AnchorPane layoutX="322.0" layoutY="136.0" prefHeight="458.0" prefWidth="443.0" style="-fx-background-color: #a4b0be; -fx-background-radius: 40;">
                <children>
                   <Label layoutX="39.0" layoutY="77.0" text="Employee Id">
                      <font>
@@ -98,7 +98,7 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="791.0" layoutY="435.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #2ed573; -fx-background-radius: 20;" text="Save ">
+            <JFXButton buttonType="RAISED" layoutX="783.0" layoutY="413.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #2ed573; -fx-background-radius: 20;" text="Save ">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -106,7 +106,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="791.0" layoutY="501.0" onAction="#btnCancelOnAction" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #e84118; -fx-background-radius: 20;" text="Delete">
+            <JFXButton buttonType="RAISED" layoutX="783.0" layoutY="488.0" onAction="#btnCancelOnAction" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #e84118; -fx-background-radius: 20;" text="Delete">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="23.0" layoutY="586.0" onAction="#btnBackOnAction" prefHeight="36.0" prefWidth="70.0" style="-fx-background-color: #273c75; -fx-background-radius: 60;" text="Back" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="1396.0" layoutY="19.0" onAction="#btnBackOnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 60;" text="       Home" textFill="#222223">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -122,7 +122,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <TableView fx:id="tblAttendance" layoutX="907.0" layoutY="127.0" prefHeight="508.0" prefWidth="578.0" stylesheets="@Css/Customer.css">
+            <TableView fx:id="tblAttendance" layoutX="874.0" layoutY="136.0" prefHeight="458.0" prefWidth="602.0" stylesheets="@Css/Customer.css">
               <columns>
                 <TableColumn fx:id="colId" prefWidth="111.20001220703125" text="Employee_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
@@ -137,22 +137,22 @@
                   <Image url="@image/icons8-items-64.png" />
                </image>
             </ImageView>
-            <TextField layoutX="39.0" layoutY="24.0" prefHeight="26.0" prefWidth="275.0" />
-            <Label layoutX="44.0" layoutY="29.0" text="Search Something here...">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
+            <TextField layoutX="39.0" layoutY="24.0" prefHeight="26.0" prefWidth="275.0" promptText="Search Something Here.." />
             <ImageView layoutX="283.0" layoutY="25.0">
                <image>
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <Label layoutX="1006.0" layoutY="61.0" text="Here is the table view For Attendance Details" textFill="#ec2c62">
+            <Label layoutX="985.0" layoutY="78.0" text="Here is the table view For Attendance Details" textFill="#ec2c62">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="20.0" fitWidth="24.0" layoutX="1404.0" layoutY="27.0">
+               <image>
+                  <Image url="@image/icons8-home-50.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

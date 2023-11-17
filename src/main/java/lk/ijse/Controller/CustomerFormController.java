@@ -23,23 +23,24 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerFormController {
-    @FXML
-    private TableColumn<?,?> colAddress;
 
     @FXML
-    private TableColumn<?,?> colId;
+    private TableColumn<?, ?> colCustomerAddress;
 
     @FXML
-    private TableColumn<?,?> colName;
+    private TableColumn<?, ?> colCustomerId;
 
     @FXML
-    private TableColumn<?,?> colTel;
+    private TableColumn<?, ?> colCustomerName;
 
     @FXML
-    private TableView<CustomerTm> tblCustomer;
+    private TableColumn<?, ?> colCustomerTel;
 
     @FXML
     private AnchorPane rootNode;
+
+    @FXML
+    private TableView<CustomerTm> tblCustomer;
 
     @FXML
     private TextField txtaddress;
@@ -84,10 +85,10 @@ public class CustomerFormController {
     }
 
     private void setCellValueFactory() {
-        colId.setCellValueFactory(new PropertyValueFactory<>("cus_id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("cus_name"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("cus_address"));
-        colTel.setCellValueFactory(new PropertyValueFactory<>("cus_tel"));
+        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("cus_id"));
+        colCustomerName.setCellValueFactory(new PropertyValueFactory<>("cus_name"));
+        colCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("cus_address"));
+        colCustomerTel.setCellValueFactory(new PropertyValueFactory<>("cus_tel"));
         
     }
 

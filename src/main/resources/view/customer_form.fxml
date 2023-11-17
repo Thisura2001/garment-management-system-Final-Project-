@@ -84,13 +84,13 @@
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tblCustomer" layoutX="894.0" layoutY="130.0" prefHeight="474.0" prefWidth="582.0">
+            <TableView fx:id="tblCustomer" layoutX="894.0" layoutY="130.0" prefHeight="474.0" prefWidth="582.0" stylesheets="@Css/Customer.css">
               <columns>
-                <TableColumn fx:id="colId" prefWidth="150.39996337890625" text="Customer_id" />
+                <TableColumn fx:id="colCustomerId" prefWidth="150.39996337890625" text="Customer_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-                  <TableColumn fx:id="colName" prefWidth="110.39990234375" text="Name" />
-                  <TableColumn fx:id="colAddress" prefWidth="210.400146484375" text="Address" />
-                  <TableColumn fx:id="colTel" prefWidth="131.199951171875" text="Telephone" />
+                  <TableColumn fx:id="colCustomerName" prefWidth="110.39990234375" text="Name" />
+                  <TableColumn fx:id="colCustomerAddress" prefWidth="210.400146484375" text="Address" />
+                  <TableColumn fx:id="colCustomerTel" prefWidth="131.199951171875" text="Telephone" />
               </columns>
             </TableView>
             <Label layoutX="1039.0" layoutY="67.0" text="Here is the table View For Customer" textFill="#fc3030">

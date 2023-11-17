@@ -122,7 +122,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <TableView fx:id="tblAttendance" layoutX="907.0" layoutY="127.0" prefHeight="508.0" prefWidth="578.0">
+            <TableView fx:id="tblAttendance" layoutX="907.0" layoutY="127.0" prefHeight="508.0" prefWidth="578.0" stylesheets="@Css/Customer.css">
               <columns>
                 <TableColumn fx:id="colId" prefWidth="111.20001220703125" text="Employee_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />

@@ -6,6 +6,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.effect.PerspectiveTransform?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,15 +19,18 @@
          <image>
             <Image url="@image/zerrin_1.jpg" />
          </image>
+         <effect>
+            <BoxBlur />
+         </effect>
       </ImageView>
-      <AnchorPane layoutX="209.0" layoutY="37.0" prefHeight="318.0" prefWidth="330.0" style="-fx-background-color: #D7CBB2; -fx-background-radius: 10;">
+      <AnchorPane fx:id="loggingRoot" layoutX="209.0" layoutY="37.0" opacity="0.84" prefHeight="318.0" prefWidth="330.0" style="-fx-background-color: #D7CBB2; -fx-background-radius: 10;">
          <children>
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="281.0" layoutY="202.0">
                <image>
                   <Image url="@image/icons8-password-30.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="152.0" layoutY="276.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" text="    Log in">
+            <JFXButton fx:id="btnLogging" buttonType="RAISED" layoutX="152.0" layoutY="276.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" stylesheets="@Css/Customer.css" text="    Log in">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -39,7 +43,7 @@
                   <Image url="@image/icons8-log-in-30.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="246.0" layoutY="276.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
+            <JFXButton fx:id="loggingSignup" buttonType="RAISED" layoutX="246.0" layoutY="276.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -127,6 +127,7 @@ public class EmployeeFormController {
             new Alert(Alert.AlertType.CONFIRMATION,"Employee Saved Successfully!!").show();
             loadAllEmployee();
             clearFields();
+            genateNextEmployeeId();
         }
 
         }catch (Exception e){

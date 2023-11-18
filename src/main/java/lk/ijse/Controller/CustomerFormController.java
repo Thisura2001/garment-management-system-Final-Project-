@@ -21,6 +21,7 @@ import lk.ijse.Tm.CustomerTm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CustomerFormController {
 
@@ -100,9 +101,6 @@ public class CustomerFormController {
         colCustomerTel.setCellValueFactory(new PropertyValueFactory<>("cus_tel"));
         
     }
-
-
-
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Dashboard_form.fxml"));
         Parent rootNode = fxmlLoader.load();
@@ -116,23 +114,82 @@ public class CustomerFormController {
     public void btnAddCustomerOnAction(ActionEvent actionEvent) {
         try {
             String id = txtid.getText();
-            String name =txtname.getText();
-            String address =txtaddress.getText();
-            String tel =txttel.getText();
+            String name = txtname.getText();
+            String address = txtaddress.getText();
+            String tel = txttel.getText();
 
-            boolean isAdd = customerManageModel.addCustomer(new customerDto(id,name,address,tel));
+            boolean isCustomerValidated = validateCustomer(id, name, address, tel);
 
-            if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Customer Saved!!").show();
-                loadAllCustomer();
-                clearFields();
+            if (isCustomerValidated) {
+                boolean isAdd = customerManageModel.addCustomer(new customerDto(id, name, address, tel));
+
+                if (isAdd) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Customer Saved!!").show();
+                    loadAllCustomer();
+                    clearFields();
+                }
             }
 
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             throw new RuntimeException(e);
         }
+    }
 
+    private boolean validateCustomer(String id, String name, String address, String tel) {
+        boolean isCustomerIDValidated = Pattern.matches("[C][0-9]{3,}", id);
+        if (!isCustomerIDValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Customer ID!").show();
+            return false;
+        }
+
+        boolean isCustomerNameValidate = Pattern.matches("[A-Za-z]{3,}", name);
+        if (!isCustomerNameValidate) {
+            new Alert(Alert.AlertType.ERROR, "Invalid customer Name!!").show();
+            return false;
+        }
+
+        boolean isValidateCustomerAddress = Pattern.matches("[A-Za-z]{4,}", address);
+        if (!isValidateCustomerAddress) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Customer Gmail!!").show();
+            return false;
+        }
+
+        boolean isValidateCustomerTel = Pattern.matches("[0-9]{9,}", tel);
+        if (!isValidateCustomerTel) {
+            new Alert(Alert.AlertType.ERROR, "Invalid customer Tel Number!!").show();
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean validateCustomer() {
+        String id = txtid.getText();
+        boolean isCustomerIDValidated = Pattern.matches("[C][0-9]{3,}", id);
+        if (!isCustomerIDValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Customer ID!").show();
+            return false;
+        }
+        String name = txtname.getText();
+        boolean isCustomerNameValidate = Pattern.matches("[A-Za-z]{3,}",name);
+        if (!isCustomerNameValidate){
+            new Alert(Alert.AlertType.ERROR,"Invalid customer Name!!").show();
+            return false;
+        }
+        String address = txtaddress.getText();
+        boolean isValidateCustomerAddress = Pattern.matches("[A-Za-z]{4,}",address);
+        if (!isValidateCustomerAddress){
+            new Alert(Alert.AlertType.ERROR,"Invalid Customer Address!!").show();
+            return false;
+        }
+        String tel = txttel.getText();
+        boolean isValidateCustomerTel = Pattern.matches("[0-9]{9,}",address);
+        if (!isValidateCustomerTel){
+            new Alert(Alert.AlertType.ERROR,"Invalid customer Tel Number!!").show();
+            return false;
+        }
+        return true;
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {

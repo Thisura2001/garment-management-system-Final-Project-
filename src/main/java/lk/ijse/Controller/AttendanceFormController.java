@@ -126,7 +126,11 @@ public class AttendanceFormController {
         }
     }
     private void setDate() {
-        lblDate.setText(String.valueOf(LocalDate.now()));
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        String formattedDate = currentDate.format(formatter);
+        lblDate.setText(formattedDate);
     }
     private void setTime() {
         LocalTime currentTime = LocalTime.now();
@@ -178,6 +182,7 @@ public class AttendanceFormController {
            if (isSaved){
                new Alert(Alert.AlertType.INFORMATION,"Saved success!!").show();
                loadAllAttendanceDetails();
+
            }
 
         } catch (SQLException e) {

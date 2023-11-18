@@ -65,6 +65,17 @@ public class RowMaterialFormController {
     public void initialize(){
         setCellValueFactory();
         loadAllMaterial();
+        genarateNextRowMaterialId();
+    }
+
+    private void genarateNextRowMaterialId() {
+        try {
+            String id =  materialManageModel.genarateNextMaterialId();
+            txtid.setText(id);
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     private void loadAllMaterial() {

@@ -90,4 +90,29 @@ public class MaterialManage_model {
         }
         return materialDto;
     }
+
+    public String genarateNextMaterialId() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql ="SELECT row_id FROM rowmaterial ORDER BY row_id DESC LIMIT 1";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()){
+            return splitnextMaretialId(resultSet.getString(1));
+        }
+        return splitnextMaretialId(null);
+    }
+
+    private String splitnextMaretialId(String nextMaterialId) {
+        if (nextMaterialId!= null) {
+
+            String[] split = nextMaterialId.split("R0");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            return "R00" + id;
+        }else {
+            return "R001";
+        }
+    }
 }

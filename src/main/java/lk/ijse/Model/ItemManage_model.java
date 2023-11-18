@@ -132,4 +132,29 @@ public class ItemManage_model {
 
         return pstm.executeUpdate() > 0;
     }
+
+    public String genarateNextItemId() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT code FROM item ORDER BY code DESC LIMIT 1";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()){
+          return splitItemCode(resultSet.getString(1));
+        }
+        return splitItemCode(null);
+    }
+
+    private String splitItemCode(String currentItemId) {
+        if(currentItemId!= null) {
+            String[] split = currentItemId.split("I0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            return "I00" + id;
+        } else {
+            return "I001";
+        }
+    }
 }

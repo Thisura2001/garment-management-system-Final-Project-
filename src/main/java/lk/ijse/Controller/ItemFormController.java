@@ -62,6 +62,16 @@ public class ItemFormController {
     public void initialize(){
         setCellValueFactory();
         loadAllItems();
+        genarateNextItemId();
+    }
+
+    private void genarateNextItemId() {
+        try {
+            String id = itemManageModel.genarateNextItemId();
+            txtid.setText(id);
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     private void loadAllItems() {

@@ -21,6 +21,8 @@ import javafx.scene.control.TableColumn;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
+
 import lk.ijse.Tm.EmployeeTm;
 
 public class EmployeeFormController {
@@ -121,20 +123,47 @@ public class EmployeeFormController {
         String address = txtaddress.getText();
         Integer tel = Integer.valueOf(txttel.getText());
         try{
+            boolean isValidate = validateEmployee(id,name,address);
+            if (isValidate){
         boolean isAdd = employeeManageModel.addEmployee(new employeeDto(id,name,address,tel));
 
-        if (isAdd){
-            new Alert(Alert.AlertType.CONFIRMATION,"Employee Saved Successfully!!").show();
+        if (isAdd) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Employee Saved Successfully!!").show();
             loadAllEmployee();
             clearFields();
             genateNextEmployeeId();
-        }
-
+                }
+            }
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR,"Employee not Saved!!  Try again").show();
             System.out.println(e);
         }
     }
+
+    private boolean validateEmployee(String id, String name, String address) {
+        boolean isValidateEmployeeId = Pattern.matches("[E][\\d]{3,}",id);
+        if (!isValidateEmployeeId){
+            new Alert(Alert.AlertType.ERROR,"Invalid Employee Id").show();
+            return false;
+        }
+        boolean isValidateEmployeeName = Pattern.matches("[A-Za-z ]+",name);
+        if (!isValidateEmployeeName){
+            new Alert(Alert.AlertType.ERROR,"Invalid Employee Name").show();
+            return false;
+        }
+        boolean isValidateEmployeeAddress = Pattern.matches("[A-Za-z]{3,}",address);
+        if (!isValidateEmployeeAddress){
+            new Alert(Alert.AlertType.ERROR,"Invalid Employee Address").show();
+            return false;
+        }
+        boolean isValidateEmployeeTel = Pattern.matches("[\\d]{9,}",txttel.getText());
+        if (!isValidateEmployeeTel){
+            new Alert(Alert.AlertType.ERROR,"Invalid Employee Tel").show();
+            return false;
+        }
+        return true;
+    }
+
     public void btnDeleteOnAction(ActionEvent actionEvent) {
         try {
             String id = txtid.getText();

@@ -60,5 +60,20 @@ public class ReportFormController {
 
         JasperViewer.viewReport(jasperPrint, false);
     }
+
+    public void btn3OnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/view/Report/CustomerWithOrders.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport, //compiled report
+                        null,
+                        DbConnection.getInstance().getConnection() //database connection
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
+    }
 }
 

@@ -23,6 +23,7 @@ import lk.ijse.Tm.ItemTm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ItemFormController {
 
@@ -143,19 +144,47 @@ public class ItemFormController {
             Integer qtyOnHand = Integer.valueOf(txtqtyOnHand.getText());
             String unitPrice =txtunitPrice.getText();
 
+            boolean isValidateItem = validateItem(code,description,qtyOnHand,unitPrice);
+            if (isValidateItem){
+
             boolean isAdd = ItemManage_model.addItems(new itemDto(code,description,qtyOnHand,unitPrice));
 
-            if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Item Saved!!").show();
+            if (isAdd) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Item Saved!!").show();
                 loadAllItems();
                 clearFields();
+                }
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             throw new RuntimeException(e);
         }
 
+    }
+
+    private boolean validateItem(String code, String description, Integer qtyOnHand, String unitPrice) {
+        boolean isValidateItemId = Pattern.matches("[I][\\d]{3,}", code);
+        if (!isValidateItemId){
+            new Alert(Alert.AlertType.ERROR,"Item Id is not valid!!").show();
+            return false;
+        }
+        boolean isValidateItemName = Pattern.matches("[A-Za-z]{3,}", description);
+        if (!isValidateItemName){
+            new Alert(Alert.AlertType.ERROR,"Item Name is not valid!!").show();
+            return false;
+        }
+        boolean isValidateItemQty =Pattern.matches("[\\d]{0,}", String.valueOf(qtyOnHand));
+        if (!isValidateItemQty){
+            new Alert(Alert.AlertType.ERROR,"Item Qty is not valid!!").show();
+            return false;
+        }
+        boolean isValidateItemUnitPrice = Pattern.matches("[\\d]{2,}", unitPrice);
+        if (!isValidateItemUnitPrice){
+            new Alert(Alert.AlertType.ERROR,"Item Unit Price is not valid!!").show();
+            return false;
+        }
+        return true;
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {

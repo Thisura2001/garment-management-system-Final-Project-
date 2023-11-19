@@ -24,6 +24,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javafx.scene.control.TableColumn;
 import lk.ijse.Tm.CustomerTm;
@@ -129,18 +130,44 @@ public class RowMaterialFormController {
         Integer qty = Integer.valueOf(txtqty.getText());
 
         try {
-
+            boolean isValidateMaterial = validateMaterial(id,name,unit_price,qty);
+            if (isValidateMaterial){
             boolean isSaved = materialManageModel.saveMaterial(new rowMaterialDto(id,name,unit_price,qty));
 
-                if (isSaved){
-                    new Alert(Alert.AlertType.CONFIRMATION,"Material saved Success!!").show();
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Material saved Success!!").show();
                     loadAllMaterial();
                     clearFields();
                 }
+            }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             throw new RuntimeException(e);
         }
+    }
+
+    private boolean validateMaterial(String id, String name, String unitPrice, Integer qty) {
+        boolean isValidateMaterialId = Pattern.matches("[R][\\d]{3,}",id);
+        if (!isValidateMaterialId){
+            new Alert(Alert.AlertType.ERROR,"Invalid Material Id").show();
+            return false;
+        }
+        boolean isValidateMaterialName = Pattern.matches("[A-Za-z ]+",name);
+        if (!isValidateMaterialName){
+            new Alert(Alert.AlertType.ERROR,"Invalid Material Name").show();
+            return false;
+        }
+        boolean isValidateMaterialUnitPrice = Pattern.matches("[\\d]{2,}",unitPrice);
+        if (!isValidateMaterialUnitPrice){
+            new Alert(Alert.AlertType.ERROR,"Invalid Material Unit Price").show();
+            return false;
+        }
+        boolean isValidateMaterialQty = Pattern.matches("[\\d]{0,}",String.valueOf(qty));
+        if (!isValidateMaterialQty){
+            new Alert(Alert.AlertType.ERROR,"Invalid Material Qty").show();
+            return false;
+        }
+        return true;
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {

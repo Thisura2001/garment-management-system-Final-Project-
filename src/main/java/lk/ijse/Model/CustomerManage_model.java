@@ -129,40 +129,6 @@ public class CustomerManage_model {
         return null;
     }
 
-    public char[] getSupplierCount() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "SELECT COUNT(*) FROM customer";
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                return resultSet.getString(1).toCharArray();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public char[] getEmployeeCount() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "SELECT COUNT(*) FROM employee";
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                return resultSet.getString(1).toCharArray();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public String generateNextCustomerId() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 

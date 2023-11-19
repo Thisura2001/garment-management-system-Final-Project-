@@ -62,7 +62,7 @@ public class DashboardFormController {
        getSupplierCount();
    }
 
-   public void getCustomerCount() throws SQLException {
+    public void getCustomerCount() throws SQLException {
        lblCustomerCount.setText(String.valueOf(customerManageModel.getCount()));
    }
    public void getEmployeeCount() throws SQLException {

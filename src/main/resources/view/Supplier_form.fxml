@@ -83,7 +83,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="471.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 30;" text="Clear" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="531.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 30;" text="Clear" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -122,6 +122,11 @@
                   <Image url="@image/icons8-home-50.png" />
                </image>
             </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="758.0" layoutY="471.0" onAction="#btnSearchOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #a29bfe; -fx-background-radius: 30;" text="Search" textFill="#dfe6e9">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

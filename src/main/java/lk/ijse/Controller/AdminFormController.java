@@ -72,7 +72,7 @@ public class AdminFormController {
     }
 
     private boolean validateAdmin(String username, String password) {
-       boolean isUsernameValidate = Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",username);
+       boolean isUsernameValidate = Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",username);// username ekta regex eka match wnwda kiyala blnwa
        if (!isUsernameValidate){
           new Alert(Alert.AlertType.ERROR,"Invalid Username !!").show();
           return false;

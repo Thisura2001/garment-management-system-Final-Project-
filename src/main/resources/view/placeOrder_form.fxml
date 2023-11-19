@@ -134,7 +134,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="975.0" layoutY="705.0" onAction="#btnPlaceOrderOnAction" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #009432; -fx-background-radius: 30;" text="            Place Order" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="818.0" layoutY="691.0" onAction="#btnPlaceOrderOnAction" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #009432; -fx-background-radius: 30;" text="            Place Order" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -159,7 +159,7 @@
                         <Image url="@image/icons8-cart-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="987.0" layoutY="708.0">
+                  <ImageView layoutX="833.0" layoutY="694.0">
                      <image>
                         <Image url="@image/icons8-create-order-30.png" />
                      </image>
@@ -187,6 +187,16 @@
                   <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="755.0" layoutY="20.0">
                      <image>
                         <Image url="@image/icons8-create-order-30.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="966.0" layoutY="691.0" onAction="#btnPrintBillOnAction" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #009432; -fx-background-radius: 30;" text="      Print Bill" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView layoutX="978.0" layoutY="697.0">
+                     <image>
+                        <Image url="@image/icons8-list-25.png" />
                      </image>
                   </ImageView>
                </children>

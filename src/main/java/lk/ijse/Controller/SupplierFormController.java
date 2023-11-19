@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.supplierDto;
 import lk.ijse.Model.SupplierManage_model;
 import javafx.scene.control.TableColumn;
@@ -21,6 +22,7 @@ import lk.ijse.Tm.supplierTm;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class SupplierFormController {
 
@@ -64,6 +66,15 @@ public class SupplierFormController {
     public void initialize(){
         setCellValueFactory();
         loadAllSuppliers();
+        genarateNextSupplierId();
+    }
+
+    private void genarateNextSupplierId() {
+        try {
+            String id = supplierManageModel.genarateNextSupplierId();
+            txtid.setText(id);
+    }catch (Exception e){
+        System.out.println(e);}
     }
 
     private void loadAllSuppliers() {
@@ -110,21 +121,55 @@ public class SupplierFormController {
             String id = txtid.getText();
             String name = txtname.getText();
             String address = txtaddress.getText();
-            String tel = txttel.getText();
+            String mail = txttel.getText();
             String type = txttype.getText();
 
-            boolean isAdd = supplierManageModel.SaveSupplier(new supplierDto(id,name,address,tel,type));
+            boolean isValidateSupplier = validateSupplier(id,name,address,mail,type);
 
-            if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Supplier saved Successfully!!").show();
+            if (isValidateSupplier){
+
+            boolean isAdd = supplierManageModel.SaveSupplier(new supplierDto(id,name,address,mail,type));
+
+            if (isAdd) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Supplier saved Successfully!!").show();
                 loadAllSuppliers();
                 clearFields();
+                }
             }
 
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             System.out.println(e);
         }
+    }
+
+    private boolean validateSupplier(String id, String name, String address, String mail, String type) {
+        boolean isValidateSupplierId = Pattern.matches("[S][\\d]{3,}", id);
+        if (!isValidateSupplierId){
+            new Alert(Alert.AlertType.ERROR,"Invalid Supplier Id").show();
+            return false;
+        }
+        boolean isValidateSupplierName = Pattern.matches("[A-Za-z ]+", name);
+        if (!isValidateSupplierName){
+            new Alert(Alert.AlertType.ERROR,"Invalid Supplier Name").show();
+            return false;
+        }
+        boolean isValidateSupplierAddress = Pattern.matches("[A-Za-z]{3,}", address);
+        if (!isValidateSupplierAddress){
+            new Alert(Alert.AlertType.ERROR,"Invalid Supplier Address").show();
+            return false;
+        }
+        boolean isValidateSupplierTel = Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",mail);
+        if (!isValidateSupplierTel){
+            new Alert(Alert.AlertType.ERROR,"Invalid Supplier mail").show();
+            return false;
+        }
+        boolean isValidateSupplierType = Pattern.matches("[A-Za-z]{3,}", type);
+        if (!isValidateSupplierType){
+            new Alert(Alert.AlertType.ERROR,"Invalid Supplier Type").show();
+            return false;
+        }
+        return true;
     }
 
     @FXML
@@ -189,5 +234,25 @@ public class SupplierFormController {
         txtaddress.setText("");
         txttel.setText("");
         txttype.setText("");
+    }
+
+    public void btnSearchOnAction(ActionEvent actionEvent) {
+        String id = txtid.getText();
+
+        try {
+            supplierDto supplierDto = supplierManageModel.searchSupplier(id);
+            if (supplierDto != null){
+                txtid.setText(supplierDto.getSup_id());
+                txtname.setText(supplierDto.getName());
+                txtaddress.setText(supplierDto.getAddress());
+                txttel.setText(supplierDto.getEmail());
+                txttype.setText(supplierDto.getType());
+            }else{
+                new Alert(Alert.AlertType.INFORMATION,"Supplier not Found!!").show();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 }

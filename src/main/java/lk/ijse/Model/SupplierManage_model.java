@@ -1,6 +1,7 @@
 package lk.ijse.Model;
 
 import lk.ijse.Db.DbConnection;
+import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.itemDto;
 import lk.ijse.Dto.supplierDto;
 
@@ -87,5 +88,53 @@ public class SupplierManage_model {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public String genarateNextSupplierId() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT sup_id FROM supplier ORDER BY sup_id DESC LIMIT 1";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next()) {
+            return splitsupplierId(resultSet.getString(1));
+        }
+        return splitsupplierId(null);
+    }
+
+    private String splitsupplierId(String currentSupplierId) {
+        if(currentSupplierId != null) {
+            String[] split = currentSupplierId.split("S0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            return "S00" + id;
+        } else {
+            return "S001";
+        }
+    }
+
+    public supplierDto searchSupplier(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM supplier WHERE sup_id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,id);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        supplierDto supplierDto= null;
+
+        if(resultSet.next()){
+            String  sup_id = resultSet.getString(1);
+            String  sup_name = resultSet.getString(2);
+            String  sup_address = resultSet.getString(3);
+            String  sup_mail = resultSet.getString(4);
+            String  type = resultSet.getString(5);
+
+            supplierDto= new supplierDto(sup_id,sup_name,sup_address,sup_mail,type);
+        }
+        return supplierDto;
     }
 }

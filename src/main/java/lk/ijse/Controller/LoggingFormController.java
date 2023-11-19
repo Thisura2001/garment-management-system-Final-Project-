@@ -60,7 +60,6 @@ public class LoggingFormController {
             if (u.isPresent()) {
                 adminDto user1 = u.get();
                 if (userName.equals(user1.getUsername()) && password.equals(user1.getPassword())) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Welcome " + userName).showAndWait();
                     navigateToDashBoard();
                 }
             }else { new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();}

@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.Db.DbConnection;
 import lk.ijse.Dto.PlaceOrderDto;
 import lk.ijse.Dto.customerDto;
 import lk.ijse.Dto.itemDto;
@@ -22,8 +23,13 @@ import lk.ijse.Model.OrderModel;
 import lk.ijse.Model.PlaceOrder_model;
 import lk.ijse.Tm.CartTm;
 import lk.ijse.mail.Mail;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -196,7 +202,7 @@ public class PlaceOrderFormController {
                 }
             }
         }
-        var cartTm = new CartTm(code, description, qty, unitPrice, tot, btn);
+        var cartTm = new CartTm(code, description, qty, unitPrice, tot, btn, qty * unitPrice);
 
         obList.add(cartTm);
 
@@ -234,6 +240,7 @@ public class PlaceOrderFormController {
         String orderId = lblOrderId.getText();
         LocalDate date = LocalDate.parse(lblOrderDate.getText());
         String customerId = cmbCustomerId.getValue();
+        String total = colTotal.getText();
 
         List<CartTm> cartTmList = new ArrayList<>();
         for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
@@ -296,5 +303,20 @@ public class PlaceOrderFormController {
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setTitle("Customer_Form");
         stage.setScene(scene);
+    }
+
+    public void btnPrintBillOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/view/Report/OrderDetail.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport, //compiled report
+                        null,
+                        DbConnection.getInstance().getConnection() //database connection
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
     }
 }

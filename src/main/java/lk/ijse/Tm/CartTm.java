@@ -16,4 +16,5 @@ public class CartTm {
     private double unitPrice;
     private double tot;
     private Button btn;
+    private double subTot;
 }

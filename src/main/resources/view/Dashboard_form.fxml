@@ -44,14 +44,6 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <JFXButton layoutX="38.0" layoutY="515.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="206.0" style="-fx-background-color: #182C61; -fx-background-radius: 40;" stylesheets="@Css/style.css" text="Manage Report" textFill="#fff8f8">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
             <JFXButton layoutX="64.0" layoutY="267.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #182C61; -fx-background-radius: 40;" text="Place Order" textFill="#efecec">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -83,12 +75,7 @@
                   <Image url="@image/icons8-material-64.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="29.0" layoutY="515.0">
-               <image>
-                  <Image url="@image/icons8-report-48.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="19.0" layoutY="581.0" onAction="#manageAttendaceOnAction" prefHeight="34.0" prefWidth="222.0" style="-fx-background-color: #182C61; -fx-background-radius: 40;" text="              Manage Attendance" textFill="WHITE">
+            <JFXButton layoutX="16.0" layoutY="519.0" onAction="#manageAttendaceOnAction" prefHeight="34.0" prefWidth="222.0" style="-fx-background-color: #182C61; -fx-background-radius: 40;" text="              Manage Attendance" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -96,7 +83,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="32.0" layoutY="585.0">
+            <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="32.0" layoutY="523.0">
                <image>
                   <Image url="@image/attendance.png" />
                </image>
@@ -135,6 +122,19 @@
                   <Image url="@image/icons8-user-50%20(1).png" />
                </image>
             </ImageView>
+            <JFXButton layoutX="32.0" layoutY="577.0" onAction="#btnManageReportOnAction" prefHeight="34.0" prefWidth="206.0" style="-fx-background-color: #182C61; -fx-background-radius: 40;" stylesheets="@Css/style.css" text="Manage Report" textFill="#fff8f8">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="29.0" layoutY="579.0">
+               <image>
+                  <Image url="@image/icons8-report-48.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Label layoutX="239.0" layoutY="15.0" prefHeight="18.0" prefWidth="129.0" text="   Welcome Back !!">
@@ -165,7 +165,7 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <BarChart fx:id="BarChart" layoutX="471.0" layoutY="122.0" prefHeight="473.0" prefWidth="734.0" stylesheets="@Css/style.css">
+            <BarChart fx:id="BarChart" layoutX="441.0" layoutY="174.0" prefHeight="418.0" prefWidth="742.0" stylesheets="@Css/style.css">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>

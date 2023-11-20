@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import lk.ijse.Dto.adminDto;
 import lk.ijse.Model.AdminModel;
 import lk.ijse.Model.LoggingModel;
+import lk.ijse.mail.Mail;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -60,9 +61,19 @@ public class LoggingFormController {
             if (u.isPresent()) {
                 adminDto user1 = u.get();
                 if (userName.equals(user1.getUsername()) && password.equals(user1.getPassword())) {
+
+                    Mail mail = new Mail();
+                    mail.setMsg("WelCome !!  Your Account Logging is Successfully!!.\n\n Thank You!! ");
+                    mail.setTo(txtusername.getText());
+                    mail.setSubject("Successfully Logging Account !!");
+
+                    Thread thread = new Thread(mail);
+                    thread.start();
                     navigateToDashBoard();
                 }
-            }else { new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();}
+            }else {
+                new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
+            }
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
             System.out.println(e);

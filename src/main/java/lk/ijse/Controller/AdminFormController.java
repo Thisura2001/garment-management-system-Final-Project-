@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Dto.adminDto;
 import lk.ijse.Model.AdminModel;
+import lk.ijse.mail.Mail;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -54,22 +55,29 @@ public class AdminFormController {
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Admin saved!").show();
                 clearFields();
-
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/logging_form.fxml"));
-                Parent rootNode = fxmlLoader.load();
-
-                Scene scene = new Scene(rootNode);
-                Stage stage = (Stage) this.rootNode.getScene().getWindow();
-                stage.setTitle("Log in Page");
-                stage.setScene(scene);
-                stage.centerOnScreen();
-                stage.show();
+                isNavigateLogging();
                  }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+    private boolean isValidEmail(String email) {
+        // Simple email validation using regular expression
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
+    }
+private void isNavigateLogging() throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/logging_form.fxml"));
+    Parent rootNode = fxmlLoader.load();
+
+    Scene scene = new Scene(rootNode);
+    Stage stage = (Stage) this.rootNode.getScene().getWindow();
+    stage.setTitle("Log in Page");
+    stage.setScene(scene);
+    stage.centerOnScreen();
+    stage.show();
+}
 
     private boolean validateAdmin(String username, String password) {
        boolean isUsernameValidate = Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",username);// username ekta regex eka match wnwda kiyala blnwa

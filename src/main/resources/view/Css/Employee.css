@@ -1,10 +1,10 @@
-#tblCustomer {
+
+#tblEmployee{
     -fx-background-color: transparent;
 }
 
-
 table-view {
-   -fx-background-color: transparent;
+    -fx-background-color: transparent;
 }
 
 .table-view:focused {
@@ -28,7 +28,7 @@ table-view {
 
 
 .table-view .table-cell{
-    -fx-text-fill: #27519a;
+    -fx-text-fill: #2133a8;
 }
 
 .table-row-cell{
@@ -68,5 +68,3 @@ table-view {
 .table-view > .virtual-flow > .scroll-bar > .decrement-button {
     -fx-opacity: 0;
 }
-
-

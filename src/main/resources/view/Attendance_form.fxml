@@ -129,7 +129,7 @@
                   <TableColumn fx:id="colName" prefWidth="115.9998779296875" text="Name" />
                   <TableColumn fx:id="colDate" prefWidth="115.9998779296875" text="Date" />
                   <TableColumn fx:id="colTime" prefWidth="115.9998779296875" text="Time" />
-                  <TableColumn fx:id="colStatus" prefWidth="115.9998779296875" text="Status" />
+                  <TableColumn fx:id="colStatus" prefWidth="141.59995117187498" text="Status" />
               </columns>
             </TableView>
             <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="750.0" layoutY="19.0">

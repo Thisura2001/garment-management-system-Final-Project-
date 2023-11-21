@@ -48,6 +48,9 @@ public class DashboardFormController {
 
     @FXML
     private AnchorPane childPanel;
+    @FXML
+    private AnchorPane dashRoot2;
+
 
     CustomerManage_model customerManageModel = new CustomerManage_model();
     EmployeeManage_model employeeManageModel = new EmployeeManage_model();

@@ -15,9 +15,9 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="464.0" prefWidth="779.0" style="-fx-background-color: #81ecec;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoggingFormController">
    <children>
-      <AnchorPane fx:id="loggingRoot" layoutX="414.0" layoutY="-2.0" prefHeight="464.0" prefWidth="406.0" style="-fx-background-color: #dcdde1; -fx-background-radius: 10;">
+      <AnchorPane fx:id="loggingRoot" layoutX="414.0" layoutY="-2.0" prefHeight="464.0" prefWidth="406.0" style="-fx-background-color: #dcdde1; -fx-background-radius: 10;" stylesheets="@Css/Logging.css">
          <children>
-            <AnchorPane layoutX="39.0" layoutY="16.0" prefHeight="431.0" prefWidth="335.0" style="-fx-background-color: #95afc0; -fx-background-radius: 60;">
+            <AnchorPane layoutX="39.0" layoutY="16.0" prefHeight="431.0" prefWidth="335.0" style="-fx-background-color: #95afc0; -fx-background-radius: 60;" stylesheets="@Css/Logging.css">
                <children>
                   <JFXTextField fx:id="txtusername" focusColor="#131212" labelFloat="true" layoutX="37.0" layoutY="146.0" prefHeight="26.0" prefWidth="273.0" promptText="UserName" unFocusColor="BLACK">
                      <effect>
@@ -45,7 +45,7 @@
                         <Font size="10.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="btnLogging" buttonType="RAISED" layoutX="35.0" layoutY="297.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" stylesheets="@Css/Customer.css" text="    Log in">
+                  <JFXButton fx:id="btnLogging" buttonType="RAISED" layoutX="35.0" layoutY="297.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="274.0" ripplerFill="#333030" style="-fx-background-color: #009432; -fx-background-radius: 10;" stylesheets="@Css/Logging.css" text="    Log in">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

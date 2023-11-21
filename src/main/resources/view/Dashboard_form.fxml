@@ -148,7 +148,7 @@
             <Image url="@image/icons8-search-24.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="254.0" layoutY="75.0" prefHeight="620.0" prefWidth="1254.0" style="-fx-background-color: #d2dae2;">
+      <AnchorPane fx:id="dashRoot2" layoutX="254.0" layoutY="75.0" prefHeight="620.0" prefWidth="1254.0" style="-fx-background-color: #ced6e0;">
          <children>
             <Label layoutX="15.0" layoutY="14.0" text="Dashboard">
                <font>
@@ -194,7 +194,7 @@
                   <Image url="@image/icons8-time.gif" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="35.0" layoutY="78.0" prefHeight="161.0" prefWidth="294.0" style="-fx-background-color: #63cdda; -fx-background-radius: 40;">
+            <AnchorPane layoutX="35.0" layoutY="78.0" prefHeight="161.0" prefWidth="294.0" style="-fx-background-color: #7ed6df; -fx-background-radius: 40;">
                <children>
                   <ImageView fitHeight="43.0" fitWidth="55.0" layoutX="14.0" layoutY="19.0">
                      <image>
@@ -213,7 +213,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="40.0" layoutY="259.0" prefHeight="162.0" prefWidth="294.0" style="-fx-background-color: #63cdda; -fx-background-radius: 40;">
+            <AnchorPane layoutX="40.0" layoutY="259.0" prefHeight="162.0" prefWidth="294.0" style="-fx-background-color: #7ed6df; -fx-background-radius: 40;">
                <children>
                   <Label fx:id="lblEmployeeCount" layoutX="85.0" layoutY="71.0" prefHeight="58.0" prefWidth="120.0">
                      <font>
@@ -232,11 +232,16 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="40.0" layoutY="444.0" prefHeight="162.0" prefWidth="294.0" style="-fx-background-color: #63cdda; -fx-background-radius: 40;">
+            <AnchorPane layoutX="40.0" layoutY="444.0" prefHeight="162.0" prefWidth="294.0" style="-fx-background-color: #7ed6df; -fx-background-radius: 40;">
                <children>
                   <Label fx:id="lblSupplierCount" layoutX="87.0" layoutY="62.0" prefHeight="58.0" prefWidth="120.0">
                      <font>
                         <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="26.0" prefHeight="35.0" prefWidth="222.0" text="Current Suppliers" textFill="#823296">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                </children>
@@ -246,11 +251,6 @@
                   <Image url="@image/icons8-supplier-48.png" />
                </image>
             </ImageView>
-            <Label layoutX="125.0" layoutY="467.0" prefHeight="35.0" prefWidth="222.0" text="Current Suppliers" textFill="#823296">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1360.0" layoutY="14.0">

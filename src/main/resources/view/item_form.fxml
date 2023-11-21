@@ -87,7 +87,7 @@
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tblItem" layoutX="900.0" layoutY="123.0" prefHeight="499.0" prefWidth="586.0">
+            <TableView fx:id="tblItem" layoutX="900.0" layoutY="123.0" prefHeight="499.0" prefWidth="586.0" stylesheets="@Css/Item.css">
               <columns>
                 <TableColumn fx:id="colid" prefWidth="150.40008544921875" text="Item_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />

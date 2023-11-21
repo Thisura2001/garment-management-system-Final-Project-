@@ -6,84 +6,84 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.effect.PerspectiveTransform?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="393.0" prefWidth="748.0" style="-fx-background-color: #d1d8e0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoggingFormController">
+<AnchorPane fx:id="rootNode" prefHeight="464.0" prefWidth="779.0" style="-fx-background-color: #81ecec;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoggingFormController">
    <children>
-      <ImageView fitHeight="391.0" fitWidth="760.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/zerrin_1.jpg" />
-         </image>
-         <effect>
-            <BoxBlur />
-         </effect>
-      </ImageView>
-      <AnchorPane fx:id="loggingRoot" layoutX="209.0" layoutY="37.0" opacity="0.84" prefHeight="318.0" prefWidth="330.0" style="-fx-background-color: #D7CBB2; -fx-background-radius: 10;">
+      <AnchorPane fx:id="loggingRoot" layoutX="414.0" layoutY="-2.0" prefHeight="464.0" prefWidth="406.0" style="-fx-background-color: #dcdde1; -fx-background-radius: 10;">
          <children>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="281.0" layoutY="202.0">
-               <image>
-                  <Image url="@image/icons8-password-30.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="btnLogging" buttonType="RAISED" layoutX="152.0" layoutY="276.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" stylesheets="@Css/Customer.css" text="    Log in">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </JFXButton>
-            <ImageView fitHeight="15.0" fitWidth="17.0" layoutX="160.0" layoutY="282.0">
-               <image>
-                  <Image url="@image/icons8-log-in-30.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="loggingSignup" buttonType="RAISED" layoutX="246.0" layoutY="276.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </JFXButton>
-            <ImageView fitHeight="18.0" fitWidth="24.0" layoutX="246.0" layoutY="281.0">
-               <image>
-                  <Image url="@image/icons8-create-64.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="txtlabel" layoutX="41.0" layoutY="248.0" text="Remember me?">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="txtusername" focusColor="#0d0d0d" labelFloat="true" layoutX="27.0" layoutY="126.0" prefHeight="26.0" prefWidth="281.0" promptText="UserName" unFocusColor="BLACK">
-               <effect>
-                  <Blend>
-                     <topInput>
-                        <PerspectiveTransform />
-                     </topInput>
-                  </Blend>
-               </effect>
-            </JFXTextField>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="281.0" layoutY="127.0">
-               <image>
-                  <Image url="@image/icons8-user-50.png" />
-               </image>
-            </ImageView>
-            <AnchorPane layoutX="18.0" layoutY="214.0" prefHeight="34.0" prefWidth="34.0" />
-            <AnchorPane layoutX="22.0" layoutY="252.0" prefHeight="8.0" prefWidth="10.0" style="-fx-background-color: #222f3e;" />
-            <JFXPasswordField fx:id="txtPassword" focusColor="#0e0f10" labelFloat="true" layoutX="26.0" layoutY="201.0" prefHeight="26.0" prefWidth="282.0" promptText="Password" unFocusColor="#050505" />
-            <ImageView fitHeight="62.0" fitWidth="70.0" layoutX="134.0" layoutY="14.0">
-               <image>
-                  <Image url="@image/icons8-user-50.png" />
-               </image>
-            </ImageView>
+            <AnchorPane layoutX="39.0" layoutY="16.0" prefHeight="431.0" prefWidth="335.0" style="-fx-background-color: #95afc0; -fx-background-radius: 60;">
+               <children>
+                  <JFXTextField fx:id="txtusername" focusColor="#131212" labelFloat="true" layoutX="37.0" layoutY="146.0" prefHeight="26.0" prefWidth="273.0" promptText="UserName" unFocusColor="BLACK">
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <PerspectiveTransform />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </JFXTextField>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="278.0" layoutY="147.0">
+                     <image>
+                        <Image url="@image/icons8-user-50.png" />
+                     </image>
+                  </ImageView>
+                  <JFXPasswordField fx:id="txtPassword" focusColor="#0e0f10" labelFloat="true" layoutX="36.0" layoutY="216.0" prefHeight="26.0" prefWidth="274.0" promptText="Password" unFocusColor="#050505" />
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="278.0" layoutY="217.0">
+                     <image>
+                        <Image url="@image/icons8-password-30.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="37.0" layoutY="257.0" prefHeight="8.0" prefWidth="10.0" style="-fx-background-color: #222f3e;" />
+                  <Label fx:id="txtlabel" layoutX="54.0" layoutY="253.0" text="Remember me?">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnLogging" buttonType="RAISED" layoutX="35.0" layoutY="297.0" onAction="#btnLoggingOnAction" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #009432; -fx-background-radius: 10;" stylesheets="@Css/Customer.css" text="    Log in">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </JFXButton>
+                  <Line endX="60.79998779296875" endY="-6.103515625E-5" layoutX="79.0" layoutY="348.0" startX="-37.5999755859375" startY="-6.103515625E-5" />
+                  <Label fx:id="txtlabel1" layoutX="164.0" layoutY="337.0" text="OR">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-8.0" layoutX="308.0" layoutY="348.0" startX="-100.0" />
+                  <JFXButton fx:id="loggingSignup" buttonType="RAISED" layoutX="35.0" layoutY="373.0" onAction="#btnCreateAccountOnAction" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;" text="      Sign up">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="87.0" fitWidth="100.0" layoutX="118.0" layoutY="14.0">
+                     <image>
+                        <Image url="@image/3426587.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
+         <effect>
+            <Blend />
+         </effect>
       </AnchorPane>
+      <ImageView fitHeight="464.0" fitWidth="416.0">
+         <image>
+            <Image url="@image/business-woman-working-at-desk-office-interior-with-computer-laptop-documents-table-lamp-coffee-manager-sitting-on-chair-workplace-for-worker-employee-flat-design-vector.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

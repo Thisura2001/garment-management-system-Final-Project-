@@ -63,7 +63,7 @@ public class LoggingFormController {
                 if (userName.equals(user1.getUsername()) && password.equals(user1.getPassword())) {
 
                     Mail mail = new Mail();
-                    mail.setMsg("WelCome !!  Your Account Logging is Successfully!!.\n\n Thank You!! ");
+                    mail.setMsg("WelCome !!  Your Account Logging is Successfully !!. ");
                     mail.setTo(txtusername.getText());
                     mail.setSubject("Successfully Logging Account !!");
 
@@ -76,7 +76,6 @@ public class LoggingFormController {
             }
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
-            System.out.println(e);
         }
     }
 }

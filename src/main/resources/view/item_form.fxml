@@ -101,7 +101,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="1411.0" layoutY="17.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="81.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 40;" text="      Home" textFill="#0a0a0b">
+            <JFXButton buttonType="RAISED" layoutX="1411.0" layoutY="17.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="81.0" style="-fx-background-color: #01a3a4; -fx-background-radius: 40;" text="      Home" textFill="#0a0a0b">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>

@@ -22,7 +22,7 @@
                   <Image url="@image/istockphoto-1167651240-612x612.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="322.0" layoutY="136.0" prefHeight="458.0" prefWidth="443.0" style="-fx-background-color: #a4b0be; -fx-background-radius: 40;">
+            <AnchorPane layoutX="322.0" layoutY="136.0" prefHeight="458.0" prefWidth="443.0" style="-fx-background-color: #7f8fa6; -fx-background-radius: 40;">
                <children>
                   <Label layoutX="39.0" layoutY="77.0" text="Employee Id">
                      <font>
@@ -114,7 +114,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="1396.0" layoutY="19.0" onAction="#btnBackOnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 60;" text="       Home" textFill="#222223">
+            <JFXButton buttonType="RAISED" layoutX="1396.0" layoutY="19.0" onAction="#btnBackOnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #01a3a4; -fx-background-radius: 60;" text="       Home" textFill="#222223">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

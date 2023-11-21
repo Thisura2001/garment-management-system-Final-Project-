@@ -75,7 +75,6 @@ public class AttendanceFormController {
         setDate();
         setTime();
     }
-
     private void setCellValueFactory() {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));

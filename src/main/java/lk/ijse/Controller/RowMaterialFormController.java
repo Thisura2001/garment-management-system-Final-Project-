@@ -67,6 +67,18 @@ public class RowMaterialFormController {
         setCellValueFactory();
         loadAllMaterial();
         genarateNextRowMaterialId();
+        tableListener();
+    }
+
+    private void tableListener() {
+        tblRowMaterial.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observableValue, rowMaterialTm, t1) -> {
+                    txtid.setText(t1.getRow_id());
+                    txtname.setText(t1.getName());
+                    txtunitPrice.setText(String.valueOf(t1.getUnit_price()));
+                    txtqty.setText(String.valueOf(t1.getQty_on_hand()));
+    });
     }
 
     private void genarateNextRowMaterialId() {

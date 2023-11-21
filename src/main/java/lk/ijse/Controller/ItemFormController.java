@@ -64,6 +64,18 @@ public class ItemFormController {
         setCellValueFactory();
         loadAllItems();
         genarateNextItemId();
+        tableListener();
+    }
+
+    private void tableListener() {
+        tblItem.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observableValue, itemTm, t1) -> {
+                    txtid.setText(t1.getCode());
+                    txtname.setText(t1.getDescription());
+                    txtqtyOnHand.setText(String.valueOf(t1.getQty_on_hand()));
+                    txtunitPrice.setText(String.valueOf(t1.getUnit_price()));
+                });
     }
 
     private void genarateNextItemId() {

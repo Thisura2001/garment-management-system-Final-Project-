@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.RowMaterialFormController">
    <children>
-      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #d1d8e0;" stylesheets="@Css/Customer.css">
+      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #c8d6e5;" stylesheets="@Css/Customer.css">
          <children>
             <ImageView fitHeight="365.0" fitWidth="313.0" layoutX="14.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -93,7 +93,7 @@
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="1391.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 40;" text="        Home" textFill="#181818">
+            <JFXButton buttonType="RAISED" layoutX="1391.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #01a3a4; -fx-background-radius: 40;" text="        Home" textFill="#181818">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

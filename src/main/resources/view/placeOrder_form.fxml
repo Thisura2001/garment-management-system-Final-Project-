@@ -14,9 +14,9 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PlaceOrderFormController">
    <children>
-      <AnchorPane fx:id="rootNode" prefHeight="743.0" prefWidth="1450.0" style="-fx-background-color: #a4b0be;">
+      <AnchorPane fx:id="rootNode" prefHeight="743.0" prefWidth="1450.0" style="-fx-background-color: #c8d6e5;">
          <children>
-            <AnchorPane layoutX="322.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #dfe4ea;">
+            <AnchorPane layoutX="322.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #c8d6e5;">
                <children>
                   <AnchorPane layoutX="656.0" layoutY="81.0" prefHeight="257.0" prefWidth="451.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
                      <children>
@@ -58,7 +58,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="12.0" layoutY="63.0" prefHeight="274.0" prefWidth="460.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
+                  <AnchorPane layoutX="29.0" layoutY="74.0" prefHeight="274.0" prefWidth="460.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
                      <children>
                         <Label layoutX="38.0" layoutY="8.0" text="Order Id -:">
                            <font>
@@ -139,7 +139,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="979.0" layoutY="9.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 40;" text="       Home" textFill="#0d0d0c">
+                  <JFXButton buttonType="RAISED" layoutX="979.0" layoutY="9.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #01a3a4; -fx-background-radius: 40;" text="       Home" textFill="#0d0d0c">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -201,9 +201,9 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="385.0" fitWidth="322.0" layoutY="180.0">
+            <ImageView fitHeight="385.0" fitWidth="320.0" layoutY="180.0">
                <image>
-                  <Image url="@image/place-order1.png" />
+                  <Image url="@image/Meesho-Clone-banner-img.png" />
                </image>
             </ImageView>
          </children>

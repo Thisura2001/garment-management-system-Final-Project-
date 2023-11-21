@@ -67,6 +67,19 @@ public class SupplierFormController {
         setCellValueFactory();
         loadAllSuppliers();
         genarateNextSupplierId();
+        tableListener();
+    }
+
+    private void tableListener() {
+        tblSupplier.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observableValue, supplierTm, t1) -> {
+                    txtid.setText(t1.getSup_id());
+                    txtname.setText(t1.getName());
+                    txtaddress.setText(t1.getAddress());
+                    txttel.setText(t1.getEmail());
+                    txttype.setText(t1.getType());
+                });
     }
 
     private void genarateNextSupplierId() {

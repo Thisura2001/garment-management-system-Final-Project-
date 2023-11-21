@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -19,11 +20,13 @@ import javafx.scene.control.TableColumn;
 import lk.ijse.Tm.CustomerTm;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-public class CustomerFormController {
+public class CustomerFormController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colCustomerAddress;
@@ -55,10 +58,21 @@ public class CustomerFormController {
     @FXML
     private TextField txttel;
     private CustomerManage_model customerManageModel = new CustomerManage_model();
-    public void initialize(){
+    public void initialize(URL url, ResourceBundle resourceBundle){
         setCellValueFactory();
         loadAllCustomer();
         genateNextCustomerId();
+        tableListener();
+    }
+    private void tableListener(){
+        tblCustomer.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observableValue, customerTm, t1) -> {
+                    txtid.setText(t1.getCus_id());
+                    txtname.setText(t1.getCus_name());
+                    txtaddress.setText(t1.getCus_address());
+                    txttel.setText(t1.getCus_tel());
+                });
     }
 
     private void loadAllCustomer() {

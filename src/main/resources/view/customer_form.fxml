@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CustomerFormController">
    <children>
-      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #b2bec3;">
+      <AnchorPane prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #c8d6e5;">
          <children>
             <ImageView fitHeight="242.0" fitWidth="290.0" layoutX="10.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -98,7 +98,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="1395.0" layoutY="33.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 20;" text="        Home">
+            <JFXButton buttonType="RAISED" layoutX="1395.0" layoutY="33.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #01a3a4; -fx-background-radius: 20;" text="        Home">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

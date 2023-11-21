@@ -62,6 +62,18 @@ public class EmployeeFormController {
         setCellValueFactory();
         loadAllEmployee();
         genateNextEmployeeId();
+        tableListener();
+    }
+
+    private void tableListener() {
+        tblEmployee.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observableValue, employeeTm, t1) -> {
+                    txtid.setText(t1.getEmp_id());
+                    txtname.setText(t1.getName());
+                    txtaddress.setText(t1.getAddress());
+                    txttel.setText(String.valueOf(t1.getTel()));
+                });
     }
 
     private void genateNextEmployeeId() {

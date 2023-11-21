@@ -13,11 +13,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="464.0" prefWidth="779.0" style="-fx-background-color: #81ecec;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoggingFormController">
+<AnchorPane fx:id="rootNode" prefHeight="455.0" prefWidth="820.0" style="-fx-background-color: #dcdde1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoggingFormController">
    <children>
-      <AnchorPane fx:id="loggingRoot" layoutX="414.0" layoutY="-2.0" prefHeight="464.0" prefWidth="406.0" style="-fx-background-color: #dcdde1; -fx-background-radius: 10;" stylesheets="@Css/Logging.css">
+      <AnchorPane fx:id="loggingRoot" layoutX="422.0" prefHeight="466.0" prefWidth="406.0" style="-fx-background-color: #000000;" stylesheets="@Css/Logging.css">
          <children>
-            <AnchorPane layoutX="39.0" layoutY="16.0" prefHeight="431.0" prefWidth="335.0" style="-fx-background-color: #95afc0; -fx-background-radius: 60;" stylesheets="@Css/Logging.css">
+            <AnchorPane layoutX="39.0" layoutY="16.0" prefHeight="431.0" prefWidth="335.0" style="-fx-background-color: #a4b0be; -fx-background-radius: 60;" stylesheets="@Css/Logging.css">
                <children>
                   <JFXTextField fx:id="txtusername" focusColor="#131212" labelFloat="true" layoutX="37.0" layoutY="146.0" prefHeight="26.0" prefWidth="273.0" promptText="UserName" unFocusColor="BLACK">
                      <effect>
@@ -80,10 +80,15 @@
             <Blend />
          </effect>
       </AnchorPane>
-      <ImageView fitHeight="464.0" fitWidth="416.0">
+      <ImageView fitHeight="466.0" fitWidth="429.0" layoutX="-4.0">
          <image>
-            <Image url="@image/business-woman-working-at-desk-office-interior-with-computer-laptop-documents-table-lamp-coffee-manager-sitting-on-chair-workplace-for-worker-employee-flat-design-vector.jpg" />
+            <Image url="@image/modern-company-logo-design-vector.jpg" />
          </image>
       </ImageView>
+      <Label layoutX="26.0" layoutY="323.0" style="-fx-background-color: #1e272e;" text="LIYO GARMENT" textFill="#f9ca24">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

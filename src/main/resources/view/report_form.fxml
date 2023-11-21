@@ -63,22 +63,22 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="450.0" layoutY="498.0" onAction="#printItemReportOnAction" prefHeight="119.0" prefWidth="250.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 60;">
+            <JFXButton buttonType="RAISED" layoutX="711.0" layoutY="285.0" onAction="#printItemReportOnAction" prefHeight="119.0" prefWidth="250.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 60;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="46.0" fitWidth="68.0" layoutX="541.0" layoutY="544.0">
+            <ImageView fitHeight="46.0" fitWidth="68.0" layoutX="802.0" layoutY="327.0">
                <image>
                   <Image url="@image/icons8-list-100.png" />
                </image>
             </ImageView>
-            <Label layoutX="517.0" layoutY="514.0" text="Print Item Details" textFill="#050505">
+            <Label layoutX="778.0" layoutY="287.0" text="Print Item Details" textFill="#050505">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="552.0" layoutY="534.0" text="Report" textFill="#0b0b0b">
+            <Label layoutX="813.0" layoutY="307.0" text="Report" textFill="#0b0b0b">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -88,21 +88,61 @@
                   <Image url="@image/icons8-items-64.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="463.0" layoutY="310.0" onAction="#btn3OnAction" prefHeight="119.0" prefWidth="249.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 60;" text="Button">
+            <JFXButton buttonType="RAISED" layoutX="462.0" layoutY="474.0" onAction="#btn3OnAction" prefHeight="119.0" prefWidth="249.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 60;" text="Button">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="46.0" fitWidth="68.0" layoutX="554.0" layoutY="352.0">
+            <ImageView fitHeight="46.0" fitWidth="68.0" layoutX="554.0" layoutY="520.0">
                <image>
                   <Image url="@image/icons8-list-100.png" />
                </image>
             </ImageView>
-            <Label layoutX="526.0" layoutY="325.0" text="Print Order Details" textFill="#050505">
+            <Label layoutX="526.0" layoutY="491.0" text="Print Order Details" textFill="#050505">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <JFXButton buttonType="RAISED" layoutX="997.0" layoutY="107.0" onAction="#btnSupplierDetailOnAction" prefHeight="119.0" prefWidth="249.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 60;" text="Button">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="997.0" layoutY="474.0" onAction="#printMaterialDetailOnAction" prefHeight="119.0" prefWidth="249.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 60;">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="1080.0" layoutY="114.0" text="Print Supplier" textFill="#050505">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="1102.0" layoutY="134.0" text="Detail" textFill="#0b0b0b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="68.0" layoutX="1088.0" layoutY="154.0">
+               <image>
+                  <Image url="@image/icons8-list-100.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1080.0" layoutY="491.0" text="Print Material" textFill="#050505">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="1102.0" layoutY="510.0" text="Detail" textFill="#050505">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="68.0" layoutX="1088.0" layoutY="520.0">
+               <image>
+                  <Image url="@image/icons8-list-100.png" />
+               </image>
+            </ImageView>
          </children>
          <cursor>
             <Cursor fx:constant="HAND" />

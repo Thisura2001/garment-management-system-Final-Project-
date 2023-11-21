@@ -46,7 +46,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="140" splitType="Stretch">
+		<band height="153" splitType="Stretch">
 			<staticText>
 				<reportElement x="150" y="0" width="220" height="40" uuid="52119356-a28e-4936-b7f0-eb3b5bd8065d"/>
 				<textElement>
@@ -82,17 +82,20 @@
 				</textElement>
 				<text><![CDATA[#02133998]]></text>
 			</staticText>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch">
+			<textField pattern="HH:mm">
+				<reportElement x="400" y="103" width="100" height="27" uuid="86391298-c506-48ab-bece-2708be27fc04"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
 			<line>
-				<reportElement x="-20" y="17" width="600" height="1" uuid="eef61c6f-2ef5-4d50-bc13-884005c1578d"/>
+				<reportElement x="-20" y="143" width="600" height="1" uuid="eef61c6f-2ef5-4d50-bc13-884005c1578d"/>
 			</line>
 		</band>
-	</pageHeader>
+	</title>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="44" splitType="Stretch">
 			<staticText>
 				<reportElement x="-20" y="0" width="100" height="30" uuid="c8f0d5d1-dd17-4627-9571-12c69b4589da">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbc78d8c-afa4-4788-8b04-a8e3e2b2a84f"/>
@@ -138,10 +141,13 @@
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
+			<line>
+				<reportElement x="-20" y="39" width="595" height="1" uuid="499f0121-7d97-41c8-a169-f60309791b4e"/>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="120" splitType="Stretch">
+		<band height="45" splitType="Stretch">
 			<textField>
 				<reportElement x="-20" y="10" width="90" height="30" uuid="fba879fa-caac-49d5-bcd4-d4c582ff0b87">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbc78d8c-afa4-4788-8b04-a8e3e2b2a84f"/>
@@ -187,23 +193,27 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="445" y="88" width="100" height="30" uuid="0f33a032-f220-4e86-8527-dcb99115c5dd"/>
-				<textElement textAlignment="Center">
-					<font fontName="Arial Black" size="20"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{SubTotal1}]]></textFieldExpression>
-			</textField>
+			<line>
+				<reportElement x="-20" y="40" width="595" height="1" uuid="933f283d-c510-4f3b-8b71-1a5d332848b7"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32">
 			<staticText>
-				<reportElement x="300" y="88" width="130" height="30" uuid="d5a7d0e3-86dc-441d-919d-04597691bc3b"/>
+				<reportElement x="305" y="2" width="130" height="30" uuid="d5a7d0e3-86dc-441d-919d-04597691bc3b"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Black" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Net Total ]]></text>
 			</staticText>
-			<line>
-				<reportElement x="-20" y="80" width="563" height="1" uuid="f72ec033-24cf-42e0-9c76-4625d46495b3"/>
-			</line>
+			<textField>
+				<reportElement x="445" y="2" width="100" height="30" uuid="0f33a032-f220-4e86-8527-dcb99115c5dd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SubTotal1}]]></textFieldExpression>
+			</textField>
 		</band>
-	</detail>
+	</pageFooter>
 </jasperReport>

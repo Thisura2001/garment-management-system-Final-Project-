@@ -2,7 +2,11 @@ package lk.ijse.mail;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 public class Mail implements Runnable{
@@ -10,6 +14,8 @@ public class Mail implements Runnable{
     private String msg;
     private String to;
     private String subject;
+
+    private File file;
 
     public void setMsg(String msg) {
         this.msg = msg;
@@ -19,11 +25,15 @@ public class Mail implements Runnable{
         this.to = to;
     }
 
+    public void setFile(File file) {
+        this.file = file;
+    }
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public void outMail() throws MessagingException {
+    public void outMail() throws MessagingException, IOException {
         String from = "thisuravimukthi123@gmail.com"; //sender's email address
         String host = "localhost";
 
@@ -48,6 +58,16 @@ public class Mail implements Runnable{
         mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
         mimeMessage.setSubject(this.subject);
         mimeMessage.setText(this.msg);
+
+        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+        mimeBodyPart.attachFile(this.file);
+
+
+        Multipart multipart = new MimeMultipart();
+        multipart.addBodyPart(mimeBodyPart);
+
+        mimeMessage.setContent(multipart);
+
         Transport.send(mimeMessage);
 
         System.out.println("sent");
@@ -59,6 +79,8 @@ public class Mail implements Runnable{
             try {
                 outMail();
             } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } else {

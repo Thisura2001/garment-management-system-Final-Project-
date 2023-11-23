@@ -8,16 +8,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Dto.customerDto;
+import lk.ijse.Dto.rowMaterialDto;
 import lk.ijse.Dto.supplierDto;
+import lk.ijse.Model.MaterialManage_model;
 import lk.ijse.Model.SupplierManage_model;
-import javafx.scene.control.TableColumn;
 import lk.ijse.Tm.supplierTm;
 
 import java.io.IOException;
@@ -60,7 +59,6 @@ public class SupplierFormController {
 
     @FXML
     private TextField txttype;
-
     private SupplierManage_model supplierManageModel = new SupplierManage_model();
 
     public void initialize(){

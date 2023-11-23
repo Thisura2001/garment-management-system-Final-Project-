@@ -15,6 +15,7 @@ import lk.ijse.Model.AdminModel;
 import lk.ijse.Model.LoggingModel;
 import lk.ijse.mail.Mail;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -73,6 +74,16 @@ public class LoggingFormController {
                 }
             }else {
                 new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
+
+                Mail mail = new Mail();
+                mail.setMsg("Sorry !!  Your Account Logging is Failed Try again !!. ");
+                mail.setTo(txtusername.getText());
+                mail.setSubject("Failed to Logging Account !!");
+                mail.setFile(new File("C:\\Users\\thisu\\Desktop\\1 semester Final Project\\Garment management.er.drawio.pdf"));
+
+                Thread thread = new Thread(mail);
+                thread.start();
+
             }
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();

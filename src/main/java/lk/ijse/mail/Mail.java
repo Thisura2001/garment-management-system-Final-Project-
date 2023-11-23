@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
-public class MailSendPdf implements Runnable {
+public class Mail implements Runnable {
 
     private String msg;
     private String to;

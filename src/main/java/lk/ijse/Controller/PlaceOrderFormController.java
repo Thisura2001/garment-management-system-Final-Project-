@@ -22,7 +22,7 @@ import lk.ijse.Model.ItemManage_model;
 import lk.ijse.Model.OrderModel;
 import lk.ijse.Model.PlaceOrder_model;
 import lk.ijse.Tm.CartTm;
-import lk.ijse.mail.MailSendPdf;
+import lk.ijse.mail.Mail;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -258,7 +258,7 @@ public class PlaceOrderFormController {
             if (isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!!").show();
 
-                MailSendPdf mail = new MailSendPdf();
+                Mail mail = new Mail();
                 mail.setMsg("Your Order is Successfully placed..!");
                 mail.setTo(lblCustomerMail.getText());
                 mail.setSubject("Successfully Ordered");
@@ -328,7 +328,7 @@ public class PlaceOrderFormController {
 
         JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\thisu\\reports\\" + id + ".pdf");
 
-        MailSendPdf mail = new MailSendPdf();
+        Mail mail = new Mail();
         mail.setMsg("Payment Success. ");
         mail.setTo(lblCustomerMail.getText());
         mail.setSubject("payment!");

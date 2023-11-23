@@ -147,7 +147,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="45" splitType="Stretch">
+		<band height="82" splitType="Stretch">
 			<textField>
 				<reportElement x="-20" y="10" width="90" height="30" uuid="fba879fa-caac-49d5-bcd4-d4c582ff0b87">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbc78d8c-afa4-4788-8b04-a8e3e2b2a84f"/>
@@ -196,24 +196,20 @@
 			<line>
 				<reportElement x="-20" y="40" width="595" height="1" uuid="933f283d-c510-4f3b-8b71-1a5d332848b7"/>
 			</line>
-		</band>
-	</detail>
-	<pageFooter>
-		<band height="32">
 			<staticText>
-				<reportElement x="305" y="2" width="130" height="30" uuid="d5a7d0e3-86dc-441d-919d-04597691bc3b"/>
+				<reportElement x="310" y="52" width="130" height="30" uuid="d5a7d0e3-86dc-441d-919d-04597691bc3b"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Black" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Net Total ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="445" y="2" width="100" height="30" uuid="0f33a032-f220-4e86-8527-dcb99115c5dd"/>
+				<reportElement x="445" y="52" width="100" height="30" uuid="0f33a032-f220-4e86-8527-dcb99115c5dd"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Black" size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SubTotal1}]]></textFieldExpression>
 			</textField>
 		</band>
-	</pageFooter>
+	</detail>
 </jasperReport>

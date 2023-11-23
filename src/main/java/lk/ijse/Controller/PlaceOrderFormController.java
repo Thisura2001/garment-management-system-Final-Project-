@@ -22,7 +22,7 @@ import lk.ijse.Model.ItemManage_model;
 import lk.ijse.Model.OrderModel;
 import lk.ijse.Model.PlaceOrder_model;
 import lk.ijse.Tm.CartTm;
-import lk.ijse.mail.Mail;
+import lk.ijse.mail.MailSendPdf;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -102,7 +102,7 @@ public class PlaceOrderFormController {
     PlaceOrder_model placeOrderModel = new PlaceOrder_model();
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
 
-    public void initialize(){
+    public void initialize() {
         lblOrderDate.setText(String.valueOf(java.time.LocalDate.now()));
         loadAllCustomerIds();
         loadAllItemCodes();
@@ -155,7 +155,8 @@ public class PlaceOrderFormController {
             throw new RuntimeException(e);
         }
     }
-    private void loadAllItemCodes(){
+
+    private void loadAllItemCodes() {
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
@@ -172,7 +173,7 @@ public class PlaceOrderFormController {
     }
 
     public void txtQtyOnAction(ActionEvent actionEvent) {
-       btnAddCartOnAction(actionEvent);
+        btnAddCartOnAction(actionEvent);
     }
 
     public void btnAddCartOnAction(ActionEvent actionEvent) {
@@ -257,14 +258,14 @@ public class PlaceOrderFormController {
             if (isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!!").show();
 
-                Mail mail = new Mail();
+                MailSendPdf mail = new MailSendPdf();
                 mail.setMsg("Your Order is Successfully placed..!");
                 mail.setTo(lblCustomerMail.getText());
                 mail.setSubject("Successfully Ordered");
 
                 Thread thread = new Thread(mail);
                 thread.start();
-            }else {
+            } else {
                 new Alert(Alert.AlertType.ERROR, "Order Failed!!").show();
             }
         } catch (Exception e) {
@@ -325,13 +326,15 @@ public class PlaceOrderFormController {
 
         JasperViewer.viewReport(jasperPrint, false);
 
-        JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\thisu\\reports\\"+id+".pdf");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\thisu\\reports\\" + id + ".pdf");
 
-        Mail mail = new Mail();
-        mail.setMsg("Pyment Success. ");
+        MailSendPdf mail = new MailSendPdf();
+        mail.setMsg("Payment Success. ");
         mail.setTo(lblCustomerMail.getText());
         mail.setSubject("payment!");
         mail.setFile(new File("C:\\Users\\thisu\\reports\\"+id+".pdf"));
+
+
 
         Thread thread = new Thread(mail);
         thread.start();

@@ -13,11 +13,9 @@ import javafx.stage.Stage;
 import lk.ijse.Dto.adminDto;
 import lk.ijse.Model.AdminModel;
 import lk.ijse.Model.LoggingModel;
-import lk.ijse.mail.Mail;
+import lk.ijse.mail.Mail_Logging;
 
-import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Optional;
 
 public class LoggingFormController {
@@ -63,7 +61,7 @@ public class LoggingFormController {
                 adminDto user1 = u.get();
                 if (userName.equals(user1.getUsername()) && password.equals(user1.getPassword())) {
 
-                    Mail mail = new Mail();
+                    Mail_Logging mail = new Mail_Logging();
                     mail.setMsg("WelCome !!  Your Account Logging is Successfully !!. ");
                     mail.setTo(txtusername.getText());
                     mail.setSubject("Successfully Logging Account !!");
@@ -75,11 +73,10 @@ public class LoggingFormController {
             }else {
                 new Alert(Alert.AlertType.ERROR,"UserName or Password is incorrect Try Again!!").show();
 
-                Mail mail = new Mail();
+                Mail_Logging mail = new Mail_Logging();
                 mail.setMsg("Sorry !!  Your Account Logging is Failed Try again !!. ");
                 mail.setTo(txtusername.getText());
                 mail.setSubject("Failed to Logging Account !!");
-                mail.setFile(new File("C:\\Users\\thisu\\Desktop\\1 semester Final Project\\Garment management.er.drawio.pdf"));
 
                 Thread thread = new Thread(mail);
                 thread.start();

@@ -11,7 +11,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Dto.adminDto;
 import lk.ijse.Model.AdminModel;
-import lk.ijse.mail.Mail;
 
 import java.io.IOException;
 import java.sql.SQLException;

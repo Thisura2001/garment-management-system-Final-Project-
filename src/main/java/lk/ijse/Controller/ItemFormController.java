@@ -38,7 +38,7 @@ public class ItemFormController {
     private TableColumn<?, ?> colname;
 
     @FXML
-    private TableColumn<?, ?> colqtyOnHand;
+    TableColumn<?, ?> colqtyOnHand;
 
     @FXML
     private AnchorPane rootNode;

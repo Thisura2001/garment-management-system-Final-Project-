@@ -23,6 +23,7 @@ import lk.ijse.Model.OrderModel;
 import lk.ijse.Model.PlaceOrder_model;
 import lk.ijse.Tm.CartTm;
 import lk.ijse.mail.Mail;
+import lk.ijse.mail.Mail_Logging;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -36,6 +37,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 
 public class PlaceOrderFormController {
@@ -100,6 +102,8 @@ public class PlaceOrderFormController {
     ItemManage_model itemManageModel = new ItemManage_model();
     OrderModel orderModel = new OrderModel();
     PlaceOrder_model placeOrderModel = new PlaceOrder_model();
+
+    ItemFormController itemFormController = new ItemFormController();
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
 
     public void initialize() {
@@ -254,23 +258,37 @@ public class PlaceOrderFormController {
         System.out.println("Place order form controller: " + cartTmList);
         var placeOrderDto = new PlaceOrderDto(orderId, date, customerId, cartTmList);
         try {
+            String id = lblOrderId.getText();
+            boolean isValidateOrder = validateOrder(id);
+
+            if (isValidateOrder){
             boolean isSuccess = placeOrderModel.placeOrder(placeOrderDto);
             if (isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!!").show();
 
-                Mail mail = new Mail();
+                Mail_Logging mail = new Mail_Logging();
                 mail.setMsg("Your Order is Successfully placed..!");
                 mail.setTo(lblCustomerMail.getText());
                 mail.setSubject("Successfully Ordered");
 
                 Thread thread = new Thread(mail);
                 thread.start();
+            }
             } else {
                 new Alert(Alert.AlertType.ERROR, "Order Failed!!").show();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private boolean validateOrder(String id) {
+        boolean isOrderIdValidate = Pattern.matches("[O][\\d]{3,}", id);
+        if (!isOrderIdValidate) {
+            new Alert(Alert.AlertType.ERROR,"Invalid OrderId !!").show();
+            return false;
+        }
+        return true;
     }
 
     public void cmbItemCodeOnAction(ActionEvent actionEvent) {

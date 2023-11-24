@@ -14,12 +14,12 @@
    <children>
       <AnchorPane layoutX="-14.0" prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #c8d6e5;">
          <children>
-            <ImageView fitHeight="237.0" fitWidth="280.0" layoutX="21.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="261.0" fitWidth="322.0" layoutX="14.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/employee_manage.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="336.0" layoutY="125.0" prefHeight="448.0" prefWidth="330.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
+            <AnchorPane layoutX="336.0" layoutY="118.0" prefHeight="455.0" prefWidth="337.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
                <children>
                   <TextField fx:id="txtid" layoutX="112.0" layoutY="107.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtaddress" layoutX="112.0" layoutY="266.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />

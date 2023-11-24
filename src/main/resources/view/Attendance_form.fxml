@@ -22,7 +22,7 @@
                   <Image url="@image/istockphoto-1167651240-612x612.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="322.0" layoutY="136.0" prefHeight="458.0" prefWidth="443.0" style="-fx-background-color: #7f8fa6; -fx-background-radius: 40;">
+            <AnchorPane layoutX="322.0" layoutY="136.0" prefHeight="458.0" prefWidth="450.0" style="-fx-background-color: #7f8fa6; -fx-background-radius: 40;">
                <children>
                   <Label layoutX="39.0" layoutY="77.0" text="Employee Id">
                      <font>

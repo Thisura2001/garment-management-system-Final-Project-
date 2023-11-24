@@ -18,7 +18,7 @@
          <children>
             <AnchorPane layoutX="322.0" layoutY="-1.0" prefHeight="746.0" prefWidth="1134.0" style="-fx-background-color: #c8d6e5;">
                <children>
-                  <AnchorPane layoutX="656.0" layoutY="81.0" prefHeight="257.0" prefWidth="451.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
+                  <AnchorPane layoutX="647.0" layoutY="81.0" prefHeight="266.0" prefWidth="460.0" style="-fx-background-color: #82ccdd; -fx-background-radius: 40;">
                      <children>
                         <Label layoutX="76.0" layoutY="20.0" text="Code :  ">
                            <font>
@@ -58,7 +58,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="29.0" layoutY="74.0" prefHeight="274.0" prefWidth="460.0" style="-fx-background-color: #747d8c; -fx-background-radius: 40;">
+                  <AnchorPane layoutX="29.0" layoutY="74.0" prefHeight="274.0" prefWidth="460.0" style="-fx-background-color: #82ccdd; -fx-background-radius: 40;">
                      <children>
                         <Label layoutX="38.0" layoutY="8.0" text="Order Id -:">
                            <font>
@@ -149,7 +149,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="304.0" layoutY="14.0" prefHeight="42.0" prefWidth="506.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 50;" text="                     Place Your Order Here" textFill="WHITE">
+                  <Label layoutX="304.0" layoutY="14.0" prefHeight="42.0" prefWidth="506.0" style="-fx-background-color: #4a69bd; -fx-background-radius: 50;" text="                     Place Order Here" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>

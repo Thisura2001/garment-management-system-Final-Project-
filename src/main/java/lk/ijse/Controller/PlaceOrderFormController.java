@@ -184,7 +184,7 @@ public class PlaceOrderFormController {
         int enterQty = Integer.parseInt(txtqty.getText());
 
         if (enterQty > currentQty) {
-            new Alert(Alert.AlertType.WARNING, "Sorry qty not available..Please enter valid quantity").show();
+            new Alert(Alert.AlertType.WARNING, "Sorry Quantity not available..Please enter valid quantity").show();
             return 0;
         }
         return enterQty;

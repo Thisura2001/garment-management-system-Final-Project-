@@ -179,42 +179,64 @@ public class PlaceOrderFormController {
     public void txtQtyOnAction(ActionEvent actionEvent) {
         btnAddCartOnAction(actionEvent);
     }
+    private int checkQty() {
+        int currentQty = Integer.parseInt(lblQty.getText());
+        int enterQty = Integer.parseInt(txtqty.getText());
+
+        if (enterQty > currentQty) {
+            new Alert(Alert.AlertType.WARNING, "Sorry qty not available..Please enter valid quantity").show();
+            return 0;
+        }
+        return enterQty;
+    }
 
     public void btnAddCartOnAction(ActionEvent actionEvent) {
+
         String code = cmbItemCode.getValue();
         String description = lblDescription.getText();
-        int qty = Integer.parseInt(txtqty.getText());
+        int qty = checkQty();
         double unitPrice = Double.parseDouble(lblUnitPrice.getText());
         double tot = unitPrice * qty;
         Button btn = new Button("Remove");
 
+        if (qty == 0) {
+            Mail_Logging mail = new Mail_Logging();
+            mail.setMsg("Sorry !! We Don't have that much quantity we have only " + lblQty.getText() + " in stock. ");
+            mail.setTo(lblCustomerMail.getText());
+            mail.setSubject("Stock Alert !!");
+
+            Thread thread = new Thread(mail);
+            thread.start();
+            return ;
+        }else {
+
         setRemoveBtnAction(btn);
         btn.setCursor(Cursor.HAND);
 
+            if (!obList.isEmpty()) {
+                for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
+                    if (colCode.getCellData(i).equals(code)) {
+                        int col_qty = (int) colQty.getCellData(i);
+                        qty += col_qty;
+                        tot = unitPrice * qty;
 
-        if (!obList.isEmpty()) {
-            for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
-                if (colCode.getCellData(i).equals(code)) {
-                    int col_qty = (int) colQty.getCellData(i);
-                    qty += col_qty;
-                    tot = unitPrice * qty;
+                        obList.get(i).setQty(qty);
+                        obList.get(i).setTot(tot);
 
-                    obList.get(i).setQty(qty);
-                    obList.get(i).setTot(tot);
-
-                    calculateTotal();
-                    tblPlaceOrder.refresh();
-                    return;
+                        calculateTotal();
+                        tblPlaceOrder.refresh();
+                        return;
+                         }
+                    }
                 }
             }
-        }
-        var cartTm = new CartTm(code, description, qty, unitPrice, tot, btn, qty * unitPrice);
+            var cartTm = new CartTm(code, description, qty, unitPrice, tot, btn, qty * unitPrice);
 
-        obList.add(cartTm);
+            obList.add(cartTm);
 
-        tblPlaceOrder.setItems(obList);
-        calculateTotal();
-        txtqty.clear();
+            tblPlaceOrder.setItems(obList);
+            calculateTotal();
+            txtqty.clear();
     }
 
     private void calculateTotal() {
@@ -267,17 +289,18 @@ public class PlaceOrderFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!!").show();
 
                 Mail_Logging mail = new Mail_Logging();
-                mail.setMsg("Your Order is Successfully placed..!");
+                mail.setMsg("Your Order Successfully Placed !! \n\n Thank You... ");
                 mail.setTo(lblCustomerMail.getText());
                 mail.setSubject("Successfully Ordered");
 
                 Thread thread = new Thread(mail);
                 thread.start();
-            }
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Order Failed!!").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Sorry Your Order Failed!!").show();
+                 }
             }
         } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Order Failed!!").show();
             throw new RuntimeException(e);
         }
     }

@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-public class CustomerFormController implements Initializable {
+public class CustomerFormController {
 
     @FXML
     private TableColumn<?, ?> colCustomerAddress;
@@ -58,7 +58,7 @@ public class CustomerFormController implements Initializable {
     @FXML
     private TextField txttel;
     private CustomerManage_model customerManageModel = new CustomerManage_model();
-    public void initialize(URL url, ResourceBundle resourceBundle){
+    public void initialize(){
         setCellValueFactory();
         loadAllCustomer();
         genateNextCustomerId();

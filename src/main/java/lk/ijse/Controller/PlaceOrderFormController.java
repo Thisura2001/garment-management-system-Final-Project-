@@ -102,8 +102,6 @@ public class PlaceOrderFormController {
     ItemManage_model itemManageModel = new ItemManage_model();
     OrderModel orderModel = new OrderModel();
     PlaceOrder_model placeOrderModel = new PlaceOrder_model();
-
-    ItemFormController itemFormController = new ItemFormController();
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
 
     public void initialize() {
@@ -270,6 +268,9 @@ public class PlaceOrderFormController {
         String customerId = cmbCustomerId.getValue();
         String total = colTotal.getText();
 
+        boolean isValidateOrder = validateOrder(orderId);
+        if (isValidateOrder){
+
         List<CartTm> cartTmList = new ArrayList<>();
         for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
             CartTm cartTm = obList.get(i);
@@ -280,10 +281,7 @@ public class PlaceOrderFormController {
         System.out.println("Place order form controller: " + cartTmList);
         var placeOrderDto = new PlaceOrderDto(orderId, date, customerId, cartTmList);
         try {
-            String id = lblOrderId.getText();
-            boolean isValidateOrder = validateOrder(id);
 
-            if (isValidateOrder){
             boolean isSuccess = placeOrderModel.placeOrder(placeOrderDto);
             if (isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!!").show();
@@ -298,10 +296,10 @@ public class PlaceOrderFormController {
             }else {
                 new Alert(Alert.AlertType.ERROR, "Sorry Your Order Failed!!").show();
                  }
-            }
-        } catch (Exception e) {
+            }catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Order Failed!!").show();
             throw new RuntimeException(e);
+             }
         }
     }
 

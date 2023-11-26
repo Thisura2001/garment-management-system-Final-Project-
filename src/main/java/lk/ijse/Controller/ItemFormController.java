@@ -1,5 +1,6 @@
 package lk.ijse.Controller;
 
+import com.google.protobuf.StringValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,16 +8,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Dto.customerDto;
+import lk.ijse.Dto.employeeDto;
 import lk.ijse.Dto.itemDto;
+import lk.ijse.Dto.rowMaterialDto;
 import lk.ijse.Model.ItemManage_model;
-import javafx.scene.control.TableColumn;
+import lk.ijse.Model.MaterialManage_model;
 import lk.ijse.Tm.EmployeeTm;
 import lk.ijse.Tm.ItemTm;
 
@@ -32,13 +33,19 @@ public class ItemFormController {
     private TableColumn<?,?> colUnitPrice;
 
     @FXML
-    private TableColumn<?, ?> colid;
+    private TableColumn<?, ?> colId;
+
+    @FXML
+    private ComboBox<?> cmbMaterialId;
+
+    @FXML
+    private TableColumn<?, ?> colMaterialId;
 
     @FXML
     private TableColumn<?, ?> colname;
 
     @FXML
-    TableColumn<?, ?> colqtyOnHand;
+    private TableColumn<?, ?> colqtyOnHand;
 
     @FXML
     private AnchorPane rootNode;
@@ -58,7 +65,9 @@ public class ItemFormController {
     @FXML
     private TextField txtunitPrice;
 
+
     private ItemManage_model itemManageModel = new ItemManage_model();
+    private MaterialManage_model materialManageModel = new MaterialManage_model();
 
     public void initialize(){
         setCellValueFactory();
@@ -108,12 +117,13 @@ public class ItemFormController {
 
             tblItem.setItems(obList);
         } catch (SQLException e) {
+            System.out.println(e);
             throw new RuntimeException(e);
         }
     }
 
     private void setCellValueFactory() {
-        colid.setCellValueFactory(new PropertyValueFactory<>("code"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("code"));
         colname.setCellValueFactory(new PropertyValueFactory<>("description"));
         colqtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty_on_hand"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
@@ -248,4 +258,13 @@ public class ItemFormController {
         txtunitPrice.setText("");
     }
 
+    public void cmbMaterialIdOnAction(ActionEvent actionEvent) {
+        String id = String.valueOf(cmbMaterialId.getValue());
+        try {
+            rowMaterialDto materialDto = materialManageModel.searchMaterial(id);
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            System.out.println(e);
+        }
+    }
 }

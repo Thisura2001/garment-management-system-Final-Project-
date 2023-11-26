@@ -53,22 +53,22 @@
                      </font></Label>
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="188.0" onAction="#btnAddCustomerOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Customer" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="741.0" layoutY="289.0" onAction="#btnAddCustomerOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Customer" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="272.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Customer" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="355.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Customer" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="355.0" onAction="#btnDeleteonAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete customer" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="418.0" onAction="#btnDeleteonAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete customer" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="439.0" onAction="#btnSearchOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #273c75; -fx-background-radius: 30;" text="Search Customer" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="480.0" onAction="#btnSearchOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #273c75; -fx-background-radius: 30;" text="Search Customer" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -103,7 +103,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="750.0" layoutY="522.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Clear" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="542.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Clear" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

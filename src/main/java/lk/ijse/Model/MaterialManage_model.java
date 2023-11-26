@@ -2,6 +2,7 @@ package lk.ijse.Model;
 
 import lk.ijse.Db.DbConnection;
 import lk.ijse.Dto.customerDto;
+import lk.ijse.Dto.itemDto;
 import lk.ijse.Dto.rowMaterialDto;
 
 import java.sql.Connection;

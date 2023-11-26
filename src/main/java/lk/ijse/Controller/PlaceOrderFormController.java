@@ -278,7 +278,6 @@ public class PlaceOrderFormController {
             cartTmList.add(cartTm);
         }
 
-        System.out.println("Place order form controller: " + cartTmList);
         var placeOrderDto = new PlaceOrderDto(orderId, date, customerId, cartTmList);
         try {
 

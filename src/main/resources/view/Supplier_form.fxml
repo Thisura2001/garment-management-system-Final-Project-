@@ -68,17 +68,17 @@
                   <Font size="11.0" />
                </font>
             </TextField>
-            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="246.0" onAction="#btnAddSupplierOnAction" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="758.0" layoutY="307.0" onAction="#btnAddSupplierOnAction" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;" text="Add Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="325.0" onAction="#btndeleteSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="758.0" layoutY="360.0" onAction="#btndeleteSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e84118; -fx-background-radius: 30;" text="Delete Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="402.0" onAction="#btnUpdateSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Supplier" textFill="#dfe6e9">
+            <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="416.0" onAction="#btnUpdateSupplierOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 30;" text="Update Supplier" textFill="#dfe6e9">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

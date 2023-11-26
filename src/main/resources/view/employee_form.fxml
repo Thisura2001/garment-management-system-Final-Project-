@@ -53,22 +53,22 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="188.0" onAction="#btnAddonAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #20bf6b; -fx-background-radius: 20;" text="Add Employee" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="246.0" onAction="#btnAddonAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #20bf6b; -fx-background-radius: 20;" text="Add Employee" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="272.0" onAction="#btnDeleteOnAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #b71540; -fx-background-radius: 20;" text="Delete Employee" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="314.0" onAction="#btnDeleteOnAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #b71540; -fx-background-radius: 20;" text="Delete Employee" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="348.0" onAction="#btnUpdateOnAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 20;" text="Update Employee" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="375.0" onAction="#btnUpdateOnAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 20;" text="Update Employee" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="423.0" onAction="#btnSearchOnAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #273c75; -fx-background-radius: 20;" text="Search Employee" textFill="#f5f6fa">
+            <JFXButton buttonType="RAISED" layoutX="688.0" layoutY="441.0" onAction="#btnSearchOnAction" prefHeight="42.0" prefWidth="138.0" style="-fx-background-color: #273c75; -fx-background-radius: 20;" text="Search Employee" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

@@ -197,12 +197,15 @@ public class SupplierFormController {
             String email = txttel.getText();
             String type = txttype.getText();
 
-            boolean isUpdate = supplierManageModel.UpdateSupplier(new supplierDto(id,name,address,email,type));
+            boolean isValidateSupplier = validateSupplier(id,name,address,email,type);
+            if (isValidateSupplier) {
+                boolean isUpdate = supplierManageModel.UpdateSupplier(new supplierDto(id, name, address, email, type));
 
-            if (isUpdate){
-                new Alert(Alert.AlertType.CONFIRMATION,"SupplierUpdate Successfully!!").show();
-                loadAllSuppliers();
-                clearFields();
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "SupplierUpdate Successfully!!").show();
+                    loadAllSuppliers();
+                    clearFields();
+                }
             }
 
         }catch (Exception e){

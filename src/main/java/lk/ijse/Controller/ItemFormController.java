@@ -228,12 +228,16 @@ public class ItemFormController {
             Integer qtyOnHand = Integer.valueOf(txtqtyOnHand.getText());
             String unitPrice =txtunitPrice.getText();
 
-            boolean isUpdate = itemManageModel.updateItems(new itemDto(code,description,qtyOnHand,unitPrice));
+            boolean isValidateItem = validateItem(code,description,qtyOnHand,unitPrice);
 
-            if (isUpdate){
-                new Alert(Alert.AlertType.CONFIRMATION,"Item Update Success!!").show();
-                loadAllItems();
-                clearFields();
+            if (isValidateItem) {
+                boolean isUpdate = itemManageModel.updateItems(new itemDto(code, description, qtyOnHand, unitPrice));
+
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Item Update Success!!").show();
+                    loadAllItems();
+                    clearFields();
+                }
             }
 
         }catch (Exception e){

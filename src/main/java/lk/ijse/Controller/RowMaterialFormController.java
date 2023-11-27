@@ -208,12 +208,15 @@ public class RowMaterialFormController {
             String unit_price = txtunitPrice.getText();
             int qty_on_hand = Integer.valueOf(txtqty.getText());
 
-            boolean isUpdate = materialManageModel.updateMaterial(new rowMaterialDto(id,name,unit_price,qty_on_hand));
+            boolean isValidateMaterial = validateMaterial(id,name,unit_price,qty_on_hand);
+            if (isValidateMaterial) {
+                boolean isUpdate = materialManageModel.updateMaterial(new rowMaterialDto(id, name, unit_price, qty_on_hand));
 
-            if (isUpdate){
-                new Alert(Alert.AlertType.CONFIRMATION,"Material Update Successfully!!").show();
-                loadAllMaterial();
-                clearFields();
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Material Update Successfully!!").show();
+                    loadAllMaterial();
+                    clearFields();
+                }
             }
 
         }catch (Exception e){

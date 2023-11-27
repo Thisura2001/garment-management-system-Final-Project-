@@ -202,12 +202,15 @@ public class EmployeeFormController {
             String address =txtaddress.getText();
             Integer tel = Integer.valueOf(txttel.getText());
 
-            boolean isUpdate = employeeManageModel.updateEmployee(new employeeDto(id,name,address,tel));
+            boolean isValidateEmployee = validateEmployee(id,name,address);
 
-            if (isUpdate){
-                new Alert(Alert.AlertType.CONFIRMATION,"Customer Update Success!!").show();
-                loadAllEmployee();
-                clearFields();
+            boolean isUpdate = employeeManageModel.updateEmployee(new employeeDto(id,name,address,tel));
+            if (isValidateEmployee) {
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Customer Update Success!!").show();
+                    loadAllEmployee();
+                    clearFields();
+                }
             }
 
         }catch (Exception e){

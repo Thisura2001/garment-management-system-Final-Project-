@@ -183,12 +183,15 @@ public class CustomerFormController {
             String address =txtaddress.getText();
             String tel =txttel.getText();
 
+            boolean isCustomerValidate = validateCustomer(id,name,address,tel);
+            if (isCustomerValidate){
             boolean isUpdate = customerManageModel.updateCustomer(new customerDto(id,name,address,tel));
 
-            if (isUpdate){
-                new Alert(Alert.AlertType.CONFIRMATION,"Customer Update Success!!").show();
+            if (isUpdate) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Customer Update Success!!").show();
                 loadAllCustomer();
                 clearFields();
+                }
             }
 
         }catch (Exception e){

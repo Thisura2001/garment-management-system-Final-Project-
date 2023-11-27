@@ -33,13 +33,8 @@ public class ItemFormController {
     private TableColumn<?,?> colUnitPrice;
 
     @FXML
-    private TableColumn<?, ?> colId;
+    private TableColumn<?, ?> colid;
 
-    @FXML
-    private ComboBox<?> cmbMaterialId;
-
-    @FXML
-    private TableColumn<?, ?> colMaterialId;
 
     @FXML
     private TableColumn<?, ?> colname;
@@ -67,7 +62,6 @@ public class ItemFormController {
 
 
     private ItemManage_model itemManageModel = new ItemManage_model();
-    private MaterialManage_model materialManageModel = new MaterialManage_model();
 
     public void initialize(){
         setCellValueFactory();
@@ -123,11 +117,10 @@ public class ItemFormController {
     }
 
     private void setCellValueFactory() {
-        colId.setCellValueFactory(new PropertyValueFactory<>("code"));
-        colname.setCellValueFactory(new PropertyValueFactory<>("description"));
-        colqtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty_on_hand"));
-        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
-
+    colid.setCellValueFactory(new PropertyValueFactory<>("code"));
+    colname.setCellValueFactory(new PropertyValueFactory<>("description"));
+    colqtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty_on_hand"));
+    colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
@@ -256,15 +249,5 @@ public class ItemFormController {
         txtname.setText("");
         txtqtyOnHand.setText("");
         txtunitPrice.setText("");
-    }
-
-    public void cmbMaterialIdOnAction(ActionEvent actionEvent) {
-        String id = String.valueOf(cmbMaterialId.getValue());
-        try {
-            rowMaterialDto materialDto = materialManageModel.searchMaterial(id);
-        }catch (Exception e){
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-            System.out.println(e);
-        }
     }
 }

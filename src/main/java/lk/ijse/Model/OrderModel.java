@@ -33,7 +33,7 @@ public class OrderModel {
 
     private String splitOrderId(String currentOrderId) {
         if(currentOrderId != null) {
-            String[] split = currentOrderId.split("O0");
+            String[] split = currentOrderId.split("[O]");
 
             int id = Integer.parseInt(split[1]); //01
             id++;

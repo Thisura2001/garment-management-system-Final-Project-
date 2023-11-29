@@ -4,7 +4,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (9)"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT * FROM rowmaterial]]>
+		<![CDATA[SELECT * FROM rowMaterial]]>
 	</queryString>
 	<field name="row_id" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="row_id"/>

@@ -91,7 +91,7 @@ public class ReportFormController {
         JasperViewer.viewReport(jasperPrint, false);
     }
 
-    public void printMaterialDetailOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+    public void btnMaterialOnAction(ActionEvent actionEvent) throws JRException, SQLException {
         InputStream resourceAsStream = getClass().getResourceAsStream("/view/Report/Material.jrxml");
         JasperDesign load = JRXmlLoader.load(resourceAsStream);
         JasperReport jasperReport = JasperCompileManager.compileReport(load);

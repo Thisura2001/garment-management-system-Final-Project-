@@ -25,33 +25,33 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblUnitPrice" layoutX="163.0" layoutY="121.0" prefHeight="35.0" prefWidth="142.0" textFill="#c0392b">
+                        <Label fx:id="lblUnitPrice" layoutX="158.0" layoutY="221.0" prefHeight="35.0" prefWidth="142.0" textFill="#c0392b">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
                         <JFXComboBox fx:id="cmbItemCode" focusColor="#c0392b" layoutX="163.0" layoutY="20.0" onAction="#cmbItemCodeOnAction" prefHeight="26.0" prefWidth="168.0" />
-                        <Label layoutX="30.0" layoutY="76.0" text="Description :">
+                        <Label layoutX="29.0" layoutY="93.0" text="Description :">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblDescription" layoutX="163.0" layoutY="72.0" prefHeight="26.0" prefWidth="118.0" textFill="#c0392b">
+                        <Label fx:id="lblDescription" layoutX="163.0" layoutY="89.0" prefHeight="26.0" prefWidth="118.0" textFill="#c0392b">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="46.0" layoutY="125.0" text="Unit Price :">
+                        <Label layoutX="29.0" layoutY="225.0" text="Unit Price :">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="27.0" layoutY="176.0" text="Qty on Hand :">
+                        <Label layoutX="24.0" layoutY="159.0" text="Qty on Hand :">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblQty" layoutX="163.0" layoutY="172.0" prefHeight="35.0" prefWidth="142.0" textFill="#c0392b">
+                        <Label fx:id="lblQty" layoutX="169.0" layoutY="155.0" prefHeight="35.0" prefWidth="142.0" textFill="#c0392b">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>

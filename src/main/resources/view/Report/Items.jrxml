@@ -30,11 +30,11 @@
 		<band/>
 	</background>
 	<title>
-		<band height="72">
+		<band height="125">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="284d6efc-7627-4c94-ae7e-612ee15f728f"/>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="120" backcolor="#006699" uuid="284d6efc-7627-4c94-ae7e-612ee15f728f"/>
 				<staticText>
-					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="bb4b8111-250a-4f83-8580-f3ca9102a3ab"/>
+					<reportElement x="10" y="70" width="234" height="43" forecolor="#FFFFFF" uuid="bb4b8111-250a-4f83-8580-f3ca9102a3ab"/>
 					<textElement>
 						<font size="26" isBold="true"/>
 					</textElement>
@@ -47,6 +47,10 @@
 					</textElement>
 					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>
+				<image>
+					<reportElement x="10" y="10" width="80" height="60" uuid="9cdab64d-8073-48f9-8c17-9858605c598d"/>
+					<imageExpression><![CDATA["C:/Users/thisu/Downloads/modern-company-logo-design-vector.jpg"]]></imageExpression>
+				</image>
 			</frame>
 		</band>
 	</title>

@@ -4,7 +4,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (9)"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT * FROM rowMaterial]]>
+		<![CDATA[SELECT * FROM rowmaterial]]>
 	</queryString>
 	<field name="row_id" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="row_id"/>
@@ -30,9 +30,9 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="139" splitType="Stretch">
+		<band height="163" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="0" width="283" height="113" uuid="63df618b-e885-41f9-84bf-fd70bf821e40"/>
+				<reportElement x="-20" y="50" width="283" height="113" uuid="63df618b-e885-41f9-84bf-fd70bf821e40"/>
 				<textElement>
 					<font size="20" isBold="true" isItalic="true"/>
 				</textElement>
@@ -52,6 +52,10 @@
 				</textElement>
 				<text><![CDATA[Material Detail...]]></text>
 			</staticText>
+			<image>
+				<reportElement x="0" y="-9" width="90" height="59" uuid="55a1bc30-5295-432e-82b9-15bdebec5eb5"/>
+				<imageExpression><![CDATA["C:/Users/thisu/Downloads/modern-company-logo-design-vector.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<columnHeader>

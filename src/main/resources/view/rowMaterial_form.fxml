@@ -53,7 +53,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="364.0" layoutY="14.0" prefHeight="35.0" prefWidth="456.0" style="-fx-background-color: #9c88ff; -fx-background-radius: 40;" text="                Manage Raw Materials" textFill="#2f3542">
+            <Label layoutX="571.0" layoutY="16.0" prefHeight="35.0" prefWidth="456.0" style="-fx-background-color: #0097e6; -fx-background-radius: 40;" text="                Manage Raw Materials" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -83,7 +83,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <ImageView layoutX="850.0" layoutY="13.0">
+            <ImageView fitHeight="35.0" fitWidth="43.0" layoutX="1042.0" layoutY="14.0">
                <image>
                   <Image url="@image/icons8-material-64.png" />
                </image>
@@ -110,11 +110,6 @@
                   <TableColumn fx:id="colQtyOnHand" prefWidth="150.4000244140625" text="QTY On Hand" />
               </columns>
             </TableView>
-            <Label layoutX="954.0" layoutY="66.0" text="Here is the table view for RowMaterials" textFill="#f71919">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
             <JFXButton buttonType="RAISED" layoutX="740.0" layoutY="507.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #9980FA; -fx-background-radius: 30;" text="Search" textFill="#f5f6fa">
                <cursor>
                   <Cursor fx:constant="HAND" />

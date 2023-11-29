@@ -14,12 +14,12 @@
    <children>
       <AnchorPane layoutX="-14.0" prefHeight="650.0" prefWidth="1500.0" style="-fx-background-color: #c8d6e5;">
          <children>
-            <ImageView fitHeight="261.0" fitWidth="322.0" layoutX="14.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="242.0" fitWidth="284.0" layoutX="14.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/employee_manage.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="336.0" layoutY="118.0" prefHeight="455.0" prefWidth="337.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
+            <AnchorPane layoutX="321.0" layoutY="160.0" prefHeight="455.0" prefWidth="337.0" style="-fx-background-color: #718093; -fx-background-radius: 40;">
                <children>
                   <TextField fx:id="txtid" layoutX="112.0" layoutY="107.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtaddress" layoutX="112.0" layoutY="266.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />
@@ -48,7 +48,7 @@
                   <TextField fx:id="txtname" layoutX="112.0" layoutY="184.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-radius: 30;" />
                </children>
             </AnchorPane>
-            <Label layoutX="346.0" layoutY="14.0" prefHeight="35.0" prefWidth="391.0" style="-fx-background-color: #8c7ae6; -fx-background-radius: 40;" text="               Manage Employee" textFill="#f5f6fa">
+            <Label layoutX="490.0" layoutY="14.0" prefHeight="35.0" prefWidth="526.0" style="-fx-background-color: #0097e6; -fx-background-radius: 40;" text="                       Manage Employee" textFill="#f5f6fa">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -83,25 +83,20 @@
                   <Image url="@image/icons8-search-24.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="750.0" layoutY="4.0">
+            <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="1039.0" layoutY="11.0">
                <image>
                   <Image url="@image/icons8-employee-64.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tblEmployee" layoutX="850.0" layoutY="118.0" prefHeight="455.0" prefWidth="610.0" stylesheets="@Css/Employee.css">
+            <TableView fx:id="tblEmployee" layoutX="856.0" layoutY="160.0" prefHeight="455.0" prefWidth="618.0" stylesheets="@Css/Employee.css">
               <columns>
                 <TableColumn fx:id="colid" prefWidth="150.4000244140625" text="Employee_id" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
                   <TableColumn fx:id="colName" prefWidth="150.4000244140625" text="Name" />
                   <TableColumn fx:id="colAddress" prefWidth="150.4000244140625" text="Address" />
-                  <TableColumn fx:id="colTel" prefWidth="156.00009765624998" text="Telephone" />
+                  <TableColumn fx:id="colTel" prefWidth="163.99997558593748" text="Telephone" />
               </columns>
             </TableView>
-            <Label layoutX="1017.0" layoutY="67.0" text="Here is the table View for Employees" textFill="#fc3062">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
             <JFXButton buttonType="RAISED" layoutX="1389.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #01a3a4; -fx-background-radius: 30;" text="      Home" textFill="#0d0d0d">
                <font>
                   <Font name="System Bold" size="12.0" />

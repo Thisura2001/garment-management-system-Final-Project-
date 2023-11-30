@@ -36,6 +36,8 @@ or_id varchar(10)not null,
 code varchar(10)not null,
 unit_price varchar(10)not null,
 qty int(20)not null,
+Total double not null,
+subTotal double not null,
 foreign key(or_id) references orders (or_id) on delete cascade on update cascade,
 foreign key(code) references item(code) on delete cascade on update cascade
 );

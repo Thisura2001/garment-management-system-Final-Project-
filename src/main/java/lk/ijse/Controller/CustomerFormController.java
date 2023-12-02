@@ -94,7 +94,7 @@ public class CustomerFormController {
                 );
             }
 
-            tblCustomer.setItems(obList);
+            tblCustomer.setItems(obList);;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

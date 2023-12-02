@@ -293,6 +293,11 @@ public class PlaceOrderFormController {
                 Thread thread = new Thread(mail);
                 thread.start();
             }else {
+//                List<CartTm> cartTmList = new ArrayList<>();
+//                for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
+//                    CartTm cartTm = obList.get(i);
+//
+//                    cartTmList.add(cartTm);
                 new Alert(Alert.AlertType.ERROR, "Sorry Your Order Failed!!").show();
                  }
             }catch (Exception e) {

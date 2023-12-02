@@ -157,11 +157,19 @@ public class AttendanceFormController {
     }
 
     public void cmbEmployeeIdOnAction(ActionEvent actionEvent) {
+//        String id = String.valueOf(cmbEmplooyeId.getValue());
+//        try {
+//            employeeDto employeeDto = employeeManageModel.searchEmployee(id);
+//           lblEmployeeName.setText(employeeDto.getName());
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
         String id = String.valueOf(cmbEmplooyeId.getValue());
+
         try {
             employeeDto employeeDto = employeeManageModel.searchEmployee(id);
-           lblEmployeeName.setText(employeeDto.getName());
-
+            lblEmployeeName.setText(employeeDto.getName());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

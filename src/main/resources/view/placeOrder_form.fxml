@@ -114,7 +114,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblCustomerName" layoutX="199.0" layoutY="174.0" prefHeight="26.0" prefWidth="142.0" textFill="#c0392b">
+                        <Label fx:id="lblCustomerName" layoutX="199.0" layoutY="174.0" prefHeight="35.0" prefWidth="239.0" textFill="#c0392b">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>

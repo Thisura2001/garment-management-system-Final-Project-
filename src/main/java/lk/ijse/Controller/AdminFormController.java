@@ -61,11 +61,6 @@ public class AdminFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
-    private boolean isValidEmail(String email) {
-        // Simple email validation using regular expression
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-        return email.matches(emailRegex);
-    }
 private void isNavigateLogging() throws IOException {
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/logging_form.fxml"));
     Parent rootNode = fxmlLoader.load();
